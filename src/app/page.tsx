@@ -4,6 +4,7 @@ import Head from 'next/head';
 import * as React from 'react';
 import '@/lib/env';
 
+import ClientExperience from '@/app/components/ClientExperience';
 import CoreValues from '@/app/components/CoreValues';
 import Hero from '@/app/components/HeroSection';
 import ResearchSection from '@/app/components/ResearchSection';
@@ -38,6 +39,7 @@ export default function HomePage() {
         <TransformSection />
         <WhyChooseUs />
         <ResearchSection />
+        <ClientExperience />
       </section>
     </main>
   );
