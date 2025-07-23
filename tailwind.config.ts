@@ -9,6 +9,8 @@ export default {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'brand-purple': '#150048',
+        'brand-red': '#C42B60',
         primary: {
           // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',

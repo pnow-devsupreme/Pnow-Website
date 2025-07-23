@@ -1,0 +1,172 @@
+import React from 'react';
+
+import ConstructionEstimator from '../../../public/svg/Vercel.svg';
+import ConstructionTechnicians from '../../../public/svg/Vercel.svg';
+import Logo from '../../../public/svg/Vercel.svg';
+import PipelineEngineer from '../../../public/svg/Vercel.svg';
+import SeniorAttorney from '../../../public/svg/Vercel.svg';
+
+const Hero: React.FC = () => {
+  return (
+    <section
+      className='w-full bg-brand-purple overflow-hidden'
+      style={{
+        /*
+         * clip-path chops out two diagonal cuts at the bottom corners
+         * 85% = cut height (≈100px of a 700px section)
+         */
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 95% 85%, 5% 85%, 0 100%)',
+      }}
+    >
+      <div className='relative mx-auto h-[700px] max-w-[1440px]'>
+        {/* ─── NAVBAR ─────────────────────────────────────────── */}
+        <nav
+          className='
+            absolute top-[32px] left-1/2
+            transform -translate-x-1/2
+            bg-white rounded-full
+            px-8 py-3
+            flex items-center
+            shadow-lg
+            w-[calc(100%-64px)] max-w-[1200px]
+          '
+        >
+          <img src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
+
+          <ul className='flex ml-10 space-x-6'>
+            {[
+              'About Us',
+              'Find a Job',
+              'Employers',
+              'Employees',
+              'Services',
+              'Blog',
+            ].map((label) => (
+              <li key={label}>
+                <a
+                  href={`#${label.toLowerCase().replace(/ /g, '-')}`}
+                  className='text-brand-purple font-semibold text-base hover:underline'
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            className='
+              ml-auto
+              bg-brand-purple text-white
+              px-6 py-3
+              rounded-full
+              font-semibold text-base
+              hover:opacity-90
+            '
+          >
+            Contact Us
+          </button>
+        </nav>
+
+        {/* ─── HERO CONTENT ───────────────────────────────────── */}
+        <div
+          className='
+            absolute top-1/2 left-1/2
+            transform -translate-x-1/2 -translate-y-1/2
+            text-center
+            px-4
+            w-full max-w-[800px]
+          '
+        >
+          <h1 className='text-[48px] font-bold text-white leading-tight'>
+            Transform Your{' '}
+            <span className='text-brand-red'>Path to Success</span>
+          </h1>
+
+          <p className='mt-4 text-[18px] leading-relaxed text-white/90'>
+            Welcome to our comprehensive solution, optimizing hiring for
+            employers and efficiently connecting top talent. For employees, we
+            offer career opportunities aligning with aspirations. Elevate your
+            success journey with us, unlocking your full potential together.
+          </p>
+
+          <div className='mt-8 flex justify-center space-x-4'>
+            <button
+              className='
+                bg-white text-brand-purple
+                px-8 py-3
+                rounded-2xl
+                font-semibold text-base
+                hover:opacity-90
+              '
+            >
+              Find Works
+            </button>
+
+            <button
+              className='
+                bg-brand-red text-white
+                px-8 py-3
+                rounded-2xl
+                font-semibold text-base
+                hover:opacity-90
+              '
+            >
+              Hire Talents Now
+            </button>
+          </div>
+        </div>
+
+        {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
+        {/** Top‑left */}
+        <div className='absolute top-[160px] left-[80px] flex flex-col items-center'>
+          <img
+            src={ConstructionEstimator}
+            alt='Construction Estimator'
+            className='w-[120px] h-[120px] rounded-full bg-white object-cover'
+          />
+          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+            Construction Estimator
+          </span>
+        </div>
+
+        {/** Bottom‑left */}
+        <div className='absolute bottom-[140px] left-[100px] flex flex-col items-center'>
+          <img
+            src={ConstructionTechnicians}
+            alt='Construction Technicians'
+            className='w-[120px] h-[120px] rounded-full bg-white object-cover'
+          />
+          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+            Construction Technicians
+          </span>
+        </div>
+
+        {/** Top‑right */}
+        <div className='absolute top-[160px] right-[80px] flex flex-col items-center'>
+          <img
+            src={SeniorAttorney}
+            alt='Senior Attorney'
+            className='w-[120px] h-[120px] rounded-full bg-white object-cover'
+          />
+          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+            Senior Attorney
+          </span>
+        </div>
+
+        {/** Bottom‑right */}
+        <div className='absolute bottom-[140px] right-[100px] flex flex-col items-center'>
+          <img
+            src={PipelineEngineer}
+            alt='Pipeline Engineer'
+            className='w-[120px] h-[120px] rounded-full bg-white object-cover'
+          />
+          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+            Pipeline Engineer
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
