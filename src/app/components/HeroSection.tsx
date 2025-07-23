@@ -11,14 +11,11 @@ const Hero: React.FC = () => {
     <section
       className='w-full bg-brand-purple overflow-hidden'
       style={{
-        /*
-         * clip-path chops out two diagonal cuts at the bottom corners
-         * 85% = cut height (≈100px of a 700px section)
-         */
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 95% 85%, 5% 85%, 0 100%)',
+        // clipPath: 'polygon(0 0, 100% 0, 100% 83%, 83% 100%, 5% 100%, 0 83%)',
+        clipPath: 'polygon(0 0, 100% 0, 100% 83%, 83% 100%, 17% 100%, 0 83%)',
       }}
     >
-      <div className='relative mx-auto h-[700px] max-w-[1440px]'>
+      <div className='relative mx-auto h-[800px] max-w-[1440px]'>
         {/* ─── NAVBAR ─────────────────────────────────────────── */}
         <nav
           className='
@@ -77,9 +74,10 @@ const Hero: React.FC = () => {
             w-full max-w-[800px]
           '
         >
-          <h1 className='text-[48px] font-bold text-white leading-tight'>
-            Transform Your{' '}
-            <span className='text-brand-red'>Path to Success</span>
+          <h1 className=' text-[60px] font-bold text-white leading-tight'>
+            Transform Your <span className='text-brand-red'>Path</span> to
+            <br />
+            <span className='text-brand-red'> Success</span>
           </h1>
 
           <p className='mt-4 text-[18px] leading-relaxed text-white/90'>
@@ -94,7 +92,7 @@ const Hero: React.FC = () => {
               className='
                 bg-white text-brand-purple
                 px-8 py-3
-                rounded-2xl
+                rounded-full
                 font-semibold text-base
                 hover:opacity-90
               '
@@ -106,7 +104,7 @@ const Hero: React.FC = () => {
               className='
                 bg-brand-red text-white
                 px-8 py-3
-                rounded-2xl
+                rounded-full
                 font-semibold text-base
                 hover:opacity-90
               '
@@ -118,7 +116,7 @@ const Hero: React.FC = () => {
 
         {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
         {/** Top‑left */}
-        <div className='absolute top-[160px] left-[80px] flex flex-col items-center'>
+        <div className='absolute top-[260px] left-[80px] flex flex-col items-center'>
           <img
             src={ConstructionEstimator}
             alt='Construction Estimator'
@@ -130,7 +128,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/** Bottom‑left */}
-        <div className='absolute bottom-[140px] left-[100px] flex flex-col items-center'>
+        <div className='absolute bottom-[160px] left-[190px] flex flex-col items-center'>
           <img
             src={ConstructionTechnicians}
             alt='Construction Technicians'
@@ -142,7 +140,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/** Top‑right */}
-        <div className='absolute top-[160px] right-[80px] flex flex-col items-center'>
+        <div className='absolute top-[260px] right-[80px] flex flex-col items-center'>
           <img
             src={SeniorAttorney}
             alt='Senior Attorney'
@@ -154,7 +152,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/** Bottom‑right */}
-        <div className='absolute bottom-[140px] right-[100px] flex flex-col items-center'>
+        <div className='absolute bottom-[160px] right-[200px] flex flex-col items-center'>
           <img
             src={PipelineEngineer}
             alt='Pipeline Engineer'

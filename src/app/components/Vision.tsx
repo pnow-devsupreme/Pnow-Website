@@ -37,12 +37,12 @@ export default function OurVision() {
   return (
     <section className='bg-white py-16 px-6'>
       <div className='max-w-7xl mx-auto'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
           {/* Left side - Illustration */}
           <div className='relative'>
             <Image
               src='/vision.png'
-              alt='Modern office environment with people working and collaborating'
+              alt='Office isometric graphic'
               width={600}
               height={700}
               className='w-full h-[700px] object-cover rounded-lg shadow-lg'
@@ -51,53 +51,62 @@ export default function OurVision() {
           </div>
 
           {/* Right side - Content */}
-          <div className='space-y-8'>
-            <h2 className='text-5xl font-bold text-[#2D1B69] mb-12'>
+          <div>
+            <h2 className='text-[48px] font-bold text-[#2D1B69] mb-[40px]'>
               Our Vision
             </h2>
 
-            {/* Timeline container */}
-            <div className='relative'>
-              {/* Continuous vertical line */}
-              <div className='absolute left-6 top-6 bottom-6 w-0.5 bg-gray-300' />
+            {/* Timeline */}
+            <ul className='relative'>
+              {/* Vertical grey line, from center of first icon to center of last */}
+              <span className='absolute left-[18px] top-[18px] bottom-[18px] w-[2px] bg-gray-200' />
 
-              <div className='space-y-12'>
-                {visionPoints.map(({ title, description, Icon }) => (
-                  <div key={title} className='flex items-center'>
-                    {/* Icon */}
-                    <div className='relative z-10'>
-                      <div className='w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center'>
-                        <Icon className='w-6 h-6 text-white' />
-                      </div>
-                    </div>
-
-                    {/* Blue horizontal connector, perfectly centered */}
-                    <div className='ml-6 w-10 h-0.5 bg-blue-500' />
-
-                    {/* Text */}
-                    <div className='ml-6'>
-                      <h3 className='text-xl font-bold text-[#2D1B69]'>
-                        {title}
-                      </h3>
-                      <p className='mt-2 text-gray-500 text-base'>
-                        {description}
-                      </p>
-                    </div>
+              {visionPoints.map(({ title, description, Icon }) => (
+                <li
+                  key={title}
+                  className='relative pl-[70px] mb-[48px] last:mb-0'
+                >
+                  {/* Icon Container */}
+                  <div
+                    className='
+                      absolute left-0 top-0
+                      w-[36px] h-[36px]
+                      bg-[#2D1B69] rounded-lg
+                      flex items-center justify-center
+                    '
+                  >
+                    <Icon className='w-[20px] h-[20px] text-white z-50' />
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Bottom description */}
-            <div className='mt-12 pt-8'>
-              <p className='text-gray-500 text-base leading-relaxed'>
-                To support our Employers with professional and executive talent
-                and to direct employees to the right position in their career
-                path with rewarding benefits. We bridge the gap between industry
-                needs and the talent pool by leveraging technology for efficient
-                matching.
-              </p>
-            </div>
+                  {/* Horizontal connector */}
+                  <div
+                    className='
+                      absolute
+                      left-[20px] top-[17px]
+                      w-[40px] h-[2px]
+                      bg-[#2D1B69]
+                    '
+                  />
+
+                  {/* Text */}
+                  <h3 className='text-[24px] font-semibold text-[#2D1B69]'>
+                    {title}
+                  </h3>
+                  <p className='mt-[8px] text-[18px] leading-relaxed text-gray-600'>
+                    {description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+
+            {/* Bottom paragraph */}
+            <p className='mt-[48px] text-[18px] leading-relaxed text-gray-600'>
+              To support our Employers with professional and executive talent
+              and to direct employees to the right position in their career path
+              with rewarding benefits. We bridge the gap between industry needs
+              and the talent pool by leveraging technology for efficient
+              matching.
+            </p>
           </div>
         </div>
       </div>
