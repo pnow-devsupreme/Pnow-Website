@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
-export default {
+const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -11,8 +11,8 @@ export default {
       colors: {
         'brand-purple': '#150048',
         'brand-red': '#C42B60',
+        ribbon: '#1F0443',
         primary: {
-          // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
           100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
           200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
@@ -40,19 +40,22 @@ export default {
           },
         },
         shimmer: {
-          '0%': {
-            backgroundPosition: '-700px 0',
-          },
-          '100%': {
-            backgroundPosition: '700px 0',
-          },
+          '0%': { backgroundPosition: '-700px 0' },
+          '100%': { backgroundPosition: '700px 0' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        marquee: 'marquee 20s linear infinite',
       },
     },
   },
   plugins: [require('@tailwindcss/forms')],
-} satisfies Config;
+};
+
+export default config;

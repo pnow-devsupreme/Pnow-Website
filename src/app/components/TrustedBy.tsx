@@ -25,7 +25,7 @@ const logos = [
 ];
 
 const TrustedBy: React.FC = () => (
-  <section id='trusted-by' className='w-full bg-gray-50 py-12'>
+  <section id='trusted-by' className='w-full  py-12'>
     <div className='bg-white rounded-3xl shadow-lg py-6 px-8 max-w-6xl mx-auto h-[200px] flex items-center'>
       <div className='flex items-center justify-between space-x-8'>
         {logos.map((logo) => (
