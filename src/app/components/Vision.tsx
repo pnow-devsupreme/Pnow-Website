@@ -1,7 +1,8 @@
-// src/components/OurVision.tsx
+// eslint-disable-next-line simple-import-sort/imports
 import { Cpu, GitBranch, UserCheck, Users } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import ourVision from '../../../public/images/ourVision.png';
 
 interface VisionPoint {
   title: string;
@@ -41,11 +42,11 @@ export default function OurVision() {
           {/* Left side - Illustration */}
           <div className='relative'>
             <Image
-              src='/vision.png'
+              src={ourVision}
               alt='Office isometric graphic'
               width={600}
               height={700}
-              className='w-full h-[700px] object-cover rounded-lg shadow-lg'
+              className='w-full h-[700px] object-cover'
               priority
             />
           </div>

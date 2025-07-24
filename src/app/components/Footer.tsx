@@ -1,128 +1,140 @@
+'use client';
+// eslint-disable-next-line simple-import-sort/imports
 import React from 'react';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaXTwitter,
-} from 'react-icons/fa6';
+import Image from 'next/image';
+import Link from 'next/link';
+import Usa from '../../../public/images/usalogo.jpg';
+import India from '../../../public/images/india.jpg';
+import FooterLogo from '../../../public/images/footerlogo.png';
 
-const Footer: React.FC = () => {
+const Australia = '/images/auslogo.svg';
+const CountryInd = '/images/charminar.svg';
+const CountryAus = '/images/australia.jpg';
+const CountryUsa = '/images/usalogo.png';
+
+const Locations = () => {
+  const AllLocations = [
+    {
+      id: '1',
+      country: 'USA',
+      flag: Usa,
+      countrylogo: CountryUsa,
+      main: '650 Warrenville Road, Ste 100 Lisle - IL 60532',
+      email: 'info@proficientnow.com',
+      contact: '+1 (872) 305-0790',
+      iframe:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.182952495526!2d-88.13640622434308!3d41.6733920782068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e58d72a8a1d2f%3A0x4485fc572f6039c2!2s748%20Dalton%20Ln%2C%20Bolingbrook%2C%20IL%2060490%2C%20USA!5e0!3m2!1sen!2sin!4v1695304183170!5m2!1sen!2sin',
+    },
+    {
+      id: '3',
+      country: 'Australia',
+      flag: Australia,
+      countrylogo: CountryAus,
+      main: 'Thomastown, Victoria - 3074, Australia',
+      email: 'info@proficientnow.com',
+      contact: '(02) 7259 9757',
+      iframe:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.182952495526!2d-88.13640622434308!3d41.6733920782068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e58d72a8a1d2f%3A0x4485fc572f6039c2!2s748%20Dalton%20Ln%2C%20Bolingbrook%2C%20IL%2060490%2C%20USA!5e0!3m2!1sen!2sin!4v1695304396073!5m2!1sen!2sin',
+    },
+    {
+      id: '2',
+      country: 'India',
+      flag: India,
+      countrylogo: CountryInd,
+      main: 'Sanali Info Park, 5th Floor, B Block, 8-2-120/113, Road no.2 Banjara Hills Hyderabad Telangana India 500034',
+      email: 'info@proficientnow.com',
+      contact: '+91 9347408217',
+      iframe:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7037515098946!2d78.41959207476543!3d17.425999101692472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912d1e3313d7%3A0x766302af7d508e45!2s5th%20Floor%2C%20B%2C%20Sanali%20Info%20Park%2C%202%2C%20LV%20Prasad%20Marg%2C%20Park%20View%20Enclave%2C%20Jubilee%20Hills%2C%20Hyderabad%2C%20Telangana%20500034!5e0!3m2!1sen!2sin!4v1695304305007!5m2!1sen!2sin',
+    },
+  ];
+
   return (
-    <footer className='bg-[#0D004D] text-white px-6 md:px-20 pt-16 pb-6'>
-      <div className='flex flex-col md:flex-row md:justify-between gap-12 border-b border-[#3A2F77] pb-8'>
-        {/* Left - Logo and Social Icons */}
-        <div className='flex flex-col items-center md:items-start text-center md:text-left'>
-          {/* Logo placeholder */}
-          <div className='mb-6'>
-            <span className='text-3xl font-bold'>🅿️</span>{' '}
-            {/* Replace with real logo */}
-          </div>
+    <div className='w-full flex  flex-col justify-center items-center bg-[#0f005f]'>
+      <div className='base:flex flex-col gap-8 lg:grid lg:grid-cols-4 w-[90%] gap-x-5 justify-center base:py-[30px] max-w-[1440px] lg:py-[100px]'>
+        <Link href='/'>
+          <Image
+            alt='logo'
+            src={FooterLogo}
+            className='base:w-[30px] base:h-[30px] lg:w-[43px] lg:h-[43px] lg:col-span-2'
+          />
+        </Link>
+        <div className='flex base:flex-col lg:flex-row gap-5 lg:col-span-3'>
+          {AllLocations.map((item, index) => (
+            <div
+              key={index}
+              className='flex w-[90%] flex-col lg:gap-[50px] justify-between text-white'
+            >
+              <div className='flex flex-col gap-[10px] base:text-[min(3.3vw,20px)] lg:text-[min(1.2vw,20px)]'>
+                <p className='base:text-[min(3.8vw,20px)] font-bold tracking-wide'>
+                  {item.country}
+                </p>
+                <div className='flex base:gap-3 lg:gap-5 items-center'>
+                  <Image
+                    alt='flag'
+                    src={item.flag}
+                    width={65}
+                    height={40}
+                    className='object-contain base:w-[min(9vw,65px)] base:h-[min(9vw,40px)] lg:w-[min(5vw,65px)] lg:h-[min(3.5vw,40px)]'
+                  />
+                </div>
 
-          {/* Social Icons */}
-          <div className='flex space-x-4'>
-            <FaFacebookF className='cursor-pointer hover:text-gray-300' />
-            <FaXTwitter className='cursor-pointer hover:text-gray-300' />
-            <FaInstagram className='cursor-pointer hover:text-gray-300' />
-            <FaLinkedinIn className='cursor-pointer hover:text-gray-300' />
-          </div>
-        </div>
-
-        {/* Locations */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm'>
-          {/* USA */}
-          <div>
-            <h4 className='font-bold mb-2'>USA 🇺🇸</h4>
-            <p>
-              <span className='text-gray-400'>Main: </span>
-              <span className='font-medium'>
-                650 Warrenville Road, Ste 100
-                <br />
-                Lisle - IL 60532
-              </span>
-            </p>
-            <p className='mt-2'>
-              <span className='text-gray-400'>Email: </span>
-              <a
-                href='mailto:info@proficientnow.com'
-                className='hover:underline'
-              >
-                info@proficientnow.com
-              </a>
-            </p>
-            <p>
-              <span className='text-gray-400'>Contact No: </span>
-              <span className='font-medium'>+1 (872) 305-0790</span>
-            </p>
-          </div>
-
-          {/* Australia */}
-          <div>
-            <h4 className='font-bold mb-2'>Australia 🇦🇺</h4>
-            <p>
-              <span className='text-gray-400'>Main: </span>
-              <span className='font-medium'>
-                Thomastown, Victoria - 3074, Australia
-              </span>
-            </p>
-            <p className='mt-2'>
-              <span className='text-gray-400'>Email: </span>
-              <a
-                href='mailto:info@proficientnow.com'
-                className='hover:underline'
-              >
-                info@proficientnow.com
-              </a>
-            </p>
-            <p>
-              <span className='text-gray-400'>Contact No: </span>
-              <span className='font-medium'>(02) 7259 9757</span>
-            </p>
-          </div>
-
-          {/* India */}
-          <div>
-            <h4 className='font-bold mb-2'>India 🇮🇳</h4>
-            <p>
-              <span className='text-gray-400'>Main: </span>
-              <span className='font-medium'>
-                Sanali Info Park, 1st Floor, A Block,
-                <br />
-                8-2-120/113, Road No. 2, Banjara Hills, Hyderabad - 500034
-              </span>
-            </p>
-            <p className='mt-2'>
-              <span className='text-gray-400'>Email: </span>
-              <a
-                href='mailto:info@proficientnow.com'
-                className='hover:underline'
-              >
-                info@proficientnow.com
-              </a>
-            </p>
-            <p>
-              <span className='text-gray-400'>Contact No: </span>
-              <span className='font-medium'>+91 7036755731</span>
-            </p>
-          </div>
+                <div className='base:text-[min(3.6vw,20px)] lg:text-[min(1vw,20px)] flex flex-col gap-2 lg:gap-3'>
+                  <p className='text-bullet'>
+                    Main:<span className='text-white'> {item.main}</span>
+                  </p>
+                  <p className='text-bullet'>
+                    Email:<span className='text-white'> {item.email}</span>
+                  </p>
+                  <p className='text-bullet'>
+                    Contact No:
+                    <span className='text-white'> {item.contact}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
+  );
+};
 
-      {/* Bottom Bar */}
-      <div className='text-xs text-gray-300 text-center pt-6 flex flex-col md:flex-row justify-between items-center'>
-        <p>
-          ©ProficientNow 2023{' '}
-          <span className='font-semibold'>All Rights Reserved.</span>
-        </p>
-        <div className='space-x-4 mt-2 md:mt-0'>
-          <a href='#' className='hover:underline'>
+const Websleak = () => {
+  return (
+    <div className='flex base:flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
+      <div className='flex base:flex-col md:flex-row gap-4'>
+        <div className='flex base:flex-wrap md:flex-row gap-5'>
+          <p>&copy;ProficientNow 2023</p>
+          <p>All Rights Reserved.</p>
+        </div>
+        <div className='flex base:flex-row gap-4'>
+          <Link className='font-normal' href='/privacypolicy'>
             Privacy Policy
-          </a>
-          <a href='#' className='hover:underline'>
+          </Link>
+          <Link className='font-normal' href='/termsandconditions'>
             Terms and Conditions
-          </a>
+          </Link>
         </div>
       </div>
-    </footer>
+      <br className='lg:hidden' />
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div className='w-full'>
+      <div className='w-full flex flex-col justify-center bg-[#0f005f]'>
+        <div>
+          {/* Optional sections like mission/vision */}
+          <div className='h-[1px] bg-[#FFFFFFB2]' />
+          <Locations />
+          <div className='h-[1px] bg-[#FFFFFFB2]' />
+          <Websleak />
+        </div>
+      </div>
+    </div>
   );
 };
 
