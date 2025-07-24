@@ -1,13 +1,16 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
-
+import React, { useEffect, useRef } from 'react';
 interface Feature {
   icon: React.ReactNode;
   title: string;
   description: string;
   href: string;
 }
+
+gsap.registerPlugin(ScrollTrigger);
 
 const features: Feature[] = [
   {
@@ -57,34 +60,71 @@ const features: Feature[] = [
   },
 ];
 
-const WhyChooseUs: React.FC = () => (
-  <section className=' py-16'>
-    <div className='container mx-auto px-6 lg:px-8 text-center'>
-      <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium'>
-        Why us
-      </span>
-      <h2 className='mt-4 text-3xl lg:text-4xl font-bold'>Why Choose Us</h2>
+const WhyChooseUs: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLAnchorElement[]>([]);
 
-      <div className='mt-12 grid grid-cols-1 md:grid-cols-3 gap-8'>
-        {features.map((f) => (
-          <a
-            key={f.title}
-            href={f.href}
-            className='block bg-white rounded-xl shadow hover:shadow-md transition-shadow p-6 text-left'
-          >
-            <div className='inline-flex items-center justify-center bg-[#0D004D] rounded-full p-3'>
-              {f.icon}
-            </div>
-            <h3 className='mt-4 text-xl font-semibold'>{f.title}</h3>
-            <p className='mt-2 text-gray-600 text-sm'>{f.description}</p>
-            <span className='mt-4 inline-flex items-center text-[#0D004D] font-medium hover:underline'>
-              Learn More <ArrowRight className='w-4 h-4 ml-1' />
-            </span>
-          </a>
-        ))}
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (cardsRef.current.length) {
+      gsap.fromTo(
+        cardsRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
+  return (
+    <section className='py-16'>
+      <div className='container mx-auto px-6 lg:px-8 text-center'>
+        <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium'>
+          Why us
+        </span>
+        <h2 className='mt-4 text-3xl lg:text-4xl font-bold'>Why Choose Us</h2>
+
+        <div
+          ref={containerRef}
+          className='mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'
+        >
+          {features.map((f, idx) => (
+            <a
+              key={f.title}
+              href={f.href}
+              ref={(el) => {
+                if (el) cardsRef.current[idx] = el;
+              }}
+              className='block bg-white rounded-xl shadow hover:shadow-md transition-shadow p-6 text-left'
+            >
+              <div className='inline-flex items-center justify-center bg-[#0D004D] rounded-full p-3'>
+                {f.icon}
+              </div>
+              <h3 className='mt-4 text-xl font-semibold'>{f.title}</h3>
+              <p className='mt-2 text-gray-600 text-sm'>{f.description}</p>
+              <span className='mt-4 inline-flex items-center text-[#0D004D] font-medium hover:underline'>
+                Learn More <ArrowRight className='w-4 h-4 ml-1' />
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default WhyChooseUs;
