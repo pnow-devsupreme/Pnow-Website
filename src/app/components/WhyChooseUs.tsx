@@ -60,7 +60,7 @@ const features: Feature[] = [
 const WhyChooseUs: React.FC = () => (
   <section className='bg-gray-50 py-16'>
     <div className='container mx-auto px-6 lg:px-8 text-center'>
-      <span className='inline-block text-purple-700 border border-purple-700 rounded-full px-3 py-1 text-xs uppercase font-medium'>
+      <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium'>
         Why us
       </span>
       <h2 className='mt-4 text-3xl lg:text-4xl font-bold'>Why Choose Us</h2>
@@ -72,12 +72,12 @@ const WhyChooseUs: React.FC = () => (
             href={f.href}
             className='block bg-white rounded-xl shadow hover:shadow-md transition-shadow p-6 text-left'
           >
-            <div className='inline-flex items-center justify-center bg-purple-700 rounded-full p-3'>
+            <div className='inline-flex items-center justify-center bg-[#0D004D] rounded-full p-3'>
               {f.icon}
             </div>
             <h3 className='mt-4 text-xl font-semibold'>{f.title}</h3>
             <p className='mt-2 text-gray-600 text-sm'>{f.description}</p>
-            <span className='mt-4 inline-flex items-center text-purple-700 font-medium hover:underline'>
+            <span className='mt-4 inline-flex items-center text-[#0D004D] font-medium hover:underline'>
               Learn More <ArrowRight className='w-4 h-4 ml-1' />
             </span>
           </a>

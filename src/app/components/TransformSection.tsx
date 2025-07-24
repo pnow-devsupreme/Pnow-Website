@@ -32,12 +32,12 @@ const TransformSection: React.FC = () => (
         </div>
         {/* text */}
         <div className='w-full lg:w-1/2 max-w-md'>
-          <span className='inline-block text-purple-700 border border-purple-700 rounded-full px-3 py-1 text-xs uppercase font-medium'>
+          <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium'>
             About us
           </span>
           <h2 className='mt-4 text-3xl lg:text-4xl font-bold leading-tight'>
             Transform Your Path to{' '}
-            <span className='text-purple-700'>Success</span>
+            <span className='text-[#0D004D]'>Success</span>
           </h2>
           <p className='mt-4 text-gray-600'>
             Welcome to our comprehensive solution, optimizing hiring for
@@ -47,7 +47,7 @@ const TransformSection: React.FC = () => (
           </p>
           <button
             type='button'
-            className='mt-6 inline-block border border-purple-700 text-purple-700 rounded-full px-6 py-2 text-sm font-medium hover:bg-purple-50 transition'
+            className='mt-6 inline-block border border-[#0D004D] text-[#0D004D] rounded-full px-6 py-2 text-sm font-medium hover:bg-purple-50 transition'
           >
             Let’s go!
           </button>
