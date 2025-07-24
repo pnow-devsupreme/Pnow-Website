@@ -36,7 +36,7 @@ const cards: Card[] = [
 
 const ResearchSection: React.FC = () => (
   <section className='relative'>
-    <div className='bg-indigo-900 h-[500px]'>
+    <div className='bg-[#0D004D] h-[500px]'>
       <div className='container mx-auto px-6 lg:px-8 py-16 text-center text-white'>
         <span className='inline-block bg-white text-indigo-900 rounded-full px-4 py-1 text-xs uppercase font-medium'>
           Category

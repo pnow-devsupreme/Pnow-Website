@@ -29,9 +29,9 @@ export default function HomePage() {
         <WhyChooseUs />
         <ResearchSection />
         <HowItWorks />
-        <ClientExperience />
 
         <MissionSection />
+        <ClientExperience />
         <CoreValues />
         <Vision />
         <Footer />

@@ -25,9 +25,9 @@ const logos = [
 ];
 
 const TrustedBy: React.FC = () => (
-  <section id='trusted-by' className='w-full  py-12'>
-    <div className='bg-white rounded-3xl shadow-lg py-6 px-8 max-w-6xl mx-auto h-[200px] flex items-center'>
-      <div className='flex items-center justify-between space-x-8'>
+  <section id='trusted-by' className='w-full py-12'>
+    <div className='bg-white rounded-3xl shadow-lg py-6 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'>
+      <div className='flex items-center justify-between  gap-[50px] ml-[30px]'>
         {logos.map((logo) => (
           <Image
             key={logo.alt}
@@ -35,7 +35,7 @@ const TrustedBy: React.FC = () => (
             alt={logo.alt}
             width={200}
             height={200}
-            className='h-[100px] object-contain'
+            className='h-[120px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300'
           />
         ))}
       </div>

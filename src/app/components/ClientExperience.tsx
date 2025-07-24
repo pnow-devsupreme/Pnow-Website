@@ -38,7 +38,7 @@ const ClientExperience: React.FC = () => {
   const current = testimonials[index];
 
   return (
-    <section className='bg-indigo-900 py-20 px-4 text-white text-center'>
+    <section className='bg-[#0D004D] py-20 px-4 text-white text-center'>
       <h2 className='text-4xl font-extrabold'>Client Experiences</h2>
       <p className='mt-3 max-w-xl mx-auto text-sm md:text-base'>
         Gaining profound insights into the path to success and unleashing your
