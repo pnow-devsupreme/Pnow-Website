@@ -1,11 +1,18 @@
-import type React from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef } from 'react';
 import { FaBridge, FaHandshake, FaUser } from 'react-icons/fa6';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const MissionSection: React.FC = () => {
   const center = 100;
   const outerR = 90;
   const innerR = 50;
   const gapAngle = 15; // Gap between sections in degrees
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   // Helper to describe one ring segment from startAngle → endAngle (in deg)
   function describeArc(startAngle: number, endAngle: number) {
@@ -56,8 +63,64 @@ const MissionSection: React.FC = () => {
     (seg) => (Math.PI / 180) * ((seg.start + seg.end) / 2)
   );
 
+  useLayoutEffect(() => {
+    if (!svgRef.current || !sectionRef.current) return;
+
+    const svg = svgRef.current;
+    const paths = svg.querySelectorAll('path');
+    const icons = document.querySelectorAll('.mission-icon');
+
+    // Set initial state (invisible)
+    gsap.set(paths, {
+      drawSVG: '0%',
+      opacity: 0,
+      transformOrigin: 'center center',
+    });
+    gsap.set(icons, { opacity: 0, scale: 0.5 });
+
+    // Create timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%', // Adjust this to control when animation starts
+        end: 'top 50%',
+        once: true, // This ensures the animation only plays once
+        markers: false, // Set to true for debugging
+      },
+    });
+
+    // Animate each path to draw in sequence
+    tl.to(paths, {
+      drawSVG: '100%',
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power2.out',
+    });
+
+    // Then animate icons
+    tl.to(
+      icons,
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+      },
+      '-=0.3' // Overlap with previous animation slightly
+    );
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
   return (
-    <section className='bg-white text-[#0D004D] py-20 px-6 md:px-20'>
+    <section
+      ref={sectionRef}
+      className='bg-white text-[#0D004D] py-20 px-6 md:px-20'
+    >
       <h2 className='text-4xl md:text-5xl font-extrabold text-center mb-16'>
         Our Mission at <span className='text-[#1A0C6D]'>ProficientNow</span>
       </h2>
@@ -76,7 +139,8 @@ const MissionSection: React.FC = () => {
         {/* Donut Graphic */}
         <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
           <svg
-            viewBox='0 0 190 200'
+            ref={svgRef}
+            viewBox='0 0 200 200'
             className='w-full h-full rounded-full text-[#0D004D]'
           >
             {arcs.map((d, i) => (
@@ -107,7 +171,7 @@ const MissionSection: React.FC = () => {
             return (
               <div
                 key={i}
-                className='absolute text-white text-2xl md:text-3xl'
+                className='absolute text-white text-2xl md:text-3xl mission-icon'
                 style={{
                   left: `${(x / 200) * 100}%`,
                   top: `${(y / 200) * 100}%`,
