@@ -20,6 +20,7 @@
   "dependencies": {
     "clsx": "^2.0.0",
     "framer-motion": "^12.23.7",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.438.0",
     "next": "^14.2.23",
     "react": "^18.2.0",
