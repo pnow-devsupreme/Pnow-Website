@@ -58,7 +58,7 @@ const features: Feature[] = [
 ];
 
 const WhyChooseUs: React.FC = () => (
-  <section className='bg-gray-50 py-16'>
+  <section className=' py-16'>
     <div className='container mx-auto px-6 lg:px-8 text-center'>
       <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium'>
         Why us
