@@ -1,7 +1,6 @@
 export const siteConfig = {
   title: 'ProficientNow',
-  description:
-    'ProficientNow: a modern recruitment platform built with Next.js, Tailwind CSS, and TypeScript. Featuring absolute imports, SEO optimization, a custom Link component, and pre‑configured Husky to streamline your talent acquisition workflow.',
+  description: '',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+  url: 'https://xd.adobe.com/view/e21bed1b-ac58-4cd5-8030-90442dcb2a2d-b748/',
 };
