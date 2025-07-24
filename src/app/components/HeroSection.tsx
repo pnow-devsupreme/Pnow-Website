@@ -10,7 +10,7 @@ import ConstructionEstimator from '../../../public/images/heroImage1.jpg';
 import ConstructionTechnicians from '../../../public/images/heroImage2.jpg';
 import PipelineEngineer from '../../../public/images/heroImage3.jpg';
 import SeniorAttorney from '../../../public/images/heroImage4.jpg';
-import Logo from '../../../public/navbar/pnlogonew.jpg';
+import PnLogo from '../../../public/navbar/PnLogo.jpg';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -105,11 +105,19 @@ const Hero: React.FC = () => {
             w-[calc(100%-64px)] max-w-[1200px]
           '
         >
-          <Image
-            src={Logo}
-            alt='ProficientNow'
-            className='h-10 flex-shrink-0'
-          />
+          <div className='flex items-center space-x-2'>
+            <Image
+              src={PnLogo}
+              alt='ProficientNow'
+              width={25}
+              height={25}
+              className=' object-cover'
+            />
+            <p className='text-brand-brown font-m text-lg'>
+              Proficient
+              <span className='text-brand-purple font-bold'>Now.</span>
+            </p>
+          </div>
 
           <ul className='flex  space-x-6'>
             {[
