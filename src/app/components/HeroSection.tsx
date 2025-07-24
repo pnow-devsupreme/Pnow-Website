@@ -18,19 +18,15 @@ const Hero: React.FC = () => {
   const descRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    // register the plugin
     gsap.registerPlugin(SplitText);
 
-    // scope all selectors inside heroRef
     const ctx = gsap.context(() => {
-      // split the heading into chars & words
+      // ─── Split‑text animations ───────────────────────────────────────────
       const splitTitle = new SplitText(titleRef.current, {
         type: 'chars, words',
       });
-      // split the description into words
       const splitDesc = new SplitText(descRef.current, { type: 'words' });
 
-      // animate heading chars
       gsap.from(splitTitle.chars, {
         duration: 0.3,
         opacity: 0,
@@ -39,7 +35,6 @@ const Hero: React.FC = () => {
         ease: 'power2.out',
       });
 
-      // animate description words
       gsap.from(splitDesc.words, {
         duration: 0.6,
         opacity: 0,
@@ -49,7 +44,7 @@ const Hero: React.FC = () => {
         delay: 0.4,
       });
 
-      // stagger in nav items
+      // ─── Navbar items & button ──────────────────────────────────────────
       const q = gsap.utils.selector(heroRef);
       gsap.from(q('.nav-item'), {
         duration: 0.4,
@@ -60,7 +55,6 @@ const Hero: React.FC = () => {
         delay: 0.4,
       });
 
-      // pop in the Contact Us button
       gsap.from(q('.contact-btn'), {
         duration: 0.6,
         scale: 0.8,
@@ -69,14 +63,18 @@ const Hero: React.FC = () => {
         delay: 0.8,
       });
 
-      // floating icons
-      gsap.to(q('.floating-icon'), {
-        y: -15,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        duration: 2,
-        stagger: 0.3,
+      // ─── Floating icons (each animates independently) ──────────────────
+      const icons = q('.floating-icon');
+      icons.forEach((el, i) => {
+        gsap.to(el, {
+          y: -15,
+          duration: 2,
+          ease: 'sine.inOut',
+          repeat: -1,
+          yoyo: true,
+          delay: i * 0.3, // stagger start only
+          force3D: true, // ensure GPU acceleration
+        });
       });
     }, heroRef);
 
@@ -158,9 +156,9 @@ const Hero: React.FC = () => {
 
           <SplitTextComp
             text='Welcome to our comprehensive solution, optimizing hiring for
-            employers and efficiently connecting top talent. For employees, we
-            offer career opportunities aligning with aspirations. Elevate your
-            success journey with us, unlocking your full potential together.'
+              employers and efficiently connecting top talent. For employees, we
+              offer career opportunities aligning with aspirations. Elevate your
+              success journey with us, unlocking your full potential together.'
             className='mt-4 text-[18px] leading-relaxed text-white/90'
             delay={100}
             duration={0.5}
@@ -186,49 +184,61 @@ const Hero: React.FC = () => {
 
         {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
         {/* Top‑left */}
-        <div className='floating-icon absolute top-[260px] left-[80px] flex flex-col items-center'>
+        <div
+          className='floating-icon absolute top-[260px] left-[80px] flex flex-col items-center'
+          style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
+        >
           <Image
             src={ConstructionEstimator}
             alt='Construction Estimator'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap antialiased'>
             Construction Estimator
           </span>
         </div>
 
         {/* Bottom‑left */}
-        <div className='floating-icon absolute bottom-[120px] left-[160px] flex flex-col items-center'>
+        <div
+          className='floating-icon absolute bottom-[120px] left-[160px] flex flex-col items-center'
+          style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
+        >
           <Image
             src={ConstructionTechnicians}
             alt='Construction Technicians'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap antialiased'>
             Construction Technicians
           </span>
         </div>
 
         {/* Top‑right */}
-        <div className='floating-icon absolute top-[260px] right-[80px] flex flex-col items-center'>
+        <div
+          className='floating-icon absolute top-[260px] right-[80px] flex flex-col items-center'
+          style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
+        >
           <Image
             src={SeniorAttorney}
             alt='Senior Attorney'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap antialiased'>
             Senior Attorney
           </span>
         </div>
 
         {/* Bottom‑right */}
-        <div className='floating-icon absolute bottom-[120px] right-[160px] flex flex-col items-center'>
+        <div
+          className='floating-icon absolute bottom-[120px] right-[160px] flex flex-col items-center'
+          style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
+        >
           <Image
             src={PipelineEngineer}
             alt='Pipeline Engineer'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap antialiased'>
             Pipeline Engineer
           </span>
         </div>
