@@ -1,17 +1,18 @@
+// eslint-disable-next-line simple-import-sort/imports
 import React from 'react';
 
-import ConstructionEstimator from '../../../public/svg/Vercel.svg';
-import ConstructionTechnicians from '../../../public/svg/Vercel.svg';
-import Logo from '../../../public/svg/Vercel.svg';
-import PipelineEngineer from '../../../public/svg/Vercel.svg';
-import SeniorAttorney from '../../../public/svg/Vercel.svg';
+import ConstructionEstimator from '../../../public/images/heroImage1.jpg';
+import ConstructionTechnicians from '../../../public/images/heroImage2.jpg';
+import Logo from '../../../public/images/logo.png';
+import PipelineEngineer from '../../../public/images/heroImage3.jpg';
+import SeniorAttorney from '../../../public/images/heroImage4.jpg';
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
   return (
     <section
       className='w-full bg-brand-purple overflow-hidden'
       style={{
-        // clipPath: 'polygon(0 0, 100% 0, 100% 83%, 83% 100%, 5% 100%, 0 83%)',
         clipPath: 'polygon(0 0, 100% 0, 100% 83%, 83% 100%, 17% 100%, 0 83%)',
       }}
     >
@@ -28,7 +29,11 @@ const Hero: React.FC = () => {
             w-[calc(100%-64px)] max-w-[1200px]
           '
         >
-          <img src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
+          <Image
+            src={Logo}
+            alt='ProficientNow'
+            className='h-10 flex-shrink-0'
+          />
 
           <ul className='flex ml-10 space-x-6'>
             {[
@@ -117,48 +122,48 @@ const Hero: React.FC = () => {
         {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
         {/** Top‑left */}
         <div className='absolute top-[260px] left-[80px] flex flex-col items-center'>
-          <img
+          <Image
             src={ConstructionEstimator}
             alt='Construction Estimator'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
             Construction Estimator
           </span>
         </div>
 
         {/** Bottom‑left */}
         <div className='absolute bottom-[160px] left-[190px] flex flex-col items-center'>
-          <img
+          <Image
             src={ConstructionTechnicians}
             alt='Construction Technicians'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
             Construction Technicians
           </span>
         </div>
 
         {/** Top‑right */}
         <div className='absolute top-[260px] right-[80px] flex flex-col items-center'>
-          <img
+          <Image
             src={SeniorAttorney}
             alt='Senior Attorney'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
             Senior Attorney
           </span>
         </div>
 
         {/** Bottom‑right */}
         <div className='absolute bottom-[160px] right-[200px] flex flex-col items-center'>
-          <img
+          <Image
             src={PipelineEngineer}
             alt='Pipeline Engineer'
             className='w-[120px] h-[120px] rounded-full bg-white object-cover'
           />
-          <span className='mt-2 bg-white px-2 py-1 rounded-lg text-[14px] text-brand-purple whitespace-nowrap'>
+          <span className='mt-2 bg-white px-2 py-1 rounded-full text-[14px] text-brand-purple whitespace-nowrap'>
             Pipeline Engineer
           </span>
         </div>
