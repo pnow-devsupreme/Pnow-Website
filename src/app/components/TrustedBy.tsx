@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 const logos = [
   {
@@ -23,24 +24,45 @@ const logos = [
     alt: 'Cisco',
   },
 ];
-
-const TrustedBy: React.FC = () => (
-  <section id='trusted-by' className='w-full py-12'>
-    <div className='bg-white rounded-3xl shadow-lg py-6 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'>
-      <div className='flex items-center justify-between  gap-[50px] ml-[30px]'>
-        {logos.map((logo) => (
-          <Image
-            key={logo.alt}
-            src={logo.src}
-            alt={logo.alt}
-            width={200}
-            height={200}
-            className='h-[120px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300'
-          />
-        ))}
+const TrustedBy: React.FC = () => {
+  return (
+    <section id='trusted-by' className='w-full py-12'>
+      <div className='bg-white rounded-3xl shadow-lg py-8 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'>
+        <div className='w-full'>
+          <Marquee
+            gradient={false}
+            speed={40}
+            pauseOnHover={true}
+            className='w-full'
+          >
+            {/* First set of logos */}
+            {logos.map((logo, idx) => (
+              <div key={`first-${idx}`} className='mx-8 flex-shrink-0'>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={200}
+                  height={80}
+                  className='h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {logos.map((logo, idx) => (
+              <div key={`second-${idx}`} className='mx-8 flex-shrink-0'>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={80}
+                  className='h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
-    </div>
-  </section>
-);
-
+    </section>
+  );
+};
 export default TrustedBy;
