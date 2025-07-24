@@ -12,8 +12,8 @@ const items = [
 
 const AngledMarquee = () => {
   return (
-    <section className='py-8 mt-6 h-[200px]'>
-      <div className='overflow-hidden flex transform -rotate-[5deg] bg-[#0D004D] w-[110%] ml-[-5%] rounded-lg h-[80px]'>
+    <section className='py-8  mt-6 h-[200px]'>
+      <div className='overflow-hidden  flex transform -rotate-[5deg] bg-[#0D004D] ml-[-5%] rounded-lg h-[80px]'>
         <Marquee
           gradient={false}
           speed={50}
