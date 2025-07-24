@@ -1,44 +1,139 @@
-import React from 'react';
+import type React from 'react';
 import { FaBridge, FaHandshake, FaUser } from 'react-icons/fa6';
 
 const MissionSection: React.FC = () => {
+  const center = 100;
+  const outerR = 90;
+  const innerR = 50;
+  const gapAngle = 15; // Gap between sections in degrees
+
+  // Helper to describe one ring segment from startAngle → endAngle (in deg)
+  function describeArc(startAngle: number, endAngle: number) {
+    const startRad = (Math.PI / 180) * startAngle;
+    const endRad = (Math.PI / 180) * endAngle;
+
+    const x1 = center + outerR * Math.cos(startRad);
+    const y1 = center + outerR * Math.sin(startRad);
+    const x2 = center + outerR * Math.cos(endRad);
+    const y2 = center + outerR * Math.sin(endRad);
+    const x3 = center + innerR * Math.cos(endRad);
+    const y3 = center + innerR * Math.sin(endRad);
+    const x4 = center + innerR * Math.cos(startRad);
+    const y4 = center + innerR * Math.sin(startRad);
+
+    // Determine if we need the large-arc-flag
+    const largeArcFlag = Math.abs(endAngle - startAngle) > 180 ? 1 : 0;
+
+    return [
+      `M ${x1} ${y1}`,
+      `A ${outerR} ${outerR} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
+      `L ${x3} ${y3}`,
+      `A ${innerR} ${innerR} 0 ${largeArcFlag} 0 ${x4} ${y4}`,
+      'Z',
+    ].join(' ');
+  }
+
+  // Calculate segment angles with gaps
+  const segmentAngle = (360 - 3 * gapAngle) / 3; // Each segment gets equal space minus gaps
+
+  // Three segments with gaps: starting from top (-90°)
+  const segments = [
+    { start: -90, end: -90 + segmentAngle }, // Top segment
+    {
+      start: -90 + segmentAngle + gapAngle,
+      end: -90 + 2 * segmentAngle + gapAngle,
+    }, // Right segment
+    {
+      start: -90 + 2 * segmentAngle + 2 * gapAngle,
+      end: -90 + 3 * segmentAngle + 2 * gapAngle,
+    }, // Left segment
+  ];
+
+  const arcs = segments.map((seg) => describeArc(seg.start, seg.end));
+
+  // Mid-angles for icon placement
+  const mids = segments.map(
+    (seg) => (Math.PI / 180) * ((seg.start + seg.end) / 2)
+  );
+
   return (
     <section className='bg-white text-[#0D004D] py-20 px-6 md:px-20'>
-      <h2 className='text-4xl md:text-5xl font-bold text-center mb-16'>
+      <h2 className='text-4xl md:text-5xl font-extrabold text-center mb-16'>
         Our Mission at <span className='text-[#1A0C6D]'>ProficientNow</span>
       </h2>
 
-      <div className='flex flex-col md:flex-row items-center justify-center gap-16 mb-10'>
-        {/* Left Text */}
-        <div className='text-center md:text-right md:w-1/3'>
-          <h3 className='text-lg font-bold mb-2'>Global Success</h3>
+      <div className='flex flex-col lg:flex-row items-center justify-center gap-12 mb-12 max-w-6xl mx-auto'>
+        {/* Left Label */}
+        <div className='lg:w-1/3 text-center lg:text-right order-2 lg:order-1'>
+          <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+            Global Success
+          </h3>
           <p className='text-gray-500'>
             Delivering solutions that drive growth worldwide
           </p>
         </div>
 
-        {/* Central Graphic */}
-        <div className='relative w-[240px] h-[240px] md:w-[300px] md:h-[300px]'>
-          <svg viewBox='0 0 200 200' className='w-full h-full text-[#0D004D]'>
-            <circle cx='100' cy='100' r='90' fill='#0D004D' />
-            <circle cx='100' cy='100' r='35' fill='white' />
+        {/* Donut Graphic */}
+        <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
+          <svg
+            viewBox='0 0 190 200'
+            className='w-full h-full rounded-full text-[#0D004D]'
+          >
+            {arcs.map((d, i) => (
+              <path
+                key={i}
+                d={d}
+                fill='#1A0C6D'
+                stroke='#1A0C6D'
+                strokeWidth='8'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='drop-shadow-sm'
+              />
+            ))}
           </svg>
 
-          <FaHandshake className='absolute text-white text-xl md:text-2xl left-[16%] top-[44%]' />
-          <FaBridge className='absolute text-white text-xl md:text-2xl right-[18%] top-[25%]' />
-          <FaUser className='absolute text-white text-xl md:text-2xl right-[25%] bottom-[20%]' />
+          {/* Icons */}
+          {[
+            <FaHandshake key='0' />,
+            <FaBridge key='1' />,
+            <FaUser key='2' />,
+          ].map((Icon, i) => {
+            // Place icon at middle radius
+            const r = (outerR + innerR) / 2;
+            const x = center + r * Math.cos(mids[i]);
+            const y = center + r * Math.sin(mids[i]);
+
+            return (
+              <div
+                key={i}
+                className='absolute text-white text-2xl md:text-3xl'
+                style={{
+                  left: `${(x / 200) * 100}%`,
+                  top: `${(y / 200) * 100}%`,
+                  transform: 'translate(-50%, -50%)',
+                }}
+              >
+                {Icon}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Right Text */}
-        <div className='text-center md:text-left md:w-1/3 space-y-6'>
+        {/* Right Labels */}
+        <div className='lg:w-1/3 text-center lg:text-left space-y-8 order-3'>
           <div>
-            <h3 className='text-lg font-bold mb-2'>Bridging Aspirations</h3>
+            <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+              Bridging Aspirations
+            </h3>
             <p className='text-gray-500'>
               Connecting ambitions with achievement
             </p>
           </div>
           <div>
-            <h3 className='text-lg font-bold mb-2'>Empowering Organizations</h3>
+            <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+              Empowering Organizations
+            </h3>
             <p className='text-gray-500'>
               Revolutionizing recruitment across industries
             </p>
@@ -47,7 +142,7 @@ const MissionSection: React.FC = () => {
       </div>
 
       {/* Footer Paragraph */}
-      <p className='text-center text-gray-700 max-w-4xl mx-auto'>
+      <p className='text-center text-gray-700 max-w-4xl mx-auto leading-relaxed text-lg'>
         ProficientNow revolutionizes recruitment across diverse industries,
         empowering organizations and individuals alike. Our mission is to bridge
         aspiration with achievement, delivering tailored solutions that drive

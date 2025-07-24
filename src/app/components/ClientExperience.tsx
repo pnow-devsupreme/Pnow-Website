@@ -38,14 +38,14 @@ const ClientExperience: React.FC = () => {
   const current = testimonials[index];
 
   return (
-    <section className='bg-[#0D004D] py-20 px-4 text-white text-center'>
+    <section className='bg-[#0D004D] py-20 px-4 text-white text-center h-[600px]'>
       <h2 className='text-4xl font-extrabold'>Client Experiences</h2>
       <p className='mt-3 max-w-xl mx-auto text-sm md:text-base'>
         Gaining profound insights into the path to success and unleashing your
         business’s full potential
       </p>
 
-      <div className='relative mt-16 max-w-3xl mx-auto flex items-center justify-center'>
+      <div className='relative mt-16 max-w-3xl mx-auto flex items-center justify-center h-[200px]'>
         {/* Stacked layers behind */}
         <div className='absolute w-full h-full flex justify-center items-center'>
           <div className='bg-white rounded-xl h-full w-11/12 absolute top-6 scale-95 shadow-xl opacity-50'></div>
