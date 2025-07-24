@@ -1,6 +1,6 @@
-import gsap from 'gsap';
 import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 const logos = [
   {
@@ -25,49 +25,44 @@ const logos = [
   },
 ];
 const TrustedBy: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // create a GSAP context scoped to this component
-    const ctx = gsap.context(() => {
-      gsap.from('.logo', {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: 'power3.out',
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          // once: true // uncomment if you only want it to play once
-        },
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section id='trusted-by' className='w-full py-12'>
-      <div
-        ref={containerRef}
-        className='bg-white rounded-3xl shadow-lg py-6 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'
-      >
-        <div className='flex items-center justify-between gap-[50px] ml-[30px]'>
-          {logos.map((logo) => (
-            <Image
-              key={logo.alt}
-              src={logo.src}
-              alt={logo.alt}
-              width={200}
-              height={200}
-              className='logo h-[120px] object-contain grayscale hover:grayscale-0 transition-all duration-300'
-            />
-          ))}
+      <div className='bg-white rounded-3xl shadow-lg py-8 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'>
+        <div className='w-full'>
+          <Marquee
+            gradient={false}
+            speed={40}
+            pauseOnHover={true}
+            className='w-full'
+          >
+            {/* First set of logos */}
+            {logos.map((logo, idx) => (
+              <div key={`first-${idx}`} className='mx-8 flex-shrink-0'>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={200}
+                  height={80}
+                  className='h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {logos.map((logo, idx) => (
+              <div key={`second-${idx}`} className='mx-8 flex-shrink-0'>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={80}
+                  className='h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                />
+              </div>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>
   );
 };
-
 export default TrustedBy;

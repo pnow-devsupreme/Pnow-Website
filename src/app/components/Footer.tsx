@@ -3,6 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from 'react-icons/fa';
+
 import Usa from '../../../public/images/usalogo.jpg';
 import India from '../../../public/images/india.jpg';
 import FooterLogo from '../../../public/images/footerlogo.png';
@@ -13,6 +20,7 @@ const CountryAus = '/images/australia.jpg';
 const CountryUsa = '/images/usalogo.png';
 
 const Locations = () => {
+  // your locations data
   const AllLocations = [
     {
       id: '1',
@@ -49,16 +57,59 @@ const Locations = () => {
     },
   ];
 
+  // social icons array
+  const socialLinks = [
+    {
+      href: 'https://facebook.com/proficientnow',
+      icon: FaFacebookF,
+      label: 'Facebook',
+    },
+    {
+      href: 'https://twitter.com/proficientnow',
+      icon: FaTwitter,
+      label: 'Twitter',
+    },
+    {
+      href: 'https://instagram.com/proficientnow',
+      icon: FaInstagram,
+      label: 'Instagram',
+    },
+    {
+      href: 'https://linkedin.com/company/proficientnow',
+      icon: FaLinkedinIn,
+      label: 'LinkedIn',
+    },
+  ];
+
   return (
-    <div className='w-full flex  flex-col justify-center items-center bg-[#0f005f]'>
+    <div className='w-full flex flex-col justify-center items-center bg-[#0f005f]'>
       <div className='base:flex flex-col gap-8 lg:grid lg:grid-cols-4 w-[90%] gap-x-5 justify-center base:py-[30px] max-w-[1440px] lg:py-[100px]'>
-        <Link href='/'>
-          <Image
-            alt='logo'
-            src={FooterLogo}
-            className='base:w-[30px] base:h-[30px] lg:w-[43px] lg:h-[43px] lg:col-span-2'
-          />
-        </Link>
+        {/* Logo + Social Icons */}
+        <div className='flex flex-col items-center lg:items-start'>
+          <Link href='/'>
+            <Image
+              alt='ProficientNow Logo'
+              src={FooterLogo}
+              className='base:w-[30px] base:h-[30px] lg:w-[43px] lg:h-[43px]'
+            />
+          </Link>
+          <div className='mt-[35px] flex space-x-4'>
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={label}
+                className='text-white hover:text-gray-300 transition-colors'
+              >
+                <Icon size={24} />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Location Cards */}
         <div className='flex base:flex-col lg:flex-row gap-5 lg:col-span-3'>
           {AllLocations.map((item, index) => (
             <div
@@ -71,7 +122,7 @@ const Locations = () => {
                 </p>
                 <div className='flex base:gap-3 lg:gap-5 items-center'>
                   <Image
-                    alt='flag'
+                    alt={`${item.country} flag`}
                     src={item.flag}
                     width={65}
                     height={40}
@@ -105,7 +156,7 @@ const Websleak = () => {
     <div className='flex base:flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
       <div className='flex base:flex-col md:flex-row gap-4'>
         <div className='flex base:flex-wrap md:flex-row gap-5'>
-          <p>&copy;ProficientNow 2023</p>
+          <p>© ProficientNow 2023</p>
           <p>All Rights Reserved.</p>
         </div>
         <div className='flex base:flex-row gap-4'>
@@ -122,20 +173,17 @@ const Websleak = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <div className='w-full'>
-      <div className='w-full flex flex-col justify-center bg-[#0f005f]'>
-        <div>
-          {/* Optional sections like mission/vision */}
-          <div className='h-[1px] bg-[#FFFFFFB2]' />
-          <Locations />
-          <div className='h-[1px] bg-[#FFFFFFB2]' />
-          <Websleak />
-        </div>
+const Footer = () => (
+  <div className='w-full'>
+    <div className='w-full flex flex-col justify-center bg-[#0f005f]'>
+      <div>
+        <div className='h-[1px] bg-[#FFFFFFB2]' />
+        <Locations />
+        <div className='h-[1px] bg-[#FFFFFFB2]' />
+        <Websleak />
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default Footer;

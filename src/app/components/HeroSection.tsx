@@ -97,7 +97,8 @@ const Hero: React.FC = () => {
             transform -translate-x-1/2
             bg-white rounded-full
             px-8 py-3
-            flex items-center
+            flex justify-between
+            items-center
             shadow-lg
             w-[calc(100%-64px)] max-w-[1200px]
           '
@@ -108,7 +109,7 @@ const Hero: React.FC = () => {
             className='h-10 flex-shrink-0'
           />
 
-          <ul className='flex ml-10 space-x-6'>
+          <ul className='flex  space-x-6'>
             {[
               'About Us',
               'Find a Job',
@@ -120,7 +121,7 @@ const Hero: React.FC = () => {
               <li key={label} className='nav-item'>
                 <a
                   href={`#${label.toLowerCase().replace(/ /g, '-')}`}
-                  className='text-brand-purple font-semibold text-base hover:underline'
+                  className='text-brand-purple font-semibold text-base '
                 >
                   {label}
                 </a>
@@ -128,7 +129,7 @@ const Hero: React.FC = () => {
             ))}
           </ul>
 
-          <button className='contact-btn ml-auto bg-brand-purple text-white px-6 py-3 rounded-full font-semibold text-base hover:opacity-90'>
+          <button className='contact-btn  bg-brand-purple text-white px-6 py-3 rounded-full font-semibold text-base hover:opacity-90'>
             Contact Us
           </button>
         </nav>
