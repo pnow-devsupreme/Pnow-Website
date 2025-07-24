@@ -20,7 +20,20 @@ const AngledMarquee = () => {
           className='flex items-center justify-center text-white text-3xl whitespace-nowrap'
         >
           {[...items, ...items].map((label, idx) => (
-            <span key={idx} className='inline-flex items-center mx-8 space-x-4'>
+            <span
+              key={`firtst-${idx}`}
+              className='inline-flex items-center mx-8 space-x-4'
+            >
+              <span>{label}</span>
+              <span>✦</span>
+            </span>
+          ))}
+          {/* Duplicate items for continuous scrolling effect */}
+          {[...items, ...items].map((label, idx) => (
+            <span
+              key={`second-${idx}`}
+              className='inline-flex items-center mx-8 space-x-4'
+            >
               <span>{label}</span>
               <span>✦</span>
             </span>
