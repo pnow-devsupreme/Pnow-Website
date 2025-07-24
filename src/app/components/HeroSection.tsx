@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         gsap.to(el, {
           y: -15,
           duration: 2,
-          ease: 'sine.inOut',
+          ease: 'ease-linear',
           repeat: -1,
           yoyo: true,
           delay: i * 0.3, // stagger start only
