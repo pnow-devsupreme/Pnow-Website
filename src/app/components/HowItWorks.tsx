@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaBriefcase, FaUser } from 'react-icons/fa';
 
 type TabKey = 'talents' | 'business';
@@ -13,7 +15,7 @@ const tabs: {
   { id: 'talents', label: 'For Talents', Icon: FaUser },
   { id: 'business', label: 'For Business', Icon: FaBriefcase },
 ];
-
+gsap.registerPlugin(ScrollTrigger);
 interface Step {
   id: number;
   title: string;
@@ -65,6 +67,32 @@ const stepsData: Record<TabKey, Step[]> = {
 
 const HowItWorks: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<TabKey>('talents');
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stepsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (stepsRef.current.length) {
+      gsap.fromTo(
+        stepsRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, [selectedTab]);
 
   return (
     <section className='bg-[#0D004D] text-white py-20 px-6 md:px-20'>
@@ -94,16 +122,24 @@ const HowItWorks: React.FC = () => {
       </div>
 
       {/* Steps */}
-      <div className='grid max-w-[70%] mx-auto md:grid-cols-3 gap-6'>
-        {stepsData[selectedTab].map(({ id, title, description }) => (
-          <div key={id} className='bg-[#291B68] p-6 rounded-lg'>
-            <div className='flex gap-2 items-center mb-5 '>
-              <div className='text-sm rounded-full p-2  flex items-center h-6 bg-white text-[#1A0C6D] '>
+      <div
+        ref={containerRef}
+        className='grid max-w-[70%] mx-auto md:grid-cols-3 gap-6'
+      >
+        {stepsData[selectedTab].map(({ id, title, description }, idx) => (
+          <div
+            key={id}
+            ref={(el) => {
+              if (el) stepsRef.current[idx] = el;
+            }}
+            className='bg-[#291B68] p-6 rounded-lg opacity-0'
+          >
+            <div className='flex gap-2 items-center mb-5'>
+              <div className='text-sm rounded-full p-2 flex items-center h-6 bg-white text-[#1A0C6D]'>
                 {id}
               </div>
-              <h3 className='text-lg font-semibold '>{title}</h3>
+              <h3 className='text-lg font-semibold'>{title}</h3>
             </div>
-
             <p className='text-sm text-gray-300'>{description}</p>
           </div>
         ))}
