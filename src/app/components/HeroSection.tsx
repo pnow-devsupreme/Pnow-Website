@@ -3,7 +3,7 @@ import React from 'react';
 
 import ConstructionEstimator from '../../../public/images/heroImage1.jpg';
 import ConstructionTechnicians from '../../../public/images/heroImage2.jpg';
-import Logo from '../../../public/images/logo.png';
+import Logo from '../../../public/navbar/pnlogonew.jpg';
 import PipelineEngineer from '../../../public/images/heroImage3.jpg';
 import SeniorAttorney from '../../../public/images/heroImage4.jpg';
 import Image from 'next/image';
@@ -13,10 +13,10 @@ const Hero: React.FC = () => {
     <section
       className='w-full bg-brand-purple overflow-hidden'
       style={{
-        clipPath: 'polygon(0 0, 100% 0, 100% 83%, 83% 100%, 17% 100%, 0 83%)',
+        clipPath: 'polygon(0 0, 100% 0, 100% 92%, 83% 100%, 17% 100%, 0 92%)',
       }}
     >
-      <div className='relative mx-auto h-[800px] max-w-[1440px]'>
+      <div className='relative mx-auto h-[750px] max-w-[1440px]'>
         {/* ─── NAVBAR ─────────────────────────────────────────── */}
         <nav
           className='
@@ -77,6 +77,8 @@ const Hero: React.FC = () => {
             text-center
             px-4
             w-full max-w-[800px]
+            flex flex-col gap-5
+            mt-10
           '
         >
           <h1 className=' text-[60px] font-bold text-white leading-tight'>
