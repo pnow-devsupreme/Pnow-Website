@@ -1,7 +1,11 @@
-// eslint-disable-next-line simple-import-sort/imports
+'use client';
+
+import gsap, { Power2 } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Cpu, GitBranch, UserCheck, Users } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+
 import ourVision from '../../../public/images/ourVision.png';
 
 interface VisionPoint {
@@ -35,11 +39,47 @@ const visionPoints: VisionPoint[] = [
 ];
 
 export default function OurVision() {
+  const listRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !listRef.current) return;
+
+    // register plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // gather items
+    const items = Array.from(
+      listRef.current.querySelectorAll<HTMLLIElement>('.vision-item')
+    );
+
+    // set initial state: invisible & shifted down
+    gsap.set(items, { opacity: 0, y: 30 });
+
+    // animate to visible & natural position, staggered on scroll
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: Power2.easeOut,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: listRef.current,
+        start: 'top 80%', // when the top of the list hits 80% viewport height
+        toggleActions: 'play none none none',
+      },
+    });
+
+    // cleanup on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
+
   return (
     <section className='bg-white py-16 px-6'>
       <div className='max-w-7xl mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-          {/* Left side - Illustration */}
+          {/* Left: Illustration */}
           <div className='relative'>
             <Image
               src={ourVision}
@@ -51,45 +91,28 @@ export default function OurVision() {
             />
           </div>
 
-          {/* Right side - Content */}
+          {/* Right: Content */}
           <div>
             <h2 className='text-[48px] font-bold text-[#2D1B69] mb-[40px]'>
               Our Vision
             </h2>
 
-            {/* Timeline */}
-            <ul className='relative'>
-              {/* Vertical grey line, from center of first icon to center of last */}
+            <ul ref={listRef} className='relative'>
+              {/* vertical grey line */}
               <span className='absolute left-[18px] top-[18px] bottom-[18px] w-[2px] bg-gray-200' />
 
               {visionPoints.map(({ title, description, Icon }) => (
                 <li
                   key={title}
-                  className='relative pl-[70px] mb-[48px] last:mb-0'
+                  className='vision-item relative pl-[70px] mb-[48px] last:mb-0'
                 >
-                  {/* Icon Container */}
-                  <div
-                    className='
-                      absolute left-0 top-0
-                      w-[36px] h-[36px]
-                      bg-[#2D1B69] rounded-lg
-                      flex items-center justify-center
-                    '
-                  >
+                  {/* icon */}
+                  <div className='absolute left-0 top-0 w-[36px] h-[36px] bg-[#2D1B69] rounded-lg flex items-center justify-center'>
                     <Icon className='w-[20px] h-[20px] text-white z-50' />
                   </div>
-
-                  {/* Horizontal connector */}
-                  <div
-                    className='
-                      absolute
-                      left-[20px] top-[17px]
-                      w-[40px] h-[2px]
-                      bg-[#2D1B69]
-                    '
-                  />
-
-                  {/* Text */}
+                  {/* connector */}
+                  <div className='absolute left-[20px] top-[17px] w-[40px] h-[2px] bg-[#2D1B69]' />
+                  {/* text */}
                   <h3 className='text-[24px] font-semibold text-[#2D1B69]'>
                     {title}
                   </h3>
@@ -100,7 +123,6 @@ export default function OurVision() {
               ))}
             </ul>
 
-            {/* Bottom paragraph */}
             <p className='mt-[48px] text-[18px] leading-relaxed text-gray-600'>
               To support our Employers with professional and executive talent
               and to direct employees to the right position in their career path

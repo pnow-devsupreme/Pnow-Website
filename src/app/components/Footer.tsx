@@ -85,7 +85,7 @@ const Locations = () => {
     <div className='w-full flex flex-col justify-center items-center bg-[#0f005f]'>
       <div className='base:flex flex-col gap-8 lg:grid lg:grid-cols-4 w-[90%] gap-x-5 justify-center base:py-[30px] max-w-[1440px] lg:py-[100px]'>
         {/* Logo + Social Icons */}
-        <div className='flex flex-col items-center lg:items-start'>
+        <div className='flex  flex-col items-center lg:items-start mb-5 py-5 md:py-1'>
           <Link href='/'>
             <Image
               alt='ProficientNow Logo'
@@ -110,11 +110,11 @@ const Locations = () => {
         </div>
 
         {/* Location Cards */}
-        <div className='flex base:flex-col lg:flex-row gap-5 lg:col-span-3'>
+        <div className='flex flex-col lg:flex-row gap-5 lg:col-span-3'>
           {AllLocations.map((item, index) => (
             <div
               key={index}
-              className='flex w-[90%] flex-col lg:gap-[50px] justify-between text-white'
+              className='flex w-[90%] flex-col lg:gap-[50px] justify-between text-white mb-6'
             >
               <div className='flex flex-col gap-[10px] base:text-[min(3.3vw,20px)] lg:text-[min(1.2vw,20px)]'>
                 <p className='base:text-[min(3.8vw,20px)] font-bold tracking-wide'>
@@ -153,8 +153,8 @@ const Locations = () => {
 
 const Websleak = () => {
   return (
-    <div className='flex base:flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
-      <div className='flex base:flex-col md:flex-row gap-4'>
+    <div className='flex flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
+      <div className='flex flex-col md:flex-row gap-4 px-5 md:px-2'>
         <div className='flex base:flex-wrap md:flex-row gap-5'>
           <p>© ProficientNow 2023</p>
           <p>All Rights Reserved.</p>
