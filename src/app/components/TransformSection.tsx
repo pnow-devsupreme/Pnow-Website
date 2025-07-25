@@ -130,7 +130,7 @@ const TransformSection: React.FC = () => {
         {/* stats */}
         <div
           ref={statsRef}
-          className='mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-6xl mx-auto gap-4'
+          className='mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-6xl mx-auto gap-4 justify-items-center'
         >
           {stats.map((s) => (
             <div
