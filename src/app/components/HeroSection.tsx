@@ -36,12 +36,12 @@ const Hero: React.FC = () => {
       });
 
       gsap.from(splitDesc.words, {
-        duration: 0.6,
+        duration: 0.2,
         opacity: 0,
         y: 20,
-        stagger: 0.05,
+        stagger: 0.01,
         ease: 'power2.out',
-        delay: 0.4,
+        delay: 0.1,
       });
 
       // ─── Navbar items & button ──────────────────────────────────────────
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
             absolute top-[32px] left-1/2
             transform -translate-x-1/2
             bg-white rounded-full
-            px-8 py-3
+            px-4 py-2 md:px-8 md:py-3
             flex justify-between
             items-center
             shadow-lg
@@ -106,10 +106,10 @@ const Hero: React.FC = () => {
           <Image
             src={Logo}
             alt='ProficientNow'
-            className='h-10 flex-shrink-0'
+            className='h-8 md:h-10 flex-shrink-0'
           />
 
-          <ul className='flex  space-x-6'>
+          <ul className='hidden md:flex  space-x-6'>
             {[
               'About Us',
               'Find a Job',
@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
         >
           <h1
             ref={titleRef}
-            className='text-[60px] font-bold text-white leading-tight'
+            className='text-[30px] lg:text-[60px] font-bold text-white leading-tight'
           >
             Transform Your <span className='text-brand-red'>Path</span> to
             <br />
@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
         {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
         {/* Top‑left */}
         <div
-          className='floating-icon absolute top-[260px] left-[80px] flex flex-col items-center'
+          className='floating-icon absolute top-[260px] left-[80px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -201,7 +201,7 @@ const Hero: React.FC = () => {
 
         {/* Bottom‑left */}
         <div
-          className='floating-icon absolute bottom-[120px] left-[160px] flex flex-col items-center'
+          className='floating-icon absolute bottom-[120px] left-[160px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -216,7 +216,7 @@ const Hero: React.FC = () => {
 
         {/* Top‑right */}
         <div
-          className='floating-icon absolute top-[260px] right-[80px] flex flex-col items-center'
+          className='floating-icon absolute top-[260px] right-[80px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -231,7 +231,7 @@ const Hero: React.FC = () => {
 
         {/* Bottom‑right */}
         <div
-          className='floating-icon absolute bottom-[120px] right-[160px] flex flex-col items-center'
+          className='floating-icon absolute bottom-[120px] right-[160px]  hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image

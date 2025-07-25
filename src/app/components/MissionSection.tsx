@@ -111,6 +111,7 @@ const MissionSection: React.FC = () => {
       '-=0.3' // Overlap with previous animation slightly
     );
 
+    // Cleanup: kill the timeline, but return void
     return () => {
       tl.kill();
     };
@@ -119,29 +120,52 @@ const MissionSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className='bg-white text-[#0D004D] py-20 px-6 md:px-20'
+      className='bg-white text-[#0D004D]
+                 py-16 px-4
+                 sm:py-20 sm:px-6
+                 md:py-24 md:px-20'
     >
-      <h2 className='text-4xl md:text-5xl font-extrabold text-center mb-16'>
+      <h2
+        className='text-3xl sm:text-4xl md:text-5xl
+                     font-extrabold text-center mb-12
+                     sm:mb-16'
+      >
         Our Mission at <span className='text-[#1A0C6D]'>ProficientNow</span>
       </h2>
 
-      <div className='flex flex-col lg:flex-row items-center justify-center gap-12 mb-12 max-w-6xl mx-auto'>
+      <div
+        className='flex flex-col lg:flex-row
+                      items-center justify-center
+                      gap-8 md:gap-12 mb-12
+                      max-w-6xl mx-auto'
+      >
         {/* Left Label */}
-        <div className='lg:w-1/3 text-center lg:text-right order-2 lg:order-1'>
-          <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+        <div
+          className='lg:w-1/3 text-center lg:text-right
+                        order-2 lg:order-1
+                        px-2 sm:px-4'
+        >
+          <h3 className='text-lg sm:text-xl font-semibold mb-2'>
             Global Success
           </h3>
-          <p className='text-gray-500'>
+          <p className='text-gray-500 text-sm sm:text-base'>
             Delivering solutions that drive growth worldwide
           </p>
         </div>
 
         {/* Donut Graphic */}
-        <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
+        <div
+          className='relative w-full max-w-[240px]
+                     sm:max-w-[280px]
+                     md:max-w-[320px]
+                     aspect-square
+                     order-1 lg:order-2'
+        >
           <svg
             ref={svgRef}
             viewBox='0 0 200 200'
-            className='w-full h-full rounded-full text-[#0D004D]'
+            preserveAspectRatio='xMidYMid meet'
+            className='w-full h-full'
           >
             {arcs.map((d, i) => (
               <path
@@ -171,7 +195,9 @@ const MissionSection: React.FC = () => {
             return (
               <div
                 key={i}
-                className='absolute text-white text-2xl md:text-3xl mission-icon'
+                className='absolute mission-icon
+                           text-white
+                           text-xl sm:text-2xl md:text-3xl'
                 style={{
                   left: `${(x / 200) * 100}%`,
                   top: `${(y / 200) * 100}%`,
@@ -185,20 +211,25 @@ const MissionSection: React.FC = () => {
         </div>
 
         {/* Right Labels */}
-        <div className='lg:w-1/3 text-center lg:text-left space-y-8 order-3'>
+        <div
+          className='lg:w-1/3 text-center lg:text-left
+                        space-y-6 sm:space-y-8
+                        order-3
+                        px-2 sm:px-4'
+        >
           <div>
-            <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+            <h3 className='text-lg sm:text-xl font-semibold mb-1'>
               Bridging Aspirations
             </h3>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 text-sm sm:text-base'>
               Connecting ambitions with achievement
             </p>
           </div>
           <div>
-            <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
+            <h3 className='text-lg sm:text-xl font-semibold mb-1'>
               Empowering Organizations
             </h3>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 text-sm sm:text-base'>
               Revolutionizing recruitment across industries
             </p>
           </div>
@@ -206,7 +237,12 @@ const MissionSection: React.FC = () => {
       </div>
 
       {/* Footer Paragraph */}
-      <p className='text-center text-gray-700 max-w-4xl mx-auto leading-relaxed text-lg'>
+      <p
+        className='text-center text-gray-700
+                    max-w-4xl mx-auto
+                    leading-relaxed
+                    text-base sm:text-lg'
+      >
         ProficientNow revolutionizes recruitment across diverse industries,
         empowering organizations and individuals alike. Our mission is to bridge
         aspiration with achievement, delivering tailored solutions that drive
