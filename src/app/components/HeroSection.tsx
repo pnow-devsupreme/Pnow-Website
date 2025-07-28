@@ -1,7 +1,11 @@
-// src/components/Hero.tsx
+// src/app/components/HeroSection.tsx
+'use client';
+
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef } from 'react';
 
 import SplitTextComp from '@/app/components/bits/SplitText';
@@ -12,16 +16,26 @@ import PipelineEngineer from '../../../public/images/heroImage3.jpg';
 import SeniorAttorney from '../../../public/images/heroImage4.jpg';
 import Logo from '../../../public/navbar/pnlogonew.jpg';
 
-const Hero: React.FC = () => {
+const NAV_LINKS = [
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Find a Job', href: '/find-a-job' },
+  { label: 'Employers', href: '/employers' },
+  { label: 'Employees', href: '/employees' },
+  { label: 'Services', href: '/services' },
+  { label: 'Blog', href: '/blog' },
+];
+
+export default function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(SplitText);
 
     const ctx = gsap.context(() => {
-      // ─── Split‑text animations ───────────────────────────────────────────
+      // Split‑text animations
       const splitTitle = new SplitText(titleRef.current, {
         type: 'chars, words',
       });
@@ -34,7 +48,6 @@ const Hero: React.FC = () => {
         stagger: 0.04,
         ease: 'power2.out',
       });
-
       gsap.from(splitDesc.words, {
         duration: 0.6,
         opacity: 0,
@@ -44,7 +57,7 @@ const Hero: React.FC = () => {
         delay: 0.4,
       });
 
-      // ─── Navbar items & button ──────────────────────────────────────────
+      // Navbar & contact button animations
       const q = gsap.utils.selector(heroRef);
       gsap.from(q('.nav-item'), {
         duration: 0.4,
@@ -54,7 +67,6 @@ const Hero: React.FC = () => {
         ease: 'power2.out',
         delay: 0.4,
       });
-
       gsap.from(q('.contact-btn'), {
         duration: 0.6,
         scale: 0.8,
@@ -63,17 +75,16 @@ const Hero: React.FC = () => {
         delay: 0.8,
       });
 
-      // ─── Floating icons (each animates independently) ──────────────────
-      const icons = q('.floating-icon');
-      icons.forEach((el, i) => {
+      // Floating icons animations
+      q('.floating-icon').forEach((el, i) => {
         gsap.to(el, {
           y: -15,
           duration: 2,
           ease: 'sine.inOut',
           repeat: -1,
           yoyo: true,
-          delay: i * 0.3, // stagger start only
-          force3D: true, // ensure GPU acceleration
+          delay: i * 0.3,
+          force3D: true,
         });
       });
     }, heroRef);
@@ -90,61 +101,47 @@ const Hero: React.FC = () => {
       }}
     >
       <div className='relative mx-auto h-[750px] max-w-[1440px]'>
-        {/* ─── NAVBAR ─────────────────────────────────────────── */}
+        {/* NAVBAR */}
         <nav
-          className='
-            absolute top-[32px] left-1/2
-            transform -translate-x-1/2
-            bg-white rounded-full
-            px-8 py-3
-            flex justify-between
-            items-center
-            shadow-lg
-            w-[calc(100%-64px)] max-w-[1200px]
-          '
+          className='absolute top-[32px] left-1/2 transform -translate-x-1/2
+                        bg-white rounded-full px-8 py-3 flex justify-between
+                        items-center shadow-lg w-[calc(100%-64px)] max-w-[1200px]'
         >
-          <Image
-            src={Logo}
-            alt='ProficientNow'
-            className='h-10 flex-shrink-0'
-          />
+          <Link href='/'>
+            <Image
+              src={Logo}
+              alt='ProficientNow'
+              className='h-10 flex-shrink-0'
+            />
+          </Link>
 
-          <ul className='flex  space-x-6'>
-            {[
-              'About Us',
-              'Find a Job',
-              'Employers',
-              'Employees',
-              'Services',
-              'Blog',
-            ].map((label) => (
-              <li key={label} className='nav-item'>
-                <a
-                  href={`#${label.toLowerCase().replace(/ /g, '-')}`}
-                  className='text-brand-purple font-semibold text-base '
+          <ul className='flex space-x-6'>
+            {NAV_LINKS.map(({ label, href }) => (
+              <li key={href} className='nav-item'>
+                <Link
+                  href={href}
+                  className='text-brand-purple font-semibold text-base'
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
-          <button className='contact-btn  bg-brand-purple text-white px-6 py-3 rounded-full font-semibold text-base hover:opacity-90'>
+          <button
+            className='contact-btn bg-brand-purple text-white px-6 py-3 rounded-full
+                       font-semibold text-base hover:opacity-90'
+            onClick={() => router.push('/contact')}
+          >
             Contact Us
           </button>
         </nav>
 
-        {/* ─── HERO CONTENT ───────────────────────────────────── */}
+        {/* HERO CONTENT */}
         <div
-          className='
-            absolute top-1/2 left-1/2
-            transform -translate-x-1/2 -translate-y-1/2
-            text-center
-            px-4
-            w-full max-w-[800px]
-            flex flex-col gap-5
-            mt-10
-          '
+          className='absolute top-1/2 left-1/2 transform
+                        -translate-x-1/2 -translate-y-1/2 text-center
+                        px-4 w-full max-w-[800px] flex flex-col gap-5 mt-10'
         >
           <h1
             ref={titleRef}
@@ -156,10 +153,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <SplitTextComp
-            text='Welcome to our comprehensive solution, optimizing hiring for
-              employers and efficiently connecting top talent. For employees, we
-              offer career opportunities aligning with aspirations. Elevate your
-              success journey with us, unlocking your full potential together.'
+            text='Welcome to our comprehensive solution, optimizing hiring for employers and efficiently connecting top talent. For employees, we offer career opportunities aligning with aspirations. Elevate your success journey with us, unlocking your full potential together.'
             className='mt-4 text-[18px] leading-relaxed text-white/90'
             delay={100}
             duration={0.5}
@@ -173,18 +167,22 @@ const Hero: React.FC = () => {
           />
 
           <div className='mt-8 flex justify-center space-x-4'>
-            <button className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
+            <Link
+              href='/find-a-job'
+              className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'
+            >
               Find Works
-            </button>
-
-            <button className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
+            </Link>
+            <Link
+              href='/employers'
+              className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'
+            >
               Hire Talents Now
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
-        {/* Top‑left */}
+        {/* FOUR FLOATING ICONS */}
         <div
           className='floating-icon absolute top-[260px] left-[80px] flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
@@ -199,7 +197,6 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* Bottom‑left */}
         <div
           className='floating-icon absolute bottom-[120px] left-[160px] flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
@@ -214,7 +211,6 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* Top‑right */}
         <div
           className='floating-icon absolute top-[260px] right-[80px] flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
@@ -229,7 +225,6 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* Bottom‑right */}
         <div
           className='floating-icon absolute bottom-[120px] right-[160px] flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
@@ -246,6 +241,4 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
