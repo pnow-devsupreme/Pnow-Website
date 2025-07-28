@@ -10,20 +10,30 @@ const items = [
   'Accounting',
 ];
 
-const AngledMarquee = () => {
-  const infiniteItems = [...items, ...items];
+export default function AngledMarquee() {
+  // Duplicate your list so there's always content trailing
+  const seamlessItems = [...items, ...items];
 
   return (
     <section className='py-8 mt-6 h-[200px]'>
-      <div className='overflow-hidden flex transform -rotate-[5deg] bg-[#0D004D] ml-[-5%] rounded-lg h-[80px]'>
+      <div
+        className='
+          overflow-hidden flex transform -rotate-[5deg]
+          bg-[#0D004D] ml-[-5%] rounded-lg h-[80px]
+        '
+      >
         <Marquee
-          gradient={false}
+          gradient={false} // no fade at edges
           speed={50}
-          loop={0}
-          pauseOnHover={false}
-          className='flex items-center justify-center text-white text-3xl whitespace-nowrap'
+          loop={0} // infinite loops
+          pauseOnHover={true}
+          pauseOnClick={false}
+          className='
+            flex items-center justify-start
+            text-white text-3xl whitespace-nowrap
+          '
         >
-          {infiniteItems.map((label, idx) => (
+          {seamlessItems.map((label, idx) => (
             <span key={idx} className='inline-flex items-center mx-8 space-x-4'>
               <span>{label}</span>
               <span>✦</span>
@@ -33,6 +43,4 @@ const AngledMarquee = () => {
       </div>
     </section>
   );
-};
-
-export default AngledMarquee;
+}
