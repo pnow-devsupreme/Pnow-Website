@@ -7,7 +7,6 @@ import '@/lib/env';
 import AngledMarquee from '@/app/components/AnglesMarquee';
 import ClientExperience from '@/app/components/ClientExperience';
 import CoreValues from '@/app/components/CoreValues';
-import Footer from '@/app/components/Footer';
 import Hero from '@/app/components/HeroSection';
 import HowItWorks from '@/app/components/HowItWorks';
 import IndustriesSection from '@/app/components/IndustriesSection';
@@ -37,7 +36,6 @@ export default function HomePage() {
         <ClientExperience />
         <CoreValues />
         <Vision />
-        <Footer />
       </section>
     </main>
   );

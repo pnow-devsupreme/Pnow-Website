@@ -116,3 +116,14 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+/* a 6‑point “bookmark” chevron with a top notch and bottom point */
+.clip‑chevron {
+  clip‑path: polygon(
+    0 0,
+    /* top‑left corner */ 50% 15%,
+    /* middle notch point */ 100% 0,
+    /* top‑right corner */ 100% 85%,
+    /* bottom‑right corner */ 50% 100%,
+    /* bottom tip */ 0 85% /* bottom‑left corner */
+  );
+}
