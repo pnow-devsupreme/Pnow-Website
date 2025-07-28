@@ -30,19 +30,15 @@ export default function ValuesSection() {
   return (
     <section className='bg-brand-purple py-16 px-4 md:px-20'>
       <div className='max-w-6xl mx-auto h-[500px] bg-white rounded-2xl p-8 md:p-12'>
-        {/* Title */}
         <h2 className='text-5xl font-bold text-brand-purple mb-10'>Values</h2>
 
-        {/* 2‐column grid of value items */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12'>
           {VALUES.map(({ title, description, icon }, idx) => (
             <div key={idx} className='flex items-start gap-4'>
-              {/* icon container */}
               <div className='w-10 h-10 bg-[#0B0A3E] rounded-lg flex items-center justify-center flex-shrink-0'>
                 <span className='text-white'>{icon}</span>
               </div>
 
-              {/* text */}
               <div>
                 <h3 className='text-lg font-semibold text-[#636363]'>
                   {title}
@@ -53,7 +49,6 @@ export default function ValuesSection() {
           ))}
         </div>
 
-        {/* bottom paragraph */}
         <p className='mt-10 text-sm text-[#4A4A4A]'>
           We are transparent, Trusted, Highly Focused and Goal Oriented. We work
           with Positive reinforcement with SMART objectives.

@@ -1,29 +1,24 @@
 'use client';
 
-import Head from 'next/head';
 import * as React from 'react';
-import '@/lib/env';
 
-import AngledMarquee from '@/app/components/AnglesMarquee';
-import ClientExperience from '@/app/components/ClientExperience';
-import CoreValues from '@/app/components/CoreValues';
-import Hero from '@/app/components/HeroSection';
-import HowItWorks from '@/app/components/HowItWorks';
-import IndustriesSection from '@/app/components/IndustriesSection';
-import MissionSection from '@/app/components/MissionSection';
-import ResearchSection from '@/app/components/ResearchSection';
-import TransformSection from '@/app/components/TransformSection';
-import TrustedBy from '@/app/components/TrustedBy';
-import Vision from '@/app/components/Vision';
-import WhyChooseUs from '@/app/components/WhyChooseUs';
+import AngledMarquee from '@/app/components/home-page/AnglesMarquee';
+import ClientExperience from '@/app/components/home-page/ClientExperience';
+import CoreValues from '@/app/components/home-page/CoreValues';
+import Hero from '@/app/components/home-page/HeroSection';
+import HowItWorks from '@/app/components/home-page/HowItWorks';
+import IndustriesSection from '@/app/components/home-page/IndustriesSection';
+import MissionSection from '@/app/components/home-page/MissionSection';
+import ResearchSection from '@/app/components/home-page/ResearchSection';
+import TransformSection from '@/app/components/home-page/TransformSection';
+import TrustedBy from '@/app/components/home-page/TrustedBy';
+import Vision from '@/app/components/home-page/Vision';
+import WhyChooseUs from '@/app/components/home-page/WhyChooseUs';
 
 export default function HomePage() {
   return (
     <main>
-      <Head>
-        <title>Hi</title>
-      </Head>
-      <section className=''>
+      <section>
         <Hero />
         <TrustedBy />
         <TransformSection />

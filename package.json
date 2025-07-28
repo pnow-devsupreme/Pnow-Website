@@ -18,11 +18,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@tabler/icons-react": "^3.34.1",
     "@vercel/speed-insights": "^1.2.0",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.7",
     "gsap": "^3.13.0",
     "lucide-react": "^0.438.0",
+    "motion": "^12.23.11",
     "next": "^14.2.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

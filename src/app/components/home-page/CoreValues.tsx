@@ -1,4 +1,3 @@
-// src/components/CoreValues.tsx
 import { Grid, Shield, Target, ThumbsUp } from 'lucide-react';
 import React from 'react';
 

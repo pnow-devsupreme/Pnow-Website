@@ -1,7 +1,9 @@
+import forms from '@tailwindcss/forms';
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -26,6 +28,10 @@ const config: Config = {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+      },
+      boxShadow: {
+        input:
+          '0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)',
       },
       keyframes: {
         flicker: {
@@ -55,7 +61,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [forms],
 };
 
 export default config;

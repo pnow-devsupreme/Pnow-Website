@@ -1,4 +1,3 @@
-// components/MissionSection.tsx
 import Image from 'next/image';
 import { FaChartLine, FaGlobe, FaStar } from 'react-icons/fa';
 

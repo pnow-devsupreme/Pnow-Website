@@ -1,4 +1,3 @@
-// components/PyramidSvg.tsx
 import React from 'react';
 import { FaBinoculars, FaBriefcase, FaUserTie } from 'react-icons/fa';
 

@@ -1,10 +1,9 @@
-// components/TransformSection.tsx
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 
-import teamImage from '../../../public/images/teamImage.png';
+import teamImage from '../../../../public/images/teamImage.png';
 
 interface Stat {
   value: string;
@@ -28,7 +27,6 @@ const TransformSection: React.FC = () => {
     if (!sectionRef.current || !statsRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1) Intro fade‑in when section scrolls into view
       gsap.from('.gsap-intro', {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -62,7 +60,6 @@ const TransformSection: React.FC = () => {
 
       const statEls = gsap.utils.toArray<HTMLElement>('.stat-value');
       statEls.forEach((el, i) => {
-        // initialize to "0" + suffix
         el.textContent = `0${suffixes[i]}`;
 
         const obj = { val: 0 };
@@ -88,9 +85,7 @@ const TransformSection: React.FC = () => {
   return (
     <section ref={sectionRef} className='bg-white py-16'>
       <div className='container max-w-8xl mx-auto px-6 lg:px-8'>
-        {/* top: image + copy */}
         <div className='flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12'>
-          {/* illustration */}
           <div className='gsap-intro w-full lg:w-1/2 flex justify-center'>
             <Image
               src={teamImage}
@@ -100,7 +95,6 @@ const TransformSection: React.FC = () => {
               className='max-w-full h-auto'
             />
           </div>
-          {/* text */}
           <div className='gsap-intro w-full lg:w-1/2 max-w-md flex flex-col gap-4'>
             <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium w-fit'>
               About us
@@ -127,7 +121,6 @@ const TransformSection: React.FC = () => {
           </div>
         </div>
 
-        {/* stats */}
         <div
           ref={statsRef}
           className='mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-6xl mx-auto gap-4'

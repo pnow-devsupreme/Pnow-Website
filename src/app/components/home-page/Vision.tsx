@@ -2,7 +2,7 @@
 import { Cpu, GitBranch, UserCheck, Users } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
-import ourVision from '../../../public/images/ourVision.png';
+import ourVision from '../../../../public/images/ourVision.png';
 
 interface VisionPoint {
   title: string;

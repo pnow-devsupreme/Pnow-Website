@@ -5,30 +5,22 @@ import PyramidSvg from '@/app/components/PyramidSvg';
 export default function VisionSection() {
   return (
     <section className='bg-white py-16 px-4 md:px-20'>
-      {/* Section title */}
       <h2 className='text-4xl font-bold text-[#0F0F55] mb-12'>Vision</h2>
 
-      {/* wrapper: same height as the SVG (150 viewBox → scale however you like) */}
       <div
         className='relative flex'
         style={{
-          height:
-            '216px' /* 150/200 × 288px = 216px if your SVG is 288px wide */,
+          height: '216px',
         }}
       >
-        {/* ───── Pyramid on the left ───── */}
         <div className='w-72 h-full flex-shrink-0'>
           <PyramidSvg />
         </div>
 
-        {/* ───── Connector lines ───── */}
-        {/* each line starts at the right edge of the pyramid (left:18rem) */}
         <hr className='absolute left-72 top-[33.333%] right-0 border-t border-[#A39BC2]' />
         <hr className='absolute left-72 top-[66.666%] right-0 border-t border-[#A39BC2]' />
         <hr className='absolute left-72 bottom-0   right-0 border-t border-[#A39BC2]' />
 
-        {/* ───── Labels ───── */}
-        {/* each block is centered on its corresponding line */}
         <div className='absolute left-[21rem] top-[33.333%] transform -translate-y-1/2 z-10 text-[#4A4A4A]'>
           <h3 className='text-xl font-semibold text-[#6F6F89]'>
             Bridge the Gap
@@ -51,7 +43,6 @@ export default function VisionSection() {
         </div>
       </div>
 
-      {/* bottom paragraph */}
       <p className='mt-10 max-w-3xl text-sm text-[#6A6A6A]'>
         To support our Employers with professional and executive talent and to
         direct employees to the right position in their career path with

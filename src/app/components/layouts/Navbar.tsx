@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import Logo from '../../../public/navbar/pnlogonew.jpg';
+import Logo from '../../../../public/navbar/pnlogonew.jpg';
 
 const navItems = [
   'About Us',

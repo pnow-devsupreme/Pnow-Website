@@ -1,4 +1,3 @@
-// components/StrategySection.tsx
 import Image from 'next/image';
 import { FaBullseye, FaHandshake, FaProjectDiagram } from 'react-icons/fa';
 import { FiMapPin } from 'react-icons/fi';
@@ -8,28 +7,24 @@ const ITEMS = [
     title: 'Talent Network',
     desc: 'Utilizing our extensive professional connections',
     icon: <FaProjectDiagram size={20} />,
-    // will render on top‑left
     pos: { side: 'left', pct: 25 },
   },
   {
     title: 'Mutual Success',
     desc: 'Directing skilled talent toward shared goals',
     icon: <FaHandshake size={20} />,
-    // bottom‑left
     pos: { side: 'left', pct: 75 },
   },
   {
     title: 'Effective Planning',
     desc: 'Crafting strategies for client growth',
     icon: <FaBullseye size={20} />,
-    // top‑right
     pos: { side: 'right', pct: 25 },
   },
   {
     title: 'Strategic Placement',
     desc: 'Matching the right talent to business demands',
     icon: <FiMapPin size={20} />,
-    // bottom‑right
     pos: { side: 'right', pct: 75 },
   },
 ];
@@ -37,12 +32,9 @@ const ITEMS = [
 export default function StrategySection() {
   return (
     <section className='bg-white py-16 px-4 md:px-20'>
-      {/* Section title */}
       <h2 className='text-4xl font-bold text-[#0F0F55] mb-12'>Strategy</h2>
 
-      {/* Chart + labels container */}
       <div className='relative mx-auto w-64 h-64'>
-        {/* Donut chart */}
         <div className='absolute inset-0'>
           <Image
             src='/strategy-chart.png'
@@ -53,7 +45,6 @@ export default function StrategySection() {
           />
         </div>
 
-        {/* Labels */}
         {ITEMS.map(({ title, desc, icon, pos }, idx) => {
           const horizontal =
             pos.side === 'left' ? 'left-[-13rem]' : 'right-[-13rem]';
@@ -83,7 +74,6 @@ export default function StrategySection() {
         })}
       </div>
 
-      {/* Bottom paragraph */}
       <p className='mt-10 max-w-3xl text-sm text-[#4A4A4A]'>
         ProficientNow crafts effective strategies for client growth, utilizing
         our talent network. We strategically place the right talent to meet

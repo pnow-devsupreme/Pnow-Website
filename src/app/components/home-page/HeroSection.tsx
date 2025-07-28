@@ -1,4 +1,3 @@
-// src/app/components/HeroSection.tsx
 'use client';
 
 import gsap from 'gsap';
@@ -10,11 +9,11 @@ import React, { useEffect, useRef } from 'react';
 
 import SplitTextComp from '@/app/components/bits/SplitText';
 
-import ConstructionEstimator from '../../../public/images/heroImage1.jpg';
-import ConstructionTechnicians from '../../../public/images/heroImage2.jpg';
-import PipelineEngineer from '../../../public/images/heroImage3.jpg';
-import SeniorAttorney from '../../../public/images/heroImage4.jpg';
-import Logo from '../../../public/navbar/pnlogonew.jpg';
+import ConstructionEstimator from '../../../../public/images/heroImage1.jpg';
+import ConstructionTechnicians from '../../../../public/images/heroImage2.jpg';
+import PipelineEngineer from '../../../../public/images/heroImage3.jpg';
+import SeniorAttorney from '../../../../public/images/heroImage4.jpg';
+import Logo from '../../../../public/navbar/pnlogonew.jpg';
 
 const NAV_LINKS = [
   { label: 'About Us', href: '/about-us' },
@@ -107,7 +106,7 @@ export default function HeroSection() {
                         bg-white rounded-full px-8 py-3 flex justify-between
                         items-center shadow-lg w-[calc(100%-64px)] max-w-[1200px]'
         >
-          <Link href='/'>
+          <Link href='/home'>
             <Image
               src={Logo}
               alt='ProficientNow'
