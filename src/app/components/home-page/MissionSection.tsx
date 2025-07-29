@@ -3,18 +3,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import { FaBridge, FaHandshake, FaUser } from 'react-icons/fa6';
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const MissionSection: React.FC = () => {
   const center = 100;
   const outerR = 90;
   const innerR = 50;
-  const gapAngle = 15; // Gap between sections in degrees
+  const gapAngle = 15; 
   const sectionRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  // Helper to describe one ring segment from startAngle → endAngle (in deg)
   function describeArc(startAngle: number, endAngle: number) {
     const startRad = (Math.PI / 180) * startAngle;
     const endRad = (Math.PI / 180) * endAngle;
@@ -28,7 +26,6 @@ const MissionSection: React.FC = () => {
     const x4 = center + innerR * Math.cos(startRad);
     const y4 = center + innerR * Math.sin(startRad);
 
-    // Determine if we need the large-arc-flag
     const largeArcFlag = Math.abs(endAngle - startAngle) > 180 ? 1 : 0;
 
     return [
@@ -40,25 +37,22 @@ const MissionSection: React.FC = () => {
     ].join(' ');
   }
 
-  // Calculate segment angles with gaps
-  const segmentAngle = (360 - 3 * gapAngle) / 3; // Each segment gets equal space minus gaps
+  const segmentAngle = (360 - 3 * gapAngle) / 3; 
 
-  // Three segments with gaps: starting from top (-90°)
   const segments = [
-    { start: -90, end: -90 + segmentAngle }, // Top segment
+    { start: -90, end: -90 + segmentAngle }, 
     {
       start: -90 + segmentAngle + gapAngle,
       end: -90 + 2 * segmentAngle + gapAngle,
-    }, // Right segment
+    }, 
     {
       start: -90 + 2 * segmentAngle + 2 * gapAngle,
       end: -90 + 3 * segmentAngle + 2 * gapAngle,
-    }, // Left segment
+    }, 
   ];
 
   const arcs = segments.map((seg) => describeArc(seg.start, seg.end));
 
-  // Mid-angles for icon placement
   const mids = segments.map(
     (seg) => (Math.PI / 180) * ((seg.start + seg.end) / 2)
   );
@@ -70,7 +64,6 @@ const MissionSection: React.FC = () => {
     const paths = svg.querySelectorAll('path');
     const icons = document.querySelectorAll('.mission-icon');
 
-    // Set initial state (invisible)
     gsap.set(paths, {
       drawSVG: '0%',
       opacity: 0,
@@ -78,18 +71,16 @@ const MissionSection: React.FC = () => {
     });
     gsap.set(icons, { opacity: 0, scale: 0.5 });
 
-    // Create timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 80%', // Adjust this to control when animation starts
+        start: 'top 80%', 
         end: 'top 50%',
-        once: true, // This ensures the animation only plays once
-        markers: false, // Set to true for debugging
+        once: true, 
+        markers: false, 
       },
     });
 
-    // Animate each path to draw in sequence
     tl.to(paths, {
       drawSVG: '100%',
       opacity: 1,
@@ -98,7 +89,6 @@ const MissionSection: React.FC = () => {
       ease: 'power2.out',
     });
 
-    // Then animate icons
     tl.to(
       icons,
       {
@@ -108,7 +98,7 @@ const MissionSection: React.FC = () => {
         stagger: 0.1,
         ease: 'back.out(1.7)',
       },
-      '-=0.3' // Overlap with previous animation slightly
+      '-=0.3'
     );
 
     return () => {
@@ -126,7 +116,6 @@ const MissionSection: React.FC = () => {
       </h2>
 
       <div className='flex flex-col lg:flex-row items-center justify-center gap-12 mb-12 max-w-6xl mx-auto'>
-        {/* Left Label */}
         <div className='lg:w-1/3 text-center lg:text-right order-2 lg:order-1'>
           <h3 className='text-xl font-semibold mb-2 text-[#0D004D]'>
             Global Success
@@ -136,8 +125,7 @@ const MissionSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Donut Graphic */}
-        <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
+          <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
           <svg
             ref={svgRef}
             viewBox='0 0 200 200'

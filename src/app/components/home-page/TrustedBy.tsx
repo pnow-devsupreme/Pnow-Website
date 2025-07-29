@@ -35,7 +35,6 @@ const TrustedBy: React.FC = () => {
             pauseOnHover={true}
             className='w-full'
           >
-            {/* First set of logos */}
             {logos.map((logo, idx) => (
               <div key={`first-${idx}`} className='mx-8 flex-shrink-0'>
                 <Image
@@ -47,7 +46,6 @@ const TrustedBy: React.FC = () => {
                 />
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
             {logos.map((logo, idx) => (
               <div key={`second-${idx}`} className='mx-8 flex-shrink-0'>
                 <Image
