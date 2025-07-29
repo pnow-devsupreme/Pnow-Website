@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import { jobs } from '@/data/jobsdata';
+
 import Logo from '../../../public/navbar/pnlogonew.jpg';
 
 const NAV_LINKS = [
@@ -61,19 +63,50 @@ export default function NavBar() {
         <Image src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
       </Link>
 
-      <ul className='flex items-center space-x-6'>
+      <ul className='flex items-center space-x-6 relative'>
         {NAV_LINKS.map(({ label, href }) => {
           const isActive = pathname === href;
+
+          if (label === 'Find a Job') {
+            return (
+              <li key={href} className='relative group'>
+                {/* Prevent navigation */}
+                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
+                  {label}
+                </button>
+
+                {/* Dropdown */}
+                <ul
+                  className='
+              absolute left-0 w-48 bg-white border rounded-lg shadow-lg
+              hidden group-hover:block z-50
+            '
+                >
+                  {jobs.map((job) => (
+                    <li key={job.slug}>
+                      <Link
+                        href={`/jobs/${job.slug}`}
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                      >
+                        {job.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
           return (
             <li key={href}>
               <Link
                 href={href}
                 className={`
-                  text-brand-purple
-                  font-semibold
-                  text-base
-                  transition
-                `}
+            text-brand-purple
+            font-semibold
+            text-base
+            transition
+          `}
               >
                 {label}
               </Link>
