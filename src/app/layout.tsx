@@ -5,7 +5,8 @@ import * as React from 'react';
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import Footer from '@/app/components/layouts/Footer';
+import Footer from '@/app/layouts/Footer';
+import NavBar from '@/app/layouts/Navbar';
 import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
+        <NavBar />
         {children} <SpeedInsights />
         <Footer />
       </body>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PyramidSvg from '@/app/components/PyramidSvg';
+import PyramidSvg from '@/app/components/about-us/PyramidSvg';
 
 export default function VisionSection() {
   return (

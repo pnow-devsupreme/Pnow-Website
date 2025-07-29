@@ -3,7 +3,7 @@ import InnovationSection from '@/app/components/about-us/InnovationSection';
 import JourneySection from '@/app/components/about-us/JourneySection';
 import PartnershipSection from '@/app/components/about-us/PartnershipSection';
 import ValuesSection from '@/app/components/about-us/ValuesSection';
-import Navbar from '@/app/components/layouts/Navbar';
+import Navbar from '@/app/layouts/Navbar';
 
 export default function ContactPage() {
   return (
