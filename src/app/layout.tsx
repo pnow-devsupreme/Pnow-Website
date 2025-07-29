@@ -1,12 +1,10 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import * as React from 'react';
 
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import Footer from '@/app/layouts/Footer';
-import NavBar from '@/app/layouts/Navbar';
+import ClientLayout from '@/app/layouts/MainLayout';
 import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {
@@ -46,13 +44,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html>
-      <body>
-        <NavBar />
-        {children} <SpeedInsights />
-        <Footer />
-      </body>
-    </html>
-  );
+  return <ClientLayout>{children}</ClientLayout>;
 }
