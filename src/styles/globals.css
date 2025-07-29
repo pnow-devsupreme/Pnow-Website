@@ -127,3 +127,7 @@
     /* bottom tip */ 0 85% /* bottom‑left corner */
   );
 }
+
+.chevron {
+  clip-path: polygon(0 10%, 100% 0, 100% 78%, 50% 100%, 0 78%);
+}
