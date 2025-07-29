@@ -39,7 +39,6 @@ export default function OurVision() {
     <section className='bg-white py-16 px-6'>
       <div className='max-w-7xl mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-          {/* Left side - Illustration */}
           <div className='relative'>
             <Image
               src={ourVision}
@@ -51,15 +50,12 @@ export default function OurVision() {
             />
           </div>
 
-          {/* Right side - Content */}
           <div>
             <h2 className='text-[48px] font-bold text-[#2D1B69] mb-[40px]'>
               Our Vision
             </h2>
 
-            {/* Timeline */}
             <ul className='relative'>
-              {/* Vertical grey line, from center of first icon to center of last */}
               <span className='absolute left-[18px] top-[18px] bottom-[18px] w-[2px] bg-gray-200' />
 
               {visionPoints.map(({ title, description, Icon }) => (
@@ -67,7 +63,6 @@ export default function OurVision() {
                   key={title}
                   className='relative pl-[70px] mb-[48px] last:mb-0'
                 >
-                  {/* Icon Container */}
                   <div
                     className='
                       absolute left-0 top-0

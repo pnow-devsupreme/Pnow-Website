@@ -11,7 +11,6 @@ const items = [
 ];
 
 export default function AngledMarquee() {
-  // Duplicate your list so there's always content trailing
   const seamlessItems = [...items, ...items];
 
   return (
