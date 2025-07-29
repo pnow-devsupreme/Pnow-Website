@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef } from 'react';
 
 import SplitTextComp from '@/app/components/bits/SplitText';
@@ -13,22 +12,11 @@ import ConstructionEstimator from '../../../../public/images/heroImage1.jpg';
 import ConstructionTechnicians from '../../../../public/images/heroImage2.jpg';
 import PipelineEngineer from '../../../../public/images/heroImage3.jpg';
 import SeniorAttorney from '../../../../public/images/heroImage4.jpg';
-import Logo from '../../../../public/navbar/pnlogonew.jpg';
-
-const NAV_LINKS = [
-  { label: 'About Us', href: '/about-us' },
-  { label: 'Find a Job', href: '/find-a-job' },
-  { label: 'Employers', href: '/employers' },
-  { label: 'Employees', href: '/employees' },
-  { label: 'Services', href: '/services' },
-  { label: 'Blog', href: '/blog' },
-];
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
-  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(SplitText);
@@ -56,7 +44,7 @@ export default function HeroSection() {
         delay: 0.01,
       });
 
-      // Navbar & contact button animations
+      // Floating icons animations
       const q = gsap.utils.selector(heroRef);
       gsap.from(q('.nav-item'), {
         duration: 0.4,
@@ -100,47 +88,14 @@ export default function HeroSection() {
       }}
     >
       <div className='relative mx-auto h-[750px] max-w-[1440px]'>
-        {/* NAVBAR */}
-        <nav
-          className='absolute top-[32px] left-1/2 transform -translate-x-1/2
-                        bg-white rounded-full px-8 py-3 flex justify-between
-                        items-center shadow-lg w-[calc(100%-64px)] max-w-[1200px]'
-        >
-          <Link href='/home'>
-            <Image
-              src={Logo}
-              alt='ProficientNow'
-              className='h-10 flex-shrink-0'
-            />
-          </Link>
-
-          <ul className='flex space-x-6'>
-            {NAV_LINKS.map(({ label, href }) => (
-              <li key={href} className='nav-item'>
-                <Link
-                  href={href}
-                  className='text-brand-purple font-semibold text-base'
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            className='contact-btn bg-brand-purple text-white px-6 py-3 rounded-full
-                       font-semibold text-base hover:opacity-90'
-            onClick={() => router.push('/contact')}
-          >
-            Contact Us
-          </button>
-        </nav>
-
         {/* HERO CONTENT */}
         <div
-          className='absolute top-1/2 left-1/2 transform
-                        -translate-x-1/2 -translate-y-1/2 text-center
-                        px-4 w-full max-w-[800px] flex flex-col gap-5 mt-10'
+          className='
+            absolute top-1/2 left-1/2 transform
+            -translate-x-1/2 -translate-y-1/2
+            text-center px-4 w-full max-w-[800px]
+            flex flex-col gap-5 mt-10
+          '
         >
           <h1
             ref={titleRef}
@@ -148,7 +103,7 @@ export default function HeroSection() {
           >
             Transform Your <span className='text-brand-red'>Path</span> to
             <br />
-            <span className='text-brand-red'> Success</span>
+            <span className='text-brand-red'>Success</span>
           </h1>
 
           <SplitTextComp
@@ -168,13 +123,13 @@ export default function HeroSection() {
           <div className='mt-8 flex justify-center space-x-4'>
             <Link
               href='/find-a-job'
-              className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'
+              className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 transition'
             >
               Find Works
             </Link>
             <Link
               href='/employers'
-              className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'
+              className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 transition'
             >
               Hire Talents Now
             </Link>
@@ -183,7 +138,10 @@ export default function HeroSection() {
 
         {/* FOUR FLOATING ICONS */}
         <div
-          className='floating-icon absolute top-[260px] left-[80px] flex flex-col items-center'
+          className='
+            floating-icon absolute top-[260px] left-[80px]
+            flex flex-col items-center
+          '
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -197,7 +155,10 @@ export default function HeroSection() {
         </div>
 
         <div
-          className='floating-icon absolute bottom-[120px] left-[160px] flex flex-col items-center'
+          className='
+            floating-icon absolute bottom-[120px] left-[160px]
+            flex flex-col items-center
+          '
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -211,7 +172,10 @@ export default function HeroSection() {
         </div>
 
         <div
-          className='floating-icon absolute top-[260px] right-[80px] flex flex-col items-center'
+          className='
+            floating-icon absolute top-[260px] right-[80px]
+            flex flex-col items-center
+          '
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -225,7 +189,10 @@ export default function HeroSection() {
         </div>
 
         <div
-          className='floating-icon absolute bottom-[120px] right-[160px] flex flex-col items-center'
+          className='
+            floating-icon absolute bottom-[120px] right-[160px]
+            flex flex-col items-center
+          '
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image

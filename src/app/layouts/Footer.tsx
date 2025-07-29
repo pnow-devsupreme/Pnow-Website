@@ -10,9 +10,9 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa';
 
-import Usa from '../../../../public/images/usalogo.jpg';
-import India from '../../../../public/images/india.jpg';
-import FooterLogo from '../../../../public/images/footerlogo.png';
+import Usa from '../../../public/images/usalogo.jpg';
+import India from '../../../public/images/india.jpg';
+import FooterLogo from '../../../public/images/footerlogo.png';
 
 const Australia = '/images/auslogo.svg';
 const CountryInd = '/images/charminar.svg';
