@@ -4,7 +4,7 @@ import * as React from 'react';
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import ClientLayout from '@/app/components/layouts/MainLayout';
+import ClientLayout from '@/app/layouts/MainLayout';
 import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {

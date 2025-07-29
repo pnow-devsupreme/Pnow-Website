@@ -7,8 +7,9 @@ import { useState } from 'react'; // Import useState
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import Footer from '@/app/components/layouts/Footer';
 import LoadingScreen from '@/app/components/loading/LoadingScreen';
+import Footer from '@/app/layouts/Footer';
+import NavBar from '@/app/layouts/Navbar';
 
 export default function ClientLayout({
   children,
@@ -30,6 +31,7 @@ export default function ClientLayout({
         {/* Main content and other components - only rendered after loading completes */}
         {isLoadingComplete && (
           <>
+            <NavBar />
             {children}
             <SpeedInsights />
             <Footer />
