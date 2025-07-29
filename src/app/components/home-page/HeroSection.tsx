@@ -53,7 +53,7 @@ export default function HeroSection() {
         y: 20,
         stagger: 0.05,
         ease: 'power2.out',
-        delay: 0.4,
+        delay: 0.01,
       });
 
       // Navbar & contact button animations
@@ -64,20 +64,20 @@ export default function HeroSection() {
         opacity: 0,
         stagger: 0.12,
         ease: 'power2.out',
-        delay: 0.4,
+        delay: 0.01,
       });
       gsap.from(q('.contact-btn'), {
         duration: 0.6,
         scale: 0.8,
         opacity: 0,
         ease: 'back.out(1.7)',
-        delay: 0.8,
+        delay: 0.01,
       });
 
       // Floating icons animations
       q('.floating-icon').forEach((el, i) => {
         gsap.to(el, {
-          y: -15,
+          scale: 0.9,
           duration: 2,
           ease: 'sine.inOut',
           repeat: -1,
