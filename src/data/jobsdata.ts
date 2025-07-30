@@ -71,7 +71,8 @@ export interface JobFeature {
 }
 export interface CareerItem {
   title: string;
-  jobDescription: string;
+  qualifications: string[];
+  responsibilities?: string[];
   imageSrc: StaticImageData | string;
   altText?: string;
   buttonText?: string;
@@ -150,7 +151,16 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Laboratory Analyst',
-          jobDescription: 'Laboratory Analyst',
+          qualifications: [
+            "Bachelor's degree in Chemistry or Biology",
+            'Proficiency in laboratory techniques and equipment',
+          ],
+          responsibilities: [
+            'Conduct analytical tests using laboratory equipment',
+            'Record data, analyze results, and prepare reports',
+            'Maintain safety and quality standards',
+            'Collaborate with team on research objectives',
+          ],
           imageSrc: Healthcare3,
           altText: 'Laboratory Analyst illustration',
           buttonText: 'Explore Role',
@@ -158,7 +168,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Laboratory Technician',
-          jobDescription: 'Laboratory Technician',
+          qualifications: [
+            'Associate or Bachelor’s degree in science-related field',
+            'Hands-on lab skills and familiarity with safety protocols',
+          ],
+          responsibilities: [
+            'Support scientists in conducting experiments',
+            'Prepare samples and manage lab equipment',
+            'Log test results and maintain lab cleanliness',
+          ],
           imageSrc: Healthcare2,
           altText: 'Laboratory Technician',
           buttonText: 'Explore Role',
@@ -166,7 +184,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Medical Sales Representative',
-          jobDescription: 'Medical Sales Representative',
+          qualifications: [
+            "Bachelor's degree in Life Sciences, Business, or related field",
+            'Strong communication and sales skills',
+          ],
+          responsibilities: [
+            'Promote and sell medical products to healthcare professionals',
+            'Develop client relationships and meet sales targets',
+            'Stay updated on industry trends and products',
+          ],
           imageSrc: Healthcare1,
           altText: 'Medical Sales Representative',
           buttonText: 'Explore Role',
@@ -174,7 +200,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Chemist',
-          jobDescription: 'Chemist',
+          qualifications: [
+            "Bachelor's or Master's in Chemistry or related field",
+            'Experience in chemical analysis and laboratory safety',
+          ],
+          responsibilities: [
+            'Conduct qualitative and quantitative chemical analyses',
+            'Develop formulations and ensure compliance',
+            'Maintain lab instruments and document findings',
+          ],
           imageSrc: Healthcare3,
           altText: 'Chemist',
           buttonText: 'Explore Role',
@@ -182,7 +216,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Clinical Research Scientist',
-          jobDescription: 'Clinical Research Scientist',
+          qualifications: [
+            'Advanced degree (PhD or MSc) in biomedical sciences',
+            'Knowledge of clinical trial protocols and regulations',
+          ],
+          responsibilities: [
+            'Design and oversee clinical trials',
+            'Analyze trial data and report results',
+            'Ensure ethical standards and regulatory compliance',
+          ],
           imageSrc: Healthcare2,
           altText: 'Clinical Research Scientist',
           buttonText: 'Explore Role',
@@ -244,7 +286,17 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Accountant',
-          jobDescription: 'Accountant',
+          qualifications: [
+            "Bachelor's degree in Accounting, Finance, or a related field",
+            'Proficiency in financial reporting and accounting software',
+          ],
+          responsibilities: [
+            'Prepare and examine financial records, ensuring accuracy',
+            'Ensure compliance with financial regulations and standards',
+            'Analyze financial data and generate reports',
+            'Maintain financial records and assist with audits',
+            'Collaborate with teams on budgeting and forecasting',
+          ],
           imageSrc: Accounting3,
           altText: 'Accountant illustration',
           buttonText: 'Explore Role',
@@ -252,7 +304,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Financial Analyst',
-          jobDescription: 'Financial Analyst',
+          qualifications: [
+            "Bachelor's degree in Finance, Economics, or related field",
+            'Strong analytical skills and financial modeling experience',
+          ],
+          responsibilities: [
+            'Analyze financial data and trends to assist decision-making',
+            'Prepare forecasts, reports, and financial models',
+            'Support budgeting and strategic planning processes',
+          ],
           imageSrc: Accounting4,
           altText: 'Financial Analyst illustration',
           buttonText: 'Explore Role',
@@ -260,7 +320,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Financial Planner',
-          jobDescription: 'Financial Planner',
+          qualifications: [
+            "Bachelor's degree in Finance, Economics, or related field",
+            'Certified Financial Planner (CFP) credential is a plus',
+          ],
+          responsibilities: [
+            'Assess client financial needs and develop plans',
+            'Provide investment and retirement advice',
+            'Monitor financial plans and adjust as needed',
+          ],
           imageSrc: Accounting5,
           altText: 'Financial Planner illustration',
           buttonText: 'Explore Role',
@@ -268,7 +336,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Auditor',
-          jobDescription: 'Auditor',
+          qualifications: [
+            "Bachelor's degree in Accounting or related field",
+            'Understanding of auditing standards and procedures',
+          ],
+          responsibilities: [
+            'Examine financial records for accuracy and compliance',
+            'Prepare audit reports and recommendations',
+            'Evaluate internal controls and risk management processes',
+          ],
           imageSrc: Accounting6,
           altText: 'Auditor illustration',
           buttonText: 'Explore Role',
@@ -276,7 +352,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Management Accountant',
-          jobDescription: 'Management Accountant',
+          qualifications: [
+            "Bachelor's degree in Accounting or Finance",
+            'Experience in cost analysis and budgeting',
+          ],
+          responsibilities: [
+            'Analyze financial performance and support strategic planning',
+            'Prepare internal reports and forecasts',
+            'Assist management with financial decisions',
+          ],
           imageSrc: Accounting1,
           altText: 'Management Accountant illustration',
           buttonText: 'Explore Role',
@@ -337,7 +421,15 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Network Engineer',
-          jobDescription: 'Network Engineer',
+          qualifications: [
+            "Bachelor's degree in Computer Science, IT, or related field",
+            'Strong knowledge of network infrastructure and protocols',
+          ],
+          responsibilities: [
+            'Design, implement, and maintain computer networks',
+            'Monitor network performance and troubleshoot issues',
+            'Optimize network infrastructure for scalability and security',
+          ],
           imageSrc: Image5,
           altText: 'Network Engineer illustration',
           buttonText: 'Explore Role',
@@ -345,7 +437,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Network Administrator',
-          jobDescription: 'Network Administrator',
+          qualifications: [
+            'Degree or certification in IT, Networking, or related field',
+            'Experience with routers, switches, and firewalls',
+          ],
+          responsibilities: [
+            'Manage day-to-day network operations',
+            'Ensure security, availability, and performance of network systems',
+            'Implement updates, patches, and backups',
+          ],
           imageSrc: Image4,
           altText: 'Network Administrator illustration',
           buttonText: 'Explore Role',
@@ -353,7 +453,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Network Security Analyst',
-          jobDescription: 'Network Security Analyst',
+          qualifications: [
+            "Bachelor's degree in Cybersecurity, IT, or related field",
+            'Knowledge of firewalls, VPNs, IDS/IPS, and encryption',
+          ],
+          responsibilities: [
+            'Monitor network for security breaches or incidents',
+            'Analyze security risks and implement mitigation strategies',
+            'Ensure compliance with cybersecurity standards and policies',
+          ],
           imageSrc: Image3,
           altText: 'Network Security Analyst illustration',
           buttonText: 'Explore Role',
@@ -361,7 +469,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Hardware Engineer',
-          jobDescription: 'Hardware Engineer',
+          qualifications: [
+            "Bachelor's degree in Electrical Engineering, Computer Engineering, or related field",
+            'Strong understanding of circuit design and microprocessors',
+          ],
+          responsibilities: [
+            'Design, test, and develop computer hardware components',
+            'Collaborate with software teams for system integration',
+            'Evaluate and improve hardware performance',
+          ],
           imageSrc: Image2,
           altText: 'Hardware Engineer illustration',
           buttonText: 'Explore Role',
@@ -369,7 +485,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Hardware Technician',
-          jobDescription: 'Hardware Technician',
+          qualifications: [
+            'Diploma or certification in hardware or computer technology',
+            'Hands-on experience with hardware troubleshooting',
+          ],
+          responsibilities: [
+            'Install, repair, and maintain computer hardware',
+            'Diagnose and fix system hardware issues',
+            'Assist users and IT teams with equipment support',
+          ],
           imageSrc: Image1,
           altText: 'Hardware Technician illustration',
           buttonText: 'Explore Role',
@@ -428,7 +552,16 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Aviation Pilot',
-          jobDescription: 'Aviation Pilot',
+          qualifications: [
+            'Commercial Pilot License (CPL) or Airline Transport Pilot License (ATPL)',
+            'Extensive flight training and medical certification',
+          ],
+          responsibilities: [
+            'Operate aircraft safely and according to flight plans',
+            'Communicate with air traffic control and crew',
+            'Conduct pre-flight and post-flight checks',
+            'Ensure passenger safety during all flight phases',
+          ],
           imageSrc: Aviation3,
           altText: 'Aviation Pilot illustration',
           buttonText: 'Explore Role',
@@ -436,7 +569,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Aviation Ground Staff',
-          jobDescription: 'Aviation Ground Staff',
+          qualifications: [
+            'High school diploma or relevant diploma in aviation services',
+            'Customer service skills and airport operations knowledge',
+          ],
+          responsibilities: [
+            'Assist passengers during check-in and boarding',
+            'Handle luggage and cargo logistics',
+            'Coordinate ground operations with flight crews',
+          ],
           imageSrc: Aviation4,
           altText: 'Aviation Ground Staff illustration',
           buttonText: 'Explore Role',
@@ -444,7 +585,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Aviation Engineer',
-          jobDescription: 'Aviation Engineer',
+          qualifications: [
+            "Bachelor's degree in Aeronautical or Mechanical Engineering",
+            'Certification from DGCA or EASA (as applicable)',
+          ],
+          responsibilities: [
+            'Maintain and repair aircraft systems and components',
+            'Conduct inspections and troubleshoot mechanical issues',
+            'Ensure compliance with aviation safety standards',
+          ],
           imageSrc: Aviation5,
           altText: 'Aviation Engineer illustration',
           buttonText: 'Explore Role',
@@ -452,7 +601,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Aviation Flight Attendant',
-          jobDescription: 'Aviation Flight Attendant',
+          qualifications: [
+            'High school diploma or equivalent',
+            'Cabin crew training and safety certification',
+          ],
+          responsibilities: [
+            'Ensure passenger safety and comfort',
+            'Demonstrate safety procedures before flight',
+            'Serve meals, assist with seating, and respond to emergencies',
+          ],
           imageSrc: Aviation6,
           altText: 'Aviation Flight Attendant illustration',
           buttonText: 'Explore Role',
@@ -460,7 +617,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Aviation Operations Manager',
-          jobDescription: 'Aviation Operations Manager',
+          qualifications: [
+            "Bachelor's degree in Aviation Management or related field",
+            'Experience in airport or airline operations',
+          ],
+          responsibilities: [
+            'Oversee day-to-day airport or airline operations',
+            'Coordinate with departments to maintain safety and efficiency',
+            'Manage staff schedules, budgets, and regulatory compliance',
+          ],
           imageSrc: Aviation7,
           altText: 'Aviation Operations Manager illustration',
           buttonText: 'Explore Role',
@@ -522,7 +687,15 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Construction Manager',
-          jobDescription: 'Construction Manager',
+          qualifications: [
+            "Bachelor's degree in Construction Management, Civil Engineering, or related field",
+            'Strong project management and leadership skills',
+          ],
+          responsibilities: [
+            'Plan, coordinate, and supervise construction projects',
+            'Manage budgets, timelines, and subcontractors',
+            'Ensure compliance with safety and building regulations',
+          ],
           imageSrc: Construction3,
           altText: 'Construction Manager illustration',
           buttonText: 'Explore Role',
@@ -530,7 +703,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Construction Engineer',
-          jobDescription: 'Construction Engineer',
+          qualifications: [
+            "Bachelor's degree in Civil, Structural, or Construction Engineering",
+            'Knowledge of engineering principles and construction practices',
+          ],
+          responsibilities: [
+            'Design and implement construction plans and systems',
+            'Collaborate with architects and contractors',
+            'Ensure structural integrity and project efficiency',
+          ],
           imageSrc: Construction4,
           altText: 'Construction Engineer illustration',
           buttonText: 'Explore Role',
@@ -538,7 +719,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Construction Laborer',
-          jobDescription: 'Construction Laborer',
+          qualifications: [
+            'High school diploma or equivalent',
+            'Physical stamina and familiarity with construction tools',
+          ],
+          responsibilities: [
+            'Perform physical tasks such as digging, loading, and assembling materials',
+            'Operate basic machinery and follow instructions from supervisors',
+            'Maintain a clean and safe job site',
+          ],
           imageSrc: Construction5,
           altText: 'Construction Laborer illustration',
           buttonText: 'Explore Role',
@@ -546,7 +735,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Construction Superintendent',
-          jobDescription: 'Construction Superintendent',
+          qualifications: [
+            'Experience in construction site supervision',
+            "Bachelor's degree or equivalent field experience",
+          ],
+          responsibilities: [
+            'Oversee field operations and supervise job site activities',
+            'Coordinate with subcontractors and ensure adherence to schedule',
+            'Enforce safety protocols and quality standards',
+          ],
           imageSrc: Construction6,
           altText: 'Construction Superintendent illustration',
           buttonText: 'Explore Role',
@@ -554,14 +751,23 @@ export const jobs: Job[] = [
         },
         {
           title: 'Construction Supervisor',
-          jobDescription: 'Construction Supervisor',
+          qualifications: [
+            'Diploma or degree in construction-related field',
+            'Strong leadership and time management skills',
+          ],
+          responsibilities: [
+            'Monitor daily activities and assign tasks to laborers',
+            'Ensure projects meet deadlines and safety regulations',
+            'Liaise with clients, engineers, and senior managers',
+          ],
           imageSrc: Construction7,
           altText: 'Construction Supervisor illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
       ],
-    },
+    }
+    
   },
   {
     id: 6,
@@ -616,7 +822,15 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Hotel Manager',
-          jobDescription: 'Hotel Manager',
+          qualifications: [
+            "Bachelor's degree in Hospitality Management or related field",
+            'Strong leadership and customer service skills',
+          ],
+          responsibilities: [
+            'Oversee daily hotel operations and staff performance',
+            'Ensure guest satisfaction and handle complaints',
+            'Manage budgets, occupancy, and revenue goals',
+          ],
           imageSrc: Hospitality3,
           altText: 'Hotel Manager illustration',
           buttonText: 'Explore Role',
@@ -624,7 +838,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Executive Chef',
-          jobDescription: 'Executive Chef',
+          qualifications: [
+            'Culinary degree or equivalent experience',
+            'Strong kitchen management and menu planning skills',
+          ],
+          responsibilities: [
+            'Lead kitchen operations and supervise culinary staff',
+            'Develop and execute creative menus',
+            'Ensure food quality, safety, and presentation standards',
+          ],
           imageSrc: Hospitality4,
           altText: 'Executive Chef illustration',
           buttonText: 'Explore Role',
@@ -632,7 +854,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Spa & Wellness Expert',
-          jobDescription: 'Spa & Wellness Expert',
+          qualifications: [
+            'Certification in wellness, massage therapy, or spa services',
+            'Knowledge of holistic treatments and client care',
+          ],
+          responsibilities: [
+            'Provide spa treatments and wellness consultations',
+            'Maintain cleanliness and relaxing ambiance',
+            'Stay current on wellness trends and techniques',
+          ],
           imageSrc: Hospitality5,
           altText: 'Spa & Wellness Expert illustration',
           buttonText: 'Explore Role',
@@ -640,7 +870,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Event Coordinator',
-          jobDescription: 'Event Coordinator',
+          qualifications: [
+            "Bachelor's degree in Hospitality, Event Management, or related field",
+            'Excellent organizational and communication skills',
+          ],
+          responsibilities: [
+            'Plan, organize, and oversee events from start to finish',
+            'Coordinate with vendors, clients, and internal teams',
+            'Manage timelines, budgets, and event logistics',
+          ],
           imageSrc: Hospitality6,
           altText: 'Event Coordinator illustration',
           buttonText: 'Explore Role',
@@ -648,7 +886,15 @@ export const jobs: Job[] = [
         },
         {
           title: 'Housekeeping Supervisor',
-          jobDescription: 'Housekeeping Supervisor',
+          qualifications: [
+            'Experience in housekeeping or hospitality operations',
+            'Attention to detail and strong supervisory skills',
+          ],
+          responsibilities: [
+            'Oversee housekeeping team and daily schedules',
+            'Ensure cleanliness and hygiene standards are met',
+            'Train staff and manage inventory of supplies',
+          ],
           imageSrc: Hospitality7,
           altText: 'Housekeeping Supervisor illustration',
           buttonText: 'Explore Role',
@@ -656,6 +902,5 @@ export const jobs: Job[] = [
         },
       ],
     },
-  }
-  
+  },
 ];
