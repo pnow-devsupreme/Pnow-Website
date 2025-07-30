@@ -1,11 +1,13 @@
 // eslint-disable-next-line simple-import-sort/imports
+'use client';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
+
 import Businessman from '../../../../public/images/Businessman.png';
 import newEmployee from '../../../../public/images/newEmployee.png';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
 
 interface Card {
   title: string;

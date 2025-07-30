@@ -46,7 +46,7 @@ const JourneySection: React.FC = () => {
           imageWidth,
           imageHeight,
         }) => (
-          <section key={id} className='py-16 px-6 mt-2'>
+          <section key={id} className='py-16 px-6 mt-32'>
             <div className='max-w-[60%] mx-auto flex flex-col md:flex-row items-center justify-between gap-12'>
               {/* Text Content */}
               <div className='max-w-xl'>
