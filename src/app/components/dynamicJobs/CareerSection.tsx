@@ -48,7 +48,7 @@ export default function CareerSection({ data }: CareerSectionProps) {
                 src={item.imageSrc}
                 alt={item.altText || item.title}
                 fill
-                className='object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105'
+                className='object-contain rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105'
               />
             </div>
 

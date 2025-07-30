@@ -10,13 +10,51 @@ import {
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
 
-import HeroImage1 from '../../public/images/heroImage1.jpg';
-import HeroImage2 from '../../public/images/heroImage2.jpg';
-import HeroImage3 from '../../public/images/heroImage3.jpg';
-import HeroImage4 from '../../public/images/heroImage4.jpg';
+import Accounting1 from '../../public/jobs/Accountant-amico.png';
+import Accounting2 from '../../public/jobs/Accountant-pana.png';
+import Accounting3 from '../../public/jobs/Accountant-rafiki.png';
+import Accounting4 from '../../public/jobs/Audit-amico.png';
+import Accounting5 from '../../public/jobs/Audit-rafiki.png';
 import Healthcare1 from '../../public/jobs/Doctors.png';
+import Accounting6 from '../../public/jobs/Investment.png';
 import Healthcare3 from '../../public/jobs/Laboratory.png';
 import Healthcare2 from '../../public/jobs/Laboratory-r.png';
+import {
+  Construction1,
+  Construction2,
+  Construction3,
+  Construction4,
+  Construction5,
+  Construction6,
+  Construction7,
+} from '~/constructionImages';
+import {
+  Aviation1,
+  Aviation2,
+  Aviation3,
+  Aviation4,
+  Aviation5,
+  Aviation6,
+  Aviation7,
+} from '~/aviationImages';
+import {
+  Image1,
+  Image2,
+  Image3,
+  Image4,
+  Image5,
+  Image6,
+  Image7,
+} from '~/hardwareNetwork';
+import {
+  Hospitality1,
+  Hospitality2,
+  Hospitality3,
+  Hospitality4,
+  Hospitality5,
+  Hospitality6,
+  Hospitality7,
+} from '~/hospitality';
 
 export interface JobSection {
   title: string;
@@ -162,7 +200,7 @@ export const jobs: Job[] = [
         title: 'Accounting & Finance Careers with ProficientNow',
         description:
           'Connecting talented professionals with rewarding careers in accounting and finance. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
-        imageSrc: HeroImage3,
+        imageSrc: Accounting1,
         altText: 'Accounting and Finance',
         buttonText: 'Contact Us',
         buttonLink: '/contact',
@@ -171,7 +209,7 @@ export const jobs: Job[] = [
         title: 'Accounting & Finance Industry Overview',
         description:
           'The accounting and finance industry is a cornerstone of the economy. It requires highly skilled professionals with a deep understanding of financial markets, accounting principles, and regulatory requirements. Accounting and finance careers offer a range of opportunities for those interested in financial analysis, forecasting, budgeting, and strategic planning.',
-        imageSrc: HeroImage4,
+        imageSrc: Accounting2,
         altText: 'Accounting and Finance',
       },
     ],
@@ -207,7 +245,7 @@ export const jobs: Job[] = [
         {
           title: 'Accountant',
           jobDescription: 'Accountant',
-          imageSrc: HeroImage1,
+          imageSrc: Accounting3,
           altText: 'Accountant illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -215,7 +253,7 @@ export const jobs: Job[] = [
         {
           title: 'Financial Analyst',
           jobDescription: 'Financial Analyst',
-          imageSrc: HeroImage2,
+          imageSrc: Accounting4,
           altText: 'Financial Analyst illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -223,7 +261,7 @@ export const jobs: Job[] = [
         {
           title: 'Financial Planner',
           jobDescription: 'Financial Planner',
-          imageSrc: HeroImage3,
+          imageSrc: Accounting5,
           altText: 'Financial Planner illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -231,7 +269,7 @@ export const jobs: Job[] = [
         {
           title: 'Auditor',
           jobDescription: 'Auditor',
-          imageSrc: HeroImage4,
+          imageSrc: Accounting6,
           altText: 'Auditor illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -239,7 +277,7 @@ export const jobs: Job[] = [
         {
           title: 'Management Accountant',
           jobDescription: 'Management Accountant',
-          imageSrc: HeroImage1,
+          imageSrc: Accounting1,
           altText: 'Management Accountant illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -249,94 +287,91 @@ export const jobs: Job[] = [
   },
   {
     id: 3,
-    title: 'Sports',
-    slug: 'sports',
+    title: 'Hardware & Networking',
+    slug: 'hardware-networking',
     sections: [
       {
-        title: 'Sports Careers with ProficientNow',
+        title: 'Hardware & Networking Careers with ProficientNow',
         description: `
-        Connecting talented professionals with rewarding careers in sports. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.
-        `,
-        imageSrc: HeroImage1,
-        altText: 'Sports careers illustration',
+        Connecting talented professionals with rewarding careers in hardware and networking. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.`,
+        imageSrc: Image7,
+        altText: 'Hardware and Networking',
         buttonText: 'Contact Us',
         buttonLink: '/contact',
       },
       {
-        title: 'Sports Industry Overview',
-        description: `
-        The sports industry is a multibillion-dollar market with a diverse range of roles and opportunities. From professional athletes to sports agents, coaches, and equipment manufacturers, the sports industry offers a wide range of careers for those passionate about sports and fitness. ProficientNow helps connect talented professionals with rewarding careers in sports.
-        `,
-        imageSrc: HeroImage2,
-        altText: 'sports illustration',
+        title: 'Hardware & Networking Industry Overview',
+        description:
+          'The hardware and networking industry is a rapidly evolving field with new technologies and innovations emerging regularly. It requires skilled professionals with a deep understanding of computer systems, networks, and cybersecurity. Hardware and networking careers offer a range of opportunities for those interested in design, development, installation, and maintenance of computer hardware and networks.',
+        imageSrc: Image6,
+        altText: 'Hardware and Networking illustration',
       },
     ],
     features: {
       description:
-        'Sports careers offer a diverse range of opportunities for those interested in sports, fitness, and related industries.',
+        'Hardware and networking careers offer a range of opportunities for those interested in design, development, installation, and maintenance of computer hardware and networks.',
       items: [
         {
-          title: 'Sports Coaching',
+          title: 'Network Engineer',
           description:
-            'Guiding athletes through training and performance development',
+            'Designing and maintaining computer networks and systems',
           icon: Monitor,
         },
         {
-          title: 'Sports Marketing',
+          title: 'Network Administrator',
           description:
-            'Creating and executing marketing strategies for sports brands',
+            'Managing and administering computer networks and systems',
           icon: Monitor,
         },
         {
-          title: 'Sports Media',
-          description:
-            'Producing and distributing sports content for audiences',
+          title: 'Network Security Analyst',
+          description: 'Analyzing and securing computer networks and systems',
           icon: Monitor,
         },
       ],
     },
     careersSection: {
-      title: 'Top Sports Careers',
+      title: 'Top Hardware & Networking Careers',
       description:
-        'Sports sectors offer diverse, rewarding careers with strong growth:',
+        'Hardware and networking sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Sports Agent',
-          jobDescription: 'Sports Agent',
-          imageSrc: HeroImage1,
-          altText: 'Sports Agent illustration',
+          title: 'Network Engineer',
+          jobDescription: 'Network Engineer',
+          imageSrc: Image5,
+          altText: 'Network Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Sports Coach',
-          jobDescription: 'Sports Coach',
-          imageSrc: HeroImage2,
-          altText: 'Sports Coach illustration',
+          title: 'Network Administrator',
+          jobDescription: 'Network Administrator',
+          imageSrc: Image4,
+          altText: 'Network Administrator illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Sports Manager',
-          jobDescription: 'Sports Manager',
-          imageSrc: HeroImage3,
-          altText: 'Sports Manager illustration',
+          title: 'Network Security Analyst',
+          jobDescription: 'Network Security Analyst',
+          imageSrc: Image3,
+          altText: 'Network Security Analyst illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Sports Producer',
-          jobDescription: 'Sports Producer',
-          imageSrc: HeroImage4,
-          altText: 'Sports Producer illustration',
+          title: 'Hardware Engineer',
+          jobDescription: 'Hardware Engineer',
+          imageSrc: Image2,
+          altText: 'Hardware Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Sports Analyst',
-          jobDescription: 'Sports Analyst',
-          imageSrc: HeroImage1,
-          altText: 'Sports Analyst illustration',
+          title: 'Hardware Technician',
+          jobDescription: 'Hardware Technician',
+          imageSrc: Image1,
+          altText: 'Hardware Technician illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
@@ -345,90 +380,89 @@ export const jobs: Job[] = [
   },
   {
     id: 4,
-    title: 'Oil & Gas',
-    slug: 'oil-and-gas',
+    title: 'Availation & Airlines',
+    slug: 'aviation',
     sections: [
       {
-        title: 'Oil & Gas Careers with ProficientNow',
+        title: 'Aviation Careers with ProficientNow',
         description:
-          'Connecting talented professionals with rewarding careers in the oil and gas industry. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
-        imageSrc: HeroImage4,
-        altText: 'Oil & Gas careers illustration',
+          'Connecting talented professionals with rewarding careers in aviation. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
+        imageSrc: Aviation1,
+        altText: 'Aviation careers illustration',
         buttonText: 'Contact Us',
         buttonLink: '/contact',
       },
       {
-        title: 'Oil & Gas Industry Overview',
+        title: 'Aviation Industry Overview',
         description:
-          "The oil and gas industry plays a vital role in meeting the world's increasing energy demands. From exploration and production to transportation and refining, the industry offers a wide range of career opportunities for skilled professionals.",
-        imageSrc: HeroImage3,
-        altText: 'oil and gas illustration',
+          'The aviation industry is a dynamic and expanding sector, offering a wide range of career opportunities. From pilots and air traffic controllers to aerospace engineers and ground staff, the aviation industry provides exciting and challenging careers for those interested in technology, travel, and logistics.',
+        imageSrc: Aviation2,
+        altText: 'Aviation illustration',
       },
     ],
     features: {
       description:
-        'Oil and gas careers offer a diverse range of opportunities for those interested in the energy industry.',
+        'Aviation careers offer a diverse range of opportunities for those interested in aviation, technology, travel, and logistics.',
       items: [
         {
-          title: 'Oil and Gas Exploration',
-          description:
-            'Exploring and evaluating potential oil and gas resources',
+          title: 'Aviation Pilot',
+          description: 'Flying planes and airplanes for passengers and cargo',
           icon: Monitor,
         },
         {
-          title: 'Oil and Gas Production',
-          description: 'Producing oil and gas for transportation and refining',
+          title: 'Aviation Ground Staff',
+          description: 'Operating and maintaining aviation equipment',
           icon: Monitor,
         },
         {
-          title: 'Oil and Gas Transportation',
-          description: 'Transporting oil and gas from exploration to refining',
+          title: 'Aviation Engineer',
+          description: 'Designing and maintaining aviation systems',
           icon: Monitor,
         },
       ],
     },
     careersSection: {
-      title: 'Top Oil & Gas Careers',
+      title: 'Top Aviation Careers',
       description:
-        'Oil and gas sectors offer diverse, rewarding careers with strong growth:',
+        'Aviation sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Oil and Gas Engineer',
-          jobDescription: 'Oil and Gas Engineer',
-          imageSrc: HeroImage1,
-          altText: 'Oil and Gas Engineer illustration',
+          title: 'Aviation Pilot',
+          jobDescription: 'Aviation Pilot',
+          imageSrc: Aviation3,
+          altText: 'Aviation Pilot illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Oil and Gas Manager',
-          jobDescription: 'Oil and Gas Manager',
-          imageSrc: HeroImage2,
-          altText: 'Oil and Gas Manager illustration',
+          title: 'Aviation Ground Staff',
+          jobDescription: 'Aviation Ground Staff',
+          imageSrc: Aviation4,
+          altText: 'Aviation Ground Staff illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Oil and Gas Technician',
-          jobDescription: 'Oil and Gas Technician',
-          imageSrc: HeroImage3,
-          altText: 'Oil and Gas Technician illustration',
+          title: 'Aviation Engineer',
+          jobDescription: 'Aviation Engineer',
+          imageSrc: Aviation5,
+          altText: 'Aviation Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Oil and Gas Specialist',
-          jobDescription: 'Oil and Gas Specialist',
-          imageSrc: HeroImage4,
-          altText: 'Oil and Gas Specialist illustration',
+          title: 'Aviation Flight Attendant',
+          jobDescription: 'Aviation Flight Attendant',
+          imageSrc: Aviation6,
+          altText: 'Aviation Flight Attendant illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Oil and Gas Quality Assurance Engineer',
-          jobDescription: 'Oil and Gas Quality Assurance Engineer',
-          imageSrc: HeroImage1,
-          altText: 'Oil and Gas Quality Assurance Engineer illustration',
+          title: 'Aviation Operations Manager',
+          jobDescription: 'Aviation Operations Manager',
+          imageSrc: Aviation7,
+          altText: 'Aviation Operations Manager illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
@@ -444,7 +478,7 @@ export const jobs: Job[] = [
         title: 'Construction Careers with ProficientNow',
         description:
           'Connecting talented professionals with rewarding careers in the construction industry. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
-        imageSrc: HeroImage2,
+        imageSrc: Construction1,
         altText: 'Construction careers illustration',
         buttonText: 'Contact Us',
         buttonLink: '/contact',
@@ -453,7 +487,7 @@ export const jobs: Job[] = [
         title: 'Construction Industry Overview',
         description:
           'The construction industry is a significant contributor to the global economy. With the growing demand for infrastructure development, housing, and commercial buildings, the construction industry is expected to grow at a steady pace. ProficientNow is a trusted partner for construction companies looking to hire top talent to fill a range of roles, from construction managers to engineers and skilled laborers.',
-        imageSrc: HeroImage1,
+        imageSrc: Construction2,
         altText: 'Construction illustration',
       },
     ],
@@ -489,7 +523,7 @@ export const jobs: Job[] = [
         {
           title: 'Construction Manager',
           jobDescription: 'Construction Manager',
-          imageSrc: HeroImage1,
+          imageSrc: Construction3,
           altText: 'Construction Manager illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -497,7 +531,7 @@ export const jobs: Job[] = [
         {
           title: 'Construction Engineer',
           jobDescription: 'Construction Engineer',
-          imageSrc: HeroImage2,
+          imageSrc: Construction4,
           altText: 'Construction Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -505,7 +539,7 @@ export const jobs: Job[] = [
         {
           title: 'Construction Laborer',
           jobDescription: 'Construction Laborer',
-          imageSrc: HeroImage3,
+          imageSrc: Construction5,
           altText: 'Construction Laborer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -513,7 +547,7 @@ export const jobs: Job[] = [
         {
           title: 'Construction Superintendent',
           jobDescription: 'Construction Superintendent',
-          imageSrc: HeroImage4,
+          imageSrc: Construction6,
           altText: 'Construction Superintendent illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -521,7 +555,7 @@ export const jobs: Job[] = [
         {
           title: 'Construction Supervisor',
           jobDescription: 'Construction Supervisor',
-          imageSrc: HeroImage1,
+          imageSrc: Construction7,
           altText: 'Construction Supervisor illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -529,4 +563,99 @@ export const jobs: Job[] = [
       ],
     },
   },
+  {
+    id: 6,
+    title: 'Hospitality',
+    slug: 'hospitality',
+    sections: [
+      {
+        title: 'Hospitality Careers with ProficientNow',
+        description:
+          'Connecting skilled professionals with exciting opportunities in the hospitality industry. We help businesses find exceptional talent through innovative and tailored recruitment solutions.',
+        imageSrc: Hospitality1,
+        altText: 'Hospitality careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Hospitality Industry Overview',
+        description:
+          'The hospitality industry is a vital part of the global economy, encompassing hotels, restaurants, travel, and tourism. With increasing demand for exceptional guest experiences, this sector offers vast career opportunities. ProficientNow partners with leading hospitality brands to recruit top-tier talent in management, culinary, customer service, and operations roles.',
+        imageSrc: Hospitality2,
+        altText: 'Hospitality industry illustration',
+      },
+    ],
+    features: {
+      description:
+        'Hospitality careers provide dynamic and rewarding paths for those passionate about service, travel, and guest experience.',
+      items: [
+        {
+          title: 'Hotel Manager',
+          description:
+            'Overseeing hotel operations and ensuring guest satisfaction',
+          icon: Monitor,
+        },
+        {
+          title: 'Executive Chef',
+          description:
+            'Leading kitchen staff and curating top-tier dining experiences',
+          icon: Monitor,
+        },
+        {
+          title: 'Front Desk Agent',
+          description:
+            'Providing welcoming and efficient check-in and guest services',
+          icon: Monitor,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Top Hospitality Careers',
+      description:
+        'The hospitality sector offers a wide variety of fulfilling careers with strong long-term prospects:',
+      items: [
+        {
+          title: 'Hotel Manager',
+          jobDescription: 'Hotel Manager',
+          imageSrc: Hospitality3,
+          altText: 'Hotel Manager illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Executive Chef',
+          jobDescription: 'Executive Chef',
+          imageSrc: Hospitality4,
+          altText: 'Executive Chef illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Spa & Wellness Expert',
+          jobDescription: 'Spa & Wellness Expert',
+          imageSrc: Hospitality5,
+          altText: 'Spa & Wellness Expert illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Event Coordinator',
+          jobDescription: 'Event Coordinator',
+          imageSrc: Hospitality6,
+          altText: 'Event Coordinator illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Housekeeping Supervisor',
+          jobDescription: 'Housekeeping Supervisor',
+          imageSrc: Hospitality7,
+          altText: 'Housekeeping Supervisor illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  }
+  
 ];
