@@ -1,11 +1,22 @@
 import {
+  Antenna,
   Coins,
+  Construction,
   FlaskConical,
+  Hammer,
   Hospital,
+  Hotel,
   Landmark,
   Monitor,
+  Network,
+  PersonStanding,
   Pill,
+  Plane,
+  Spade,
   UmbrellaOff,
+  Users,
+  Wifi,
+  Wrench,
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
@@ -399,13 +410,13 @@ export const jobs: Job[] = [
           title: 'Network Engineer',
           description:
             'Designing and maintaining computer networks and systems',
-          icon: Monitor,
+          icon: Wifi,
         },
         {
           title: 'Network Administrator',
           description:
             'Managing and administering computer networks and systems',
-          icon: Monitor,
+          icon: Network,
         },
         {
           title: 'Network Security Analyst',
@@ -531,17 +542,17 @@ export const jobs: Job[] = [
         {
           title: 'Aviation Pilot',
           description: 'Flying planes and airplanes for passengers and cargo',
-          icon: Monitor,
+          icon: Plane,
         },
         {
           title: 'Aviation Ground Staff',
           description: 'Operating and maintaining aviation equipment',
-          icon: Monitor,
+          icon: Users,
         },
         {
           title: 'Aviation Engineer',
           description: 'Designing and maintaining aviation systems',
-          icon: Monitor,
+          icon: Antenna,
         },
       ],
     },
@@ -664,19 +675,19 @@ export const jobs: Job[] = [
           title: 'Construction Manager',
           description:
             'Planning, overseeing, and supervising construction projects',
-          icon: Monitor,
+          icon: Construction,
         },
         {
           title: 'Construction Engineer',
           description:
             'Designing, constructing, and overseeing construction projects',
-          icon: Monitor,
+          icon: Hammer,
         },
         {
           title: 'Construction Laborer',
           description:
             'Working on construction sites to build structures and infrastructure',
-          icon: Monitor,
+          icon: Wrench,
         },
       ],
     },
@@ -798,19 +809,19 @@ export const jobs: Job[] = [
           title: 'Hotel Manager',
           description:
             'Overseeing hotel operations and ensuring guest satisfaction',
-          icon: Monitor,
+          icon: Hotel,
         },
         {
           title: 'Executive Chef',
           description:
             'Leading kitchen staff and curating top-tier dining experiences',
-          icon: Monitor,
+          icon: Spade,
         },
         {
           title: 'Front Desk Agent',
           description:
             'Providing welcoming and efficient check-in and guest services',
-          icon: Monitor,
+          icon: PersonStanding,
         },
       ],
     },
