@@ -766,8 +766,7 @@ export const jobs: Job[] = [
           buttonLink: '/careers',
         },
       ],
-    }
-    
+    },
   },
   {
     id: 6,
