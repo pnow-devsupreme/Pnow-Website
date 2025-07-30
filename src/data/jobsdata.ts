@@ -1,4 +1,12 @@
-import { FlaskConical, Hospital, Monitor, Pill } from 'lucide-react';
+import {
+  Coins,
+  FlaskConical,
+  Hospital,
+  Landmark,
+  Monitor,
+  Pill,
+  UmbrellaOff,
+} from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
 
@@ -25,6 +33,7 @@ export interface JobFeature {
 }
 export interface CareerItem {
   title: string;
+  jobDescription: string;
   imageSrc: StaticImageData | string;
   altText?: string;
   buttonText?: string;
@@ -50,7 +59,7 @@ export interface Job {
   careersSection?: JobCareers;
 }
 
-// Complete job data with hero + industry overview sections
+// List of all jobs
 export const jobs: Job[] = [
   {
     id: 1,
@@ -103,6 +112,7 @@ export const jobs: Job[] = [
       items: [
         {
           title: 'Laboratory Analyst',
+          jobDescription: 'Laboratory Analyst',
           imageSrc: Healthcare3,
           altText: 'Laboratory Analyst illustration',
           buttonText: 'Explore Role',
@@ -110,385 +120,411 @@ export const jobs: Job[] = [
         },
         {
           title: 'Laboratory Technician',
+          jobDescription: 'Laboratory Technician',
           imageSrc: Healthcare2,
           altText: 'Laboratory Technician',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/ui-ux-designer',
+          buttonLink: '/careers',
         },
         {
           title: 'Medical Sales Representative',
+          jobDescription: 'Medical Sales Representative',
           imageSrc: Healthcare1,
           altText: 'Medical Sales Representative',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/full-stack-engineer',
+          buttonLink: '/careers',
         },
         {
           title: 'Chemist',
+          jobDescription: 'Chemist',
           imageSrc: Healthcare3,
           altText: 'Chemist',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/product-manager',
+          buttonLink: '/careers',
         },
         {
           title: 'Clinical Research Scientist',
+          jobDescription: 'Clinical Research Scientist',
           imageSrc: Healthcare2,
           altText: 'Clinical Research Scientist',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/software-architect',
+          buttonLink: '/careers',
         },
       ],
     },
   },
   {
     id: 2,
-    title: 'Backend Engineer',
-    slug: 'backend-engineer',
+    title: 'Accounting & Finance',
+    slug: 'accounting-finance',
     sections: [
       {
-        title: 'Scale Our Backend Infrastructure',
+        title: 'Accounting & Finance Careers with ProficientNow',
         description:
-          "Architect and build robust microservices and APIs that power ProficientNow's platform.",
+          'Connecting talented professionals with rewarding careers in accounting and finance. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
         imageSrc: HeroImage3,
-        altText: 'Illustration of backend engineering',
-        buttonText: 'Apply Now',
-        buttonLink: 'https://yourcompany.com/careers/backend-engineer',
+        altText: 'Accounting and Finance',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
       },
       {
-        title: 'Cloud & Infrastructure Industry Overview',
+        title: 'Accounting & Finance Industry Overview',
         description:
-          'In the Cloud and Infrastructure industries, professionals work to build and maintain the backbone of modern digital services. From backend engineers developing scalable APIs to DevOps specialists managing cloud resources, the sector focuses on reliability and performance.',
+          'The accounting and finance industry is a cornerstone of the economy. It requires highly skilled professionals with a deep understanding of financial markets, accounting principles, and regulatory requirements. Accounting and finance careers offer a range of opportunities for those interested in financial analysis, forecasting, budgeting, and strategic planning.',
         imageSrc: HeroImage4,
-        altText: 'Cloud infrastructure overview illustration',
+        altText: 'Accounting and Finance',
       },
     ],
     features: {
       description:
-        'Technology companies rely on backend engineers, database specialists, and infrastructure professionals to ensure their systems are secure, scalable, and performant. These roles offer excellent career opportunities for those passionate about building robust technical foundations.',
+        'Accounting and finance careers offer a range of opportunities for those interested in financial analysis, forecasting, budgeting, and strategic planning.',
       items: [
         {
-          title: 'API Development',
+          title: 'Financial Analysis',
           description:
-            'Building secure and scalable APIs for modern applications',
-          icon: Hospital,
+            'Analyzing and interpreting financial data to make informed decisions',
+          icon: Landmark,
         },
         {
-          title: 'Database Management',
+          title: 'Budgeting and Planning',
           description:
-            'Designing and optimizing database systems for performance',
-          icon: Monitor,
+            'Developing and implementing financial plans and budgets for organizations',
+          icon: Coins,
         },
         {
-          title: 'Cloud Infrastructure',
-          description: 'Managing and scaling cloud-based systems and services',
-          icon: Monitor,
+          title: 'Risk Management',
+          description:
+            'Analyzing and managing financial risks and opportunities',
+          icon: UmbrellaOff,
         },
       ],
     },
     careersSection: {
-      title: 'Top Backend & Infrastructure Careers',
+      title: 'Top Accounting & Finance Careers',
       description:
-        'Backend and infrastructure sectors offer technical, high-impact careers with excellent growth:',
+        'Accounting and finance sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Backend Developer',
+          title: 'Accountant',
+          jobDescription: 'Accountant',
           imageSrc: HeroImage1,
-          altText: 'Backend Developer illustration',
+          altText: 'Accountant illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/backend-developer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Database Administrator',
+          title: 'Financial Analyst',
+          jobDescription: 'Financial Analyst',
           imageSrc: HeroImage2,
-          altText: 'Database Administrator illustration',
+          altText: 'Financial Analyst illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/database-administrator',
+          buttonLink: '/careers',
         },
         {
-          title: 'Cloud Engineer',
+          title: 'Financial Planner',
+          jobDescription: 'Financial Planner',
           imageSrc: HeroImage3,
-          altText: 'Cloud Engineer illustration',
+          altText: 'Financial Planner illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/cloud-engineer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Systems Architect',
+          title: 'Auditor',
+          jobDescription: 'Auditor',
           imageSrc: HeroImage4,
-          altText: 'Systems Architect illustration',
+          altText: 'Auditor illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/systems-architect',
+          buttonLink: '/careers',
         },
         {
-          title: 'Site Reliability Engineer',
+          title: 'Management Accountant',
+          jobDescription: 'Management Accountant',
           imageSrc: HeroImage1,
-          altText: 'Site Reliability Engineer illustration',
+          altText: 'Management Accountant illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/site-reliability-engineer',
+          buttonLink: '/careers',
         },
       ],
     },
   },
   {
     id: 3,
-    title: 'Product Designer',
-    slug: 'product-designer',
+    title: 'Sports',
+    slug: 'sports',
     sections: [
       {
-        title: 'Design Our User Experience',
-        description: `Craft intuitive interfaces and design systems to enhance ProficientNow's user experience.`,
+        title: 'Sports Careers with ProficientNow',
+        description: `
+        Connecting talented professionals with rewarding careers in sports. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.
+        `,
         imageSrc: HeroImage1,
-        altText: 'Illustration of product design',
-        buttonText: 'Apply Now',
-        buttonLink: 'https://yourcompany.com/careers/product-designer',
+        altText: 'Sports careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
       },
       {
-        title: 'Design & Creative Industry Overview',
-        description:
-          'In the Design and Creative industries, professionals work to create compelling visual experiences and user-centered solutions. From product designers crafting intuitive interfaces to UX researchers understanding user behavior, the sector combines creativity with strategic thinking.',
+        title: 'Sports Industry Overview',
+        description: `
+        The sports industry is a multibillion-dollar market with a diverse range of roles and opportunities. From professional athletes to sports agents, coaches, and equipment manufacturers, the sports industry offers a wide range of careers for those passionate about sports and fitness. ProficientNow helps connect talented professionals with rewarding careers in sports.
+        `,
         imageSrc: HeroImage2,
-        altText: 'Design industry overview illustration',
+        altText: 'sports illustration',
       },
     ],
     features: {
       description:
-        'Creative companies employ designers, researchers, and creative directors to develop engaging digital experiences and brand identities. These industries offer inspiring career opportunities for those passionate about visual communication and user experience design.',
+        'Sports careers offer a diverse range of opportunities for those interested in sports, fitness, and related industries.',
       items: [
         {
-          title: 'User Experience Design',
+          title: 'Sports Coaching',
           description:
-            'Creating intuitive and engaging user interfaces for digital products',
+            'Guiding athletes through training and performance development',
           icon: Monitor,
         },
         {
-          title: 'Design Systems',
+          title: 'Sports Marketing',
           description:
-            'Building scalable design frameworks and component libraries',
+            'Creating and executing marketing strategies for sports brands',
           icon: Monitor,
         },
         {
-          title: 'User Research',
+          title: 'Sports Media',
           description:
-            'Understanding user needs through research and testing methodologies',
+            'Producing and distributing sports content for audiences',
           icon: Monitor,
         },
       ],
     },
     careersSection: {
-      title: 'Top Design & Creative Careers',
+      title: 'Top Sports Careers',
       description:
-        'Design and creative sectors offer innovative, visually-focused careers with strong demand:',
+        'Sports sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Product Designer',
+          title: 'Sports Agent',
+          jobDescription: 'Sports Agent',
           imageSrc: HeroImage1,
-          altText: 'Product Designer illustration',
+          altText: 'Sports Agent illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/product-designer',
+          buttonLink: '/careers',
         },
         {
-          title: 'UX Researcher',
+          title: 'Sports Coach',
+          jobDescription: 'Sports Coach',
           imageSrc: HeroImage2,
-          altText: 'UX Researcher illustration',
+          altText: 'Sports Coach illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/ux-researcher',
+          buttonLink: '/careers',
         },
         {
-          title: 'Visual Designer',
+          title: 'Sports Manager',
+          jobDescription: 'Sports Manager',
           imageSrc: HeroImage3,
-          altText: 'Visual Designer illustration',
+          altText: 'Sports Manager illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/visual-designer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Creative Director',
+          title: 'Sports Producer',
+          jobDescription: 'Sports Producer',
           imageSrc: HeroImage4,
-          altText: 'Creative Director illustration',
+          altText: 'Sports Producer illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/creative-director',
+          buttonLink: '/careers',
         },
         {
-          title: 'Interaction Designer',
+          title: 'Sports Analyst',
+          jobDescription: 'Sports Analyst',
           imageSrc: HeroImage1,
-          altText: 'Interaction Designer illustration',
+          altText: 'Sports Analyst illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/interaction-designer',
+          buttonLink: '/careers',
         },
       ],
     },
   },
   {
     id: 4,
-    title: 'DevOps Engineer',
-    slug: 'devops-engineer',
+    title: 'Oil & Gas',
+    slug: 'oil-and-gas',
     sections: [
       {
-        title: 'Optimize Our Infrastructure',
+        title: 'Oil & Gas Careers with ProficientNow',
         description:
-          'Streamline our DevOps processes and optimize our cloud infrastructure for maximum efficiency.',
+          'Connecting talented professionals with rewarding careers in the oil and gas industry. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
         imageSrc: HeroImage4,
-        altText: 'Illustration of DevOps engineering',
-        buttonText: 'Apply Now',
-        buttonLink: 'https://yourcompany.com/careers/devops-engineer',
+        altText: 'Oil & Gas careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
       },
       {
-        title: 'DevOps & Cloud Operations Overview',
+        title: 'Oil & Gas Industry Overview',
         description:
-          'In the DevOps and Cloud Operations field, professionals work to bridge development and operations, ensuring smooth deployment and maintenance of software systems. From automation engineers streamlining workflows to cloud specialists managing infrastructure, the sector focuses on efficiency and reliability.',
+          "The oil and gas industry plays a vital role in meeting the world's increasing energy demands. From exploration and production to transportation and refining, the industry offers a wide range of career opportunities for skilled professionals.",
         imageSrc: HeroImage3,
-        altText: 'DevOps operations overview illustration',
+        altText: 'oil and gas illustration',
       },
     ],
     features: {
       description:
-        'Modern technology companies depend on DevOps engineers, cloud architects, and automation specialists to deliver reliable, scalable solutions. These roles offer excellent opportunities for those passionate about operational excellence and infrastructure optimization.',
+        'Oil and gas careers offer a diverse range of opportunities for those interested in the energy industry.',
       items: [
         {
-          title: 'Infrastructure Automation',
+          title: 'Oil and Gas Exploration',
           description:
-            'Automating deployment processes and infrastructure management',
+            'Exploring and evaluating potential oil and gas resources',
           icon: Monitor,
         },
         {
-          title: 'Continuous Integration',
-          description:
-            'Building and maintaining CI/CD pipelines for seamless deployments',
+          title: 'Oil and Gas Production',
+          description: 'Producing oil and gas for transportation and refining',
           icon: Monitor,
         },
         {
-          title: 'Cloud Management',
-          description:
-            'Managing and optimizing cloud resources for cost and performance',
+          title: 'Oil and Gas Transportation',
+          description: 'Transporting oil and gas from exploration to refining',
           icon: Monitor,
         },
       ],
     },
     careersSection: {
-      title: 'Top DevOps & Infrastructure Careers',
+      title: 'Top Oil & Gas Careers',
       description:
-        'DevOps and infrastructure sectors offer technical, automation-focused careers with high demand:',
+        'Oil and gas sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'DevOps Engineer',
+          title: 'Oil and Gas Engineer',
+          jobDescription: 'Oil and Gas Engineer',
           imageSrc: HeroImage1,
-          altText: 'DevOps Engineer illustration',
+          altText: 'Oil and Gas Engineer illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/devops-engineer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Cloud Architect',
+          title: 'Oil and Gas Manager',
+          jobDescription: 'Oil and Gas Manager',
           imageSrc: HeroImage2,
-          altText: 'Cloud Architect illustration',
+          altText: 'Oil and Gas Manager illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/cloud-architect',
+          buttonLink: '/careers',
         },
         {
-          title: 'Infrastructure Engineer',
+          title: 'Oil and Gas Technician',
+          jobDescription: 'Oil and Gas Technician',
           imageSrc: HeroImage3,
-          altText: 'Infrastructure Engineer illustration',
+          altText: 'Oil and Gas Technician illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/infrastructure-engineer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Automation Specialist',
+          title: 'Oil and Gas Specialist',
+          jobDescription: 'Oil and Gas Specialist',
           imageSrc: HeroImage4,
-          altText: 'Automation Specialist illustration',
+          altText: 'Oil and Gas Specialist illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/automation-specialist',
+          buttonLink: '/careers',
         },
         {
-          title: 'Platform Engineer',
+          title: 'Oil and Gas Quality Assurance Engineer',
+          jobDescription: 'Oil and Gas Quality Assurance Engineer',
           imageSrc: HeroImage1,
-          altText: 'Platform Engineer illustration',
+          altText: 'Oil and Gas Quality Assurance Engineer illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/platform-engineer',
+          buttonLink: '/careers',
         },
       ],
     },
   },
   {
     id: 5,
-    title: 'Content Strategist',
-    slug: 'content-strategist',
+    title: 'Construction',
+    slug: 'construction',
     sections: [
       {
-        title: 'Boost Our Content Strategy',
+        title: 'Construction Careers with ProficientNow',
         description:
-          'Develop and maintain high-quality content that engages our audience and drives business growth.',
+          'Connecting talented professionals with rewarding careers in the construction industry. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
         imageSrc: HeroImage2,
-        altText: 'Illustration of content strategy',
-        buttonText: 'Apply Now',
-        buttonLink: 'https://yourcompany.com/careers/content-strategist',
+        altText: 'Construction careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
       },
       {
-        title: 'Marketing & Content Industry Overview',
+        title: 'Construction Industry Overview',
         description:
-          'In the Marketing and Content industries, professionals work to create compelling narratives and strategic communications that connect brands with their audiences. From content strategists developing editorial calendars to SEO specialists optimizing for search, the sector combines creativity with data-driven insights.',
+          'The construction industry is a significant contributor to the global economy. With the growing demand for infrastructure development, housing, and commercial buildings, the construction industry is expected to grow at a steady pace. ProficientNow is a trusted partner for construction companies looking to hire top talent to fill a range of roles, from construction managers to engineers and skilled laborers.',
         imageSrc: HeroImage1,
-        altText: 'Marketing and content overview illustration',
+        altText: 'Construction illustration',
       },
     ],
     features: {
       description:
-        'Marketing and content companies employ strategists, writers, and digital marketers to build brand awareness and drive engagement. These industries offer dynamic career opportunities for those passionate about storytelling and audience connection.',
+        'Construction careers offer a diverse range of opportunities for those interested in the construction industry.',
       items: [
         {
-          title: 'Content Creation',
+          title: 'Construction Manager',
           description:
-            'Developing engaging written and visual content across multiple channels',
+            'Planning, overseeing, and supervising construction projects',
           icon: Monitor,
         },
         {
-          title: 'SEO Optimization',
+          title: 'Construction Engineer',
           description:
-            'Optimizing content for search engines and organic discovery',
+            'Designing, constructing, and overseeing construction projects',
           icon: Monitor,
         },
         {
-          title: 'Performance Analytics',
+          title: 'Construction Laborer',
           description:
-            'Measuring and analyzing content performance to drive strategy',
+            'Working on construction sites to build structures and infrastructure',
           icon: Monitor,
         },
       ],
     },
     careersSection: {
-      title: 'Top Marketing & Content Careers',
+      title: 'Top Construction Careers',
       description:
-        'Marketing and content sectors offer creative, strategy-focused careers with strong growth potential:',
+        'Construction sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Content Strategist',
+          title: 'Construction Manager',
+          jobDescription: 'Construction Manager',
           imageSrc: HeroImage1,
-          altText: 'Content Strategist illustration',
+          altText: 'Construction Manager illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/content-strategist',
+          buttonLink: '/careers',
         },
         {
-          title: 'SEO Specialist',
+          title: 'Construction Engineer',
+          jobDescription: 'Construction Engineer',
           imageSrc: HeroImage2,
-          altText: 'SEO Specialist illustration',
+          altText: 'Construction Engineer illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/seo-specialist',
+          buttonLink: '/careers',
         },
         {
-          title: 'Digital Marketing Manager',
+          title: 'Construction Laborer',
+          jobDescription: 'Construction Laborer',
           imageSrc: HeroImage3,
-          altText: 'Digital Marketing Manager illustration',
+          altText: 'Construction Laborer illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/digital-marketing-manager',
+          buttonLink: '/careers',
         },
         {
-          title: 'Content Writer',
+          title: 'Construction Superintendent',
+          jobDescription: 'Construction Superintendent',
           imageSrc: HeroImage4,
-          altText: 'Content Writer illustration',
+          altText: 'Construction Superintendent illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/content-writer',
+          buttonLink: '/careers',
         },
         {
-          title: 'Marketing Analyst',
+          title: 'Construction Supervisor',
+          jobDescription: 'Construction Supervisor',
           imageSrc: HeroImage1,
-          altText: 'Marketing Analyst illustration',
+          altText: 'Construction Supervisor illustration',
           buttonText: 'Explore Role',
-          buttonLink: '/careers/marketing-analyst',
+          buttonLink: '/careers',
         },
       ],
     },

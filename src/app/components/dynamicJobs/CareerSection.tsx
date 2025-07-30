@@ -1,16 +1,32 @@
-// components/CareerSection.tsx
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { useState } from 'react';
 
 import { JobCareers } from '@/data/jobsdata';
+
+import JobModal from '@/app/components/dynamicJobs/JobModel';
 
 interface CareerSectionProps {
   data: JobCareers;
 }
 
 export default function CareerSection({ data }: CareerSectionProps) {
+  const [selectedItem, setSelectedItem] = useState<
+    null | (typeof data.items)[0]
+  >(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = (item: typeof selectedItem) => {
+    setSelectedItem(item);
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+    setIsOpen(false);
+  };
+
   return (
     <section className='py-16 px-4 lg:px-4 bg-white max-w-6xl'>
       <div className='text-left max-w-6xl mx-auto mb-12'>
@@ -24,29 +40,32 @@ export default function CareerSection({ data }: CareerSectionProps) {
         {data.items.map((item, index) => (
           <div
             key={index}
-            className='flex flex-col items-center text-center group'
+            className='flex flex-col items-center text-center group cursor-pointer'
+            onClick={() => handleOpenModal(item)}
           >
-            {/* Fixed height container for vertical images */}
             <div className='w-full h-[400px] relative mb-4'>
               <Image
                 src={item.imageSrc}
                 alt={item.altText || item.title}
                 fill
-                className='object-cover rounded-xl transition-transform  duration-300 ease-in-out group-hover:scale-105'
+                className='object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105'
               />
             </div>
 
             {item.title && (
-              <Link
-                href='/'
-                className='mt-2 text-xl font-semibold text-primary mb-2 hover:underline'
-              >
+              <div className='mt-2 text-xl font-semibold text-primary mb-2 hover:underline'>
                 {item.title}
-              </Link>
+              </div>
             )}
           </div>
         ))}
       </div>
+
+      <JobModal
+        isOpen={isOpen}
+        onClose={handleCloseModal}
+        item={selectedItem}
+      />
     </section>
   );
 }
