@@ -20,7 +20,13 @@ import {
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
-import {drugImg, psychologistImg, chemist,pharma, forensic } from '~/healthCare';
+import {
+  drugImg,
+  psychologistImg,
+  chemist,
+  pharma,
+  forensic,
+} from '~/healthCare';
 import { finance, financeLeader, EWallet } from '~/accounting';
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
@@ -355,7 +361,7 @@ export const jobs: Job[] = [
         {
           title: 'Accountant',
           qualifications: [
-            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
+            'Bachelor’s degree in Accounting or Finance; CPA certification preferred.',
             ' Proficiency in accounting principles and financial regulations.',
           ],
           responsibilities: [
@@ -373,7 +379,7 @@ export const jobs: Job[] = [
         {
           title: 'Accounting Manager',
           qualifications: [
-            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
+            'Bachelor’s degree in Accounting or Finance; CPA certification preferred.',
             'Proven experience in accounting leadership.',
           ],
           responsibilities: [
@@ -390,7 +396,7 @@ export const jobs: Job[] = [
         {
           title: 'Financial Analyst',
           qualifications: [
-            "Bachelor’s degree in Finance, Accounting, Economics, or a related field.",
+            'Bachelor’s degree in Finance, Accounting, Economics, or a related field.',
             'Strong analytical and communication skills.',
           ],
           responsibilities: [
@@ -439,7 +445,7 @@ export const jobs: Job[] = [
         {
           title: 'Auditor',
           qualifications: [
-            "Bachelor’s degree in Accounting, Finance, or a related field.",
+            'Bachelor’s degree in Accounting, Finance, or a related field.',
             ' CPA or CIA certification preferred.',
           ],
           responsibilities: [
@@ -455,7 +461,7 @@ export const jobs: Job[] = [
         {
           title: 'CFO',
           qualifications: [
-            " Master’s degree in Finance, Accounting, or Business Administration; CPA or CFA certification preferred.",
+            ' Master’s degree in Finance, Accounting, or Business Administration; CPA or CFA certification preferred.',
             'Extensive experience in financial leadership roles.',
           ],
           responsibilities: [
@@ -472,7 +478,7 @@ export const jobs: Job[] = [
         {
           title: 'Management Accounting',
           qualifications: [
-            "Bachelor’s degree in Accounting, Finance, or a related field; CPA or CMA certification preferred",
+            'Bachelor’s degree in Accounting, Finance, or a related field; CPA or CMA certification preferred',
           ],
           responsibilities: [
             'Analyze financial data to support informed decision-making.',
@@ -488,8 +494,8 @@ export const jobs: Job[] = [
         {
           title: 'Senior Accountant',
           qualifications: [
-            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
-            'Several years of experience in accounting roles.'
+            'Bachelor’s degree in Accounting or Finance; CPA certification preferred.',
+            'Several years of experience in accounting roles.',
           ],
           responsibilities: [
             'Prepare and review accurate financial statements and reports.',
@@ -556,15 +562,17 @@ export const jobs: Job[] = [
         'Hardware and networking sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Network Engineer',
+          title: 'Network Security Specialist',
           qualifications: [
-            "Bachelor's degree in Computer Science, IT, or related field",
-            'Strong knowledge of network infrastructure and protocols',
+            'Bachelor’s degree in Computer Science, Information Technology, or a related field. Relevant certifications such as CISSP, CompTIA Security+, or Certified Ethical Hacker.',
+            'Strong understanding of network protocols, firewalls, intrusion detection systems, and encryption technologies.',
+            'Experience with security assessment tools and techniques. Excellent analytical and problem-solving skills',
           ],
           responsibilities: [
-            'Design, implement, and maintain computer networks',
-            'Monitor network performance and troubleshoot issues',
-            'Optimize network infrastructure for scalability and security',
+            'Monitor network traffic for signs of suspicious activity and potential security incidents.',
+            'Conduct security assessments, penetration testing, and vulnerability assessments of network infrastructure.',
+            'Develop, enforce, and update security policies, procedures, and best practices across the organization',
+            'Stay up-to-date with the latest trends, emerging threats, and advancements in network security technologies.',
           ],
           imageSrc: Image5,
           altText: 'Network Engineer illustration',
@@ -574,64 +582,113 @@ export const jobs: Job[] = [
         {
           title: 'Network Administrator',
           qualifications: [
-            'Degree or certification in IT, Networking, or related field',
-            'Experience with routers, switches, and firewalls',
+            'Bachelor’s degree in Computer Science, Information Technology, or a related field',
+            'Certifications such as Cisco Certified Network Associate (CCNA) or CompTIA Network+',
+            'Proficiency in network protocols, routing, switching, and network security',
+            'Experience with routers, switches, firewalls, and network infrastructure',
+            'Familiarity with network monitoring and troubleshooting tools',
           ],
+
           responsibilities: [
-            'Manage day-to-day network operations',
-            'Ensure security, availability, and performance of network systems',
-            'Implement updates, patches, and backups',
+            'Install, configure, and maintain network hardware, software, and infrastructure components',
+            'Monitor network performance, availability, and security to ensure uptime and optimal performance',
+            'Troubleshoot network issues and perform root cause analysis to resolve problems efficiently',
+            'Implement network upgrades, patches, and security updates to maintain system integrity',
+            'Manage user accounts, permissions, and access controls in accordance with security policies',
+            'Document network configurations, procedures, and troubleshooting steps for future reference',
           ],
+
           imageSrc: Image4,
           altText: 'Network Administrator illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Network Security Analyst',
+          title: 'Network Engineer',
           qualifications: [
-            "Bachelor's degree in Cybersecurity, IT, or related field",
-            'Knowledge of firewalls, VPNs, IDS/IPS, and encryption',
+            "Bachelor's degree in Computer Science, Information Technology, or a related field",
+            'Strong knowledge of network protocols, routing, switching, and security',
+            'Experience with network design, implementation, and optimization',
+            'Excellent problem-solving and analytical skills',
           ],
           responsibilities: [
-            'Monitor network for security breaches or incidents',
-            'Analyze security risks and implement mitigation strategies',
-            'Ensure compliance with cybersecurity standards and policies',
+            'Design, implement, and manage enterprise network infrastructure, including routers, switches, firewalls, and VPNs',
+            'Configure and optimize network performance, availability, and security',
+            'Monitor network traffic, bandwidth utilization, and performance metrics',
+            'Troubleshoot network issues and perform root cause analysis for resolution',
+            'Implement network upgrades, patches, and security updates to maintain integrity',
+            'Collaborate with cross-functional teams to integrate network solutions with IT systems',
           ],
-          imageSrc: Image3,
-          altText: 'Network Security Analyst illustration',
+          imageSrc: Image5,
+          altText: 'Network Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
           title: 'Hardware Engineer',
           qualifications: [
-            "Bachelor's degree in Electrical Engineering, Computer Engineering, or related field",
-            'Strong understanding of circuit design and microprocessors',
+            "Bachelor's degree in Electrical Engineering, Computer Engineering, or a related field",
+            'Strong knowledge of digital and analog circuits, microprocessors, and semiconductor devices',
+            'Proficiency in CAD software for hardware design and simulation',
+            'Experience with hardware prototyping, testing, and debugging',
+            'Excellent problem-solving and analytical skills',
           ],
           responsibilities: [
-            'Design, test, and develop computer hardware components',
-            'Collaborate with software teams for system integration',
-            'Evaluate and improve hardware performance',
+            'Design and develop hardware components and systems, including circuit boards, processors, and peripherals',
+            'Perform schematic design, PCB layout, and simulations using CAD tools',
+            'Prototype, test, and validate hardware designs to ensure functionality and performance',
+            'Collaborate with software engineers and cross-functional teams to integrate hardware and software systems',
+            'Conduct design reviews, troubleshoot hardware issues, and support product development lifecycle',
+            'Implement design improvements and resolve hardware-related challenges',
           ],
-          imageSrc: Image2,
+          imageSrc: Image3,
           altText: 'Hardware Engineer illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Hardware Technician',
+          title: 'System Administrator',
           qualifications: [
-            'Diploma or certification in hardware or computer technology',
-            'Hands-on experience with hardware troubleshooting',
+            "Bachelor's degree in Computer Science, Information Technology, or a related field",
+            'Certifications such as Microsoft Certified Systems Administrator (MCSA) or Linux Professional Institute Certification (LPIC)',
+            'Proficiency in operating systems like Windows Server, Linux, and Unix',
+            'Experience with system administration tools and technologies',
+            'Strong troubleshooting and problem-solving skills',
           ],
           responsibilities: [
-            'Install, repair, and maintain computer hardware',
-            'Diagnose and fix system hardware issues',
-            'Assist users and IT teams with equipment support',
+            'Install, configure, and maintain server hardware, operating systems, and software applications',
+            'Monitor system performance, availability, and security to ensure optimal operation',
+            'Troubleshoot system issues and conduct root cause analysis for timely resolution',
+            'Implement system upgrades, patches, and security updates to maintain system integrity',
+            'Manage user accounts, permissions, and access controls to ensure security compliance',
+            'Backup and restore data, and execute disaster recovery procedures',
+            'Document system configurations, procedures, and troubleshooting steps for reference',
           ],
           imageSrc: Image1,
-          altText: 'Hardware Technician illustration',
+          altText: 'System Administrator illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'IT Support Specialist',
+          qualifications: [
+            'Associate’s degree or certification in Information Technology, Computer Science, or a related field',
+            'Experience in technical support or help desk roles',
+            'Knowledge of computer hardware, software, and operating systems',
+            'Strong customer service and communication skills',
+            'Ability to troubleshoot and resolve technical issues',
+          ],
+          responsibilities: [
+            'Provide technical support and assistance to end-users via phone, email, or in-person',
+            'Diagnose and resolve hardware, software, and network-related problems',
+            'Install, configure, and upgrade computer systems and software applications',
+            'Assist with user account management, permissions, and access controls',
+            'Escalate complex issues to higher-level support teams or vendors',
+            'Document support requests, resolutions, and troubleshooting steps',
+            'Provide training and guidance to end-users on IT systems, applications, and best practices',
+          ],
+          imageSrc: Image2,
+          altText: 'IT Support Specialist illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
@@ -687,67 +744,133 @@ export const jobs: Job[] = [
         'Aviation sectors offer diverse, rewarding careers with strong growth:',
       items: [
         {
-          title: 'Aviation Pilot',
-          qualifications: [
-            'Commercial Pilot License (CPL) or Airline Transport Pilot License (ATPL)',
-            'Extensive flight training and medical certification',
-          ],
-          responsibilities: [
-            'Operate aircraft safely and according to flight plans',
-            'Communicate with air traffic control and crew',
-            'Conduct pre-flight and post-flight checks',
-            'Ensure passenger safety during all flight phases',
-          ],
-          imageSrc: Aviation3,
-          altText: 'Aviation Pilot illustration',
-          buttonText: 'Explore Role',
-          buttonLink: '/careers',
-        },
-        {
-          title: 'Aviation Ground Staff',
-          qualifications: [
-            'High school diploma or relevant diploma in aviation services',
-            'Customer service skills and airport operations knowledge',
-          ],
-          responsibilities: [
-            'Assist passengers during check-in and boarding',
-            'Handle luggage and cargo logistics',
-            'Coordinate ground operations with flight crews',
-          ],
-          imageSrc: Aviation4,
-          altText: 'Aviation Ground Staff illustration',
-          buttonText: 'Explore Role',
-          buttonLink: '/careers',
-        },
-        {
-          title: 'Aviation Engineer',
-          qualifications: [
-            "Bachelor's degree in Aeronautical or Mechanical Engineering",
-            'Certification from DGCA or EASA (as applicable)',
-          ],
-          responsibilities: [
-            'Maintain and repair aircraft systems and components',
-            'Conduct inspections and troubleshoot mechanical issues',
-            'Ensure compliance with aviation safety standards',
-          ],
-          imageSrc: Aviation5,
-          altText: 'Aviation Engineer illustration',
-          buttonText: 'Explore Role',
-          buttonLink: '/careers',
-        },
-        {
-          title: 'Aviation Flight Attendant',
+          title: 'Aircraft Cleaner',
           qualifications: [
             'High school diploma or equivalent',
-            'Cabin crew training and safety certification',
+            'Previous experience in janitorial or cleaning services preferred',
           ],
           responsibilities: [
-            'Ensure passenger safety and comfort',
-            'Demonstrate safety procedures before flight',
-            'Serve meals, assist with seating, and respond to emergencies',
+            'Clean aircraft interiors, including cabins, galleys, and lavatories',
+            'Vacuum carpets, wipe down surfaces, and sanitize high-touch areas',
+            'Dispose of waste and replenish supplies as needed',
+            'Follow established cleaning protocols and safety procedures to ensure a hygienic environment',
+          ],
+          imageSrc: Aviation3,
+          altText: 'Aircraft Cleaner illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Reservation Agent',
+          qualifications: [
+            'High school diploma or equivalent',
+            'Excellent communication and customer service skills',
+            'Proficiency in reservation software systems',
+          ],
+          responsibilities: [
+            'Assist customers in booking and managing flight reservations',
+            'Provide accurate information on flight schedules, fares, and services',
+            'Process ticket sales, modifications, and cancellations',
+            'Handle inquiries and resolve customer issues or complaints professionally',
+            'Maintain accurate records and documentation of all reservations',
+          ],
+          imageSrc: Aviation5,
+          altText: 'Reservation Agent illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Aircraft Fueller',
+          qualifications: [
+            'High school diploma or equivalent',
+            'Valid driver’s license with a clean record',
+            'Training in fueling operations and safety procedures',
+          ],
+          responsibilities: [
+            'Fuel aircraft in accordance with established procedures and safety protocols',
+            'Monitor fuel levels and conduct quality control checks',
+            'Operate fueling equipment, including fuel trucks and hydrant systems',
+            'Coordinate with flight crews and ground staff to ensure timely fueling',
+            'Maintain accurate fueling records and required documentation',
+          ],
+          imageSrc: Aviation7,
+          altText: 'Aircraft Fueller illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Air Traffic Controller',
+          qualifications: [
+            'Bachelor’s degree in Air Traffic Management, Aviation Administration, or a related field',
+            'FAA Air Traffic Control Specialist certification required',
+            'Strong communication and decision-making skills',
+          ],
+          responsibilities: [
+            'Monitor and manage air traffic within assigned airspace or airport zones',
+            'Provide clear instructions to pilots on flight paths, altitudes, and speeds',
+            'Coordinate take-offs, landings, and aircraft movements to ensure safe separation',
+            'Communicate effectively with other air traffic control facilities and agencies',
+            'Respond to emergencies and execute contingency procedures as necessary',
           ],
           imageSrc: Aviation6,
-          altText: 'Aviation Flight Attendant illustration',
+          altText: 'Air Traffic Controller illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Aviation Manager',
+          qualifications: [
+            'Bachelor’s degree in Aviation Management, Business Administration, or a related field',
+            'Several years of experience in aviation operations or management roles',
+          ],
+          responsibilities: [
+            'Oversee day-to-day operations of aviation facilities or departments',
+            'Develop and implement policies, procedures, and strategic plans',
+            'Manage departmental budgets, resources, and personnel',
+            'Ensure compliance with safety regulations, industry standards, and company policies',
+            'Coordinate with departments and stakeholders to meet organizational goals',
+          ],
+          imageSrc: Aviation5,
+          altText: 'Aviation Manager illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Aerospace Engineer',
+          qualifications: [
+            'Bachelor’s degree in Aerospace Engineering, Mechanical Engineering, or a related field',
+            'Strong analytical and problem-solving skills',
+            'Experience in aircraft design, analysis, or testing',
+          ],
+          responsibilities: [
+            'Design and develop aircraft, spacecraft, and related systems',
+            'Conduct aerodynamic analysis and structural design evaluations',
+            'Perform computational modeling and simulation studies',
+            'Evaluate materials and manufacturing processes for aerospace use',
+            'Collaborate with multidisciplinary teams to meet project objectives',
+          ],
+          imageSrc: Aviation3,
+          altText: 'Aerospace Engineer illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Flight Attendant',
+          qualifications: [
+            'Completion of a flight attendant training program',
+            'Excellent communication and customer service skills',
+            'Ability to handle emergencies, physical stamina, and flexibility for irregular hours and frequent travel',
+          ],
+          responsibilities: [
+            'Ensure the safety and comfort of passengers during flights',
+            'Conduct pre-flight safety demonstrations and provide clear instructions',
+            'Assist passengers with boarding, seating, and stowing carry-on items',
+            'Serve food, beverages, and amenities in accordance with airline policies',
+            'Address passenger inquiries, resolve complaints, and manage in-flight emergencies',
+            'Collaborate with the flight crew to maintain a secure and orderly cabin',
+          ],
+          imageSrc: Aviation7,
+          altText: 'Flight Attendant illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
@@ -762,7 +885,7 @@ export const jobs: Job[] = [
             'Coordinate with departments to maintain safety and efficiency',
             'Manage staff schedules, budgets, and regulatory compliance',
           ],
-          imageSrc: Aviation7,
+          imageSrc: Aviation3,
           altText: 'Aviation Operations Manager illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
