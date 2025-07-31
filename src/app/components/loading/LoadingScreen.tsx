@@ -78,7 +78,7 @@ export default function LoadingScreen({
       {
         opacity: 1,
         y: 0,
-        duration: 0.6,
+        duration: 0.3,
         stagger: 0.05,
         ease: 'power2.out',
       },
@@ -92,7 +92,7 @@ export default function LoadingScreen({
         opacity: 1,
         rotation: 0,
         scale: 1,
-        duration: 0.5,
+        duration: 0.4,
         stagger: 0.15,
         ease: 'back.out(1.7)',
       },
@@ -105,7 +105,7 @@ export default function LoadingScreen({
     // Curtain pull-up animation
     tl.to(curtain, {
       y: '-100%',
-      duration: 1.4,
+      duration: 1,
       ease: 'power2.inOut',
       onComplete: () => {
         setIsComplete(true);
@@ -190,7 +190,7 @@ export default function LoadingScreen({
                 <span
                   key={`outline-${index}`}
                   ref={(el) => addOutlineLetterRef(el, index)}
-                  className='text-4xl md:text-5xl lg:text-6xl font-light tracking-wider'
+                  className='text-xl md:text-5xl lg:text-6xl font-light tracking-wider'
                   style={{
                     color: 'transparent',
                     WebkitTextStroke: '2px #ffffff',
@@ -208,7 +208,7 @@ export default function LoadingScreen({
                 <span
                   key={`solid-${index}`}
                   ref={(el) => addSolidLetterRef(el, index)}
-                  className='text-4xl md:text-5xl lg:text-6xl font-light tracking-wider text-white'
+                  className='text-xl md:text-5xl lg:text-6xl font-light tracking-wider text-white'
                 >
                   {letter === ' ' ? '\u00A0' : letter}
                 </span>
