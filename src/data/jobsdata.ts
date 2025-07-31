@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
+import {drugImg, psychologistImg, chemist,pharma, forensic } from '~/healthCare';
 
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
@@ -180,15 +181,17 @@ export const jobs: Job[] = [
         {
           title: 'Laboratory Technician',
           qualifications: [
-            'Associate or Bachelor’s degree in science-related field',
-            'Hands-on lab skills and familiarity with safety protocols',
+            'Associate degree or certification in Medical Laboratory Technology or a related field.',
+            'Proficiency in laboratory procedures and techniques.',
           ],
           responsibilities: [
-            'Support scientists in conducting experiments',
-            'Prepare samples and manage lab equipment',
-            'Log test results and maintain lab cleanliness',
+            'Prepare specimens and samples for analysis.',
+            'Perform routine laboratory tests and experiments.',
+            'Maintain laboratory equipment and supplies.',
+            'Document and report test results accurately.',
+            'Follow safety protocols and quality control procedures.',
           ],
-          imageSrc: Healthcare2,
+          imageSrc: forensic,
           altText: 'Laboratory Technician',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
@@ -196,48 +199,102 @@ export const jobs: Job[] = [
         {
           title: 'Medical Sales Representative',
           qualifications: [
-            "Bachelor's degree in Life Sciences, Business, or related field",
-            'Strong communication and sales skills',
+            'Bachelor’s degree in a relevant field (such as Biology or Marketing).',
+            'Strong sales and communication skills',
           ],
           responsibilities: [
             'Promote and sell medical products to healthcare professionals',
-            'Develop client relationships and meet sales targets',
-            'Stay updated on industry trends and products',
+            'Build and maintain relationships with clients and customers.',
+            'Provide product information and conduct product demonstrations.',
+            'Analyze market trends and develop sales strategies.',
           ],
-          imageSrc: Healthcare1,
+          imageSrc: pharma,
           altText: 'Medical Sales Representative',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
-          title: 'Chemist',
+          title: 'Pharmaceutical Manufacturer Technician',
           qualifications: [
-            "Bachelor's or Master's in Chemistry or related field",
-            'Experience in chemical analysis and laboratory safety',
+            'Associate degree or certification in Pharmacy Technology or a related field.',
+            'Experience in pharmaceutical manufacturing required.',
           ],
           responsibilities: [
-            'Conduct qualitative and quantitative chemical analyses',
-            'Develop formulations and ensure compliance',
-            'Maintain lab instruments and document findings',
+            'Operate and maintain pharmaceutical manufacturing equipment.',
+            'Follow standard operating procedures and safety protocols.',
+            'Prepare and package pharmaceutical products.',
+            'Monitor product quality and compliance with regulations.',
           ],
-          imageSrc: Healthcare3,
+          imageSrc: drugImg,
           altText: 'Chemist',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Regulatory Specialist',
+          qualifications: [
+            'Bachelor’s degree in Regulatory Affairs or a related field.',
+            'Strong knowledge of healthcare regulations and compliance standards.',
+          ],
+          responsibilities: [
+            'Prepare and submit regulatory documents for product approvals.',
+            'Monitor regulatory changes and ensure ongoing compliance.',
+            'Review product labeling and advertising materials for compliance.',
+            'Provide guidance and support to internal teams on regulatory requirements.',
+          ],
+          imageSrc: Healthcare2,
+          altText: 'Regulatory Specialist',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
         {
           title: 'Clinical Research Scientist',
           qualifications: [
-            'Advanced degree (PhD or MSc) in biomedical sciences',
-            'Knowledge of clinical trial protocols and regulations',
+            'Advanced degree (Master’s or Ph.D.) in a relevant scientific field.',
+            'Experience in clinical research required',
           ],
           responsibilities: [
-            'Design and oversee clinical trials',
-            'Analyze trial data and report results',
-            'Ensure ethical standards and regulatory compliance',
+            'Design and implement clinical research studies.',
+            'Collect, analyze, and interpret clinical data.',
+            'Prepare study protocols, reports, and scientific publications.',
+            'Ensure compliance with regulatory requirements and ethical standards.',
           ],
-          imageSrc: Healthcare2,
+          imageSrc: pharma,
           altText: 'Clinical Research Scientist',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Chemist',
+          qualifications: [
+            'Bachelor’s degree or higher in Chemistry or a related field.',
+            'Strong analytical and problem-solving skills.',
+          ],
+          responsibilities: [
+            'Conduct chemical analyses and laboratory experiments.',
+            'Develop and optimize chemical processes and formulations.',
+            'Prepare study protocols, reports, and scientific publications.',
+            'Maintain laboratory safety protocols and quality standards.',
+          ],
+          imageSrc: chemist,
+          altText: 'Chemist',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Psychiatrist',
+          qualifications: [
+            'Medical degree (MD or DO) with specialization in Psychiatry.',
+            'Board certification in Psychiatry required.',
+          ],
+          responsibilities: [
+            'Diagnose and treat a wide range of mental health disorders.',
+            'Conduct psychiatric evaluations and comprehensive assessments.',
+            'Provide crisis intervention and support to patients and their families.',
+            'Collaborate with multidisciplinary healthcare teams to coordinate patient care.',
+          ],
+          imageSrc: psychologistImg,
+          altText: 'Chemist',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
