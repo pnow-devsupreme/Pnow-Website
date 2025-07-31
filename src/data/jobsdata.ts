@@ -21,7 +21,7 @@ import {
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
 import {drugImg, psychologistImg, chemist,pharma, forensic } from '~/healthCare';
-
+import { finance, financeLeader, EWallet } from '~/accounting';
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
 import Accounting3 from '../../public/jobs/Accountant-rafiki.png';
@@ -355,15 +355,15 @@ export const jobs: Job[] = [
         {
           title: 'Accountant',
           qualifications: [
-            "Bachelor's degree in Accounting, Finance, or a related field",
-            'Proficiency in financial reporting and accounting software',
+            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
+            ' Proficiency in accounting principles and financial regulations.',
           ],
           responsibilities: [
-            'Prepare and examine financial records, ensuring accuracy',
-            'Ensure compliance with financial regulations and standards',
-            'Analyze financial data and generate reports',
-            'Maintain financial records and assist with audits',
-            'Collaborate with teams on budgeting and forecasting',
+            'Maintain accurate and up-to-date financial records.',
+            'Analyze financial data to ensure accuracy and regulatory compliance.',
+            'Prepare, review, and file tax returns in a timely manner.',
+            'Assist with budgeting, forecasting, and financial planning.',
+            'Manage accounts payable and accounts receivable processes.',
           ],
           imageSrc: Accounting3,
           altText: 'Accountant illustration',
@@ -371,15 +371,33 @@ export const jobs: Job[] = [
           buttonLink: '/careers',
         },
         {
-          title: 'Financial Analyst',
+          title: 'Accounting Manager',
           qualifications: [
-            "Bachelor's degree in Finance, Economics, or related field",
-            'Strong analytical skills and financial modeling experience',
+            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
+            'Proven experience in accounting leadership.',
           ],
           responsibilities: [
-            'Analyze financial data and trends to assist decision-making',
-            'Prepare forecasts, reports, and financial models',
-            'Support budgeting and strategic planning processes',
+            'Oversee daily operations of the accounting department.',
+            'Supervise accounting staff and ensure accuracy of financial records.',
+            'Develop and implement accounting policies and internal procedures.',
+            'Prepare and present financial reports to senior management.',
+          ],
+          imageSrc: finance,
+          altText: 'Accounting Manager illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Financial Analyst',
+          qualifications: [
+            "Bachelor’s degree in Finance, Accounting, Economics, or a related field.",
+            'Strong analytical and communication skills.',
+          ],
+          responsibilities: [
+            'Analyze financial data and trends to provide insights and recommendations.',
+            'Conduct variance analysis to identify areas for improvement.',
+            'Assist with financial planning, budgeting, and performance tracking.',
+            'Prepare presentations and reports for management and stakeholders.',
           ],
           imageSrc: Accounting4,
           altText: 'Financial Analyst illustration',
@@ -387,15 +405,15 @@ export const jobs: Job[] = [
           buttonLink: '/careers',
         },
         {
-          title: 'Financial Planner',
+          title: 'Accounting Clerk',
           qualifications: [
-            "Bachelor's degree in Finance, Economics, or related field",
-            'Certified Financial Planner (CFP) credential is a plus',
+            'High school diploma or equivalent; some college coursework in accounting or a related field preferred.',
           ],
           responsibilities: [
-            'Assess client financial needs and develop plans',
-            'Provide investment and retirement advice',
-            'Monitor financial plans and adjust as needed',
+            'Assist with accounts payable and accounts receivable processes.',
+            'Maintain and update financial records accurately in databases.',
+            'Prepare invoices, track payments, and process transactions.',
+            'Support basic bookkeeping and administrative accounting tasks.',
           ],
           imageSrc: Accounting5,
           altText: 'Financial Planner illustration',
@@ -403,15 +421,31 @@ export const jobs: Job[] = [
           buttonLink: '/careers',
         },
         {
-          title: 'Auditor',
+          title: 'Accounts Payable',
           qualifications: [
-            "Bachelor's degree in Accounting or related field",
-            'Understanding of auditing standards and procedures',
+            'High school diploma or equivalent; some college coursework in accounting or a related field preferred.',
           ],
           responsibilities: [
-            'Examine financial records for accuracy and compliance',
-            'Prepare audit reports and recommendations',
-            'Evaluate internal controls and risk management processes',
+            'Process vendor invoices with accuracy and attention to detail.',
+            'Conduct variance analysis to identify areas for improvement.',
+            'Assist with financial planning, budgeting, and performance tracking.',
+            'Prepare presentations and reports for management and stakeholders.',
+          ],
+          imageSrc: Accounting5,
+          altText: 'Accounts Payable illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Auditor',
+          qualifications: [
+            "Bachelor’s degree in Accounting, Finance, or a related field.",
+            ' CPA or CIA certification preferred.',
+          ],
+          responsibilities: [
+            'Conduct internal audits to evaluate financial processes and internal controls.',
+            'Identify risks, inefficiencies, and recommend corrective actions.',
+            'Prepare detailed audit reports and present findings to management.',
           ],
           imageSrc: Accounting6,
           altText: 'Auditor illustration',
@@ -419,17 +453,51 @@ export const jobs: Job[] = [
           buttonLink: '/careers',
         },
         {
-          title: 'Management Accountant',
+          title: 'CFO',
           qualifications: [
-            "Bachelor's degree in Accounting or Finance",
-            'Experience in cost analysis and budgeting',
+            " Master’s degree in Finance, Accounting, or Business Administration; CPA or CFA certification preferred.",
+            'Extensive experience in financial leadership roles.',
           ],
           responsibilities: [
-            'Analyze financial performance and support strategic planning',
-            'Prepare internal reports and forecasts',
-            'Assist management with financial decisions',
+            'Develop and execute financial strategies aligned with company objectives.',
+            'Oversee financial planning, budgeting, and forecasting processes.',
+            'Provide strategic financial insights and recommendations to senior leadership.',
+            'Oversee financial reporting and communicate performance to stakeholders.',
+          ],
+          imageSrc: EWallet,
+          altText: 'Auditor illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Management Accounting',
+          qualifications: [
+            "Bachelor’s degree in Accounting, Finance, or a related field; CPA or CMA certification preferred",
+          ],
+          responsibilities: [
+            'Analyze financial data to support informed decision-making.',
+            'Prepare departmental and project-based budgets and forecasts.',
+            'Monitor financial performance and report variances against budgets.',
+            'Provide insights to enhance operational efficiency and profitability.',
           ],
           imageSrc: Accounting1,
+          altText: 'Management Accountant illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Senior Accountant',
+          qualifications: [
+            "Bachelor’s degree in Accounting or Finance; CPA certification preferred.",
+            'Several years of experience in accounting roles.'
+          ],
+          responsibilities: [
+            'Prepare and review accurate financial statements and reports.',
+            'Supervise, mentor, and support junior accounting staff.',
+            'Assist with month-end and year-end closing activities.',
+            'Conduct financial analysis and deliver actionable insights to management.',
+          ],
+          imageSrc: financeLeader,
           altText: 'Management Accountant illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
