@@ -1,11 +1,13 @@
 'use client';
 
+import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { jobs } from '@/data/jobsdata';
+
 import { employmentData } from '@/app/components/employer/data/employerData';
 
 import Logo from '../../../public/navbar/pnlogonew.jpg';
@@ -21,34 +23,71 @@ const NAV_LINKS = [
 
 export default function NavBar() {
   const pathname = usePathname();
-  const isHome = pathname === '/';
-
+  const navRef = useRef<HTMLElement>(null);
+  const tweenRef = useRef<gsap.core.Tween>();
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
+  // 1) Track scroll position
+  useLayoutEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // initialize on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const positionStyles =
-    isHome && !scrolled
-      ? 'absolute left-1/2 transform -translate-x-1/2 top-[32px] '
-      : 'sticky top-0 left-0 mx-auto';
+  // 2) Create a single tween on mount, paused
+  useLayoutEffect(() => {
+    if (!navRef.current) return;
+    // tween from "unscrolled" → "scrolled"
+    tweenRef.current = gsap.to(navRef.current, {
+      width: '100%',
+      borderRadius: '0px',
+      duration: 0.9,
+      ease: 'power2.out',
+      paused: true,
+    });
+    // ensure it starts at the "unscrolled" values
+    gsap.set(navRef.current, {
+      width: 'calc(100% - 500px)',
+      borderRadius: '9999px',
+    });
+  }, []);
 
-  const rounding = scrolled ? 'rounded-none' : 'rounded-full';
+  // 3) Play forward or reverse when `scrolled` flips
+  useLayoutEffect(() => {
+    if (!tweenRef.current) return;
+    if (scrolled) {
+      tweenRef.current.play();
+    } else {
+      tweenRef.current.reverse();
+    }
+  }, [scrolled]);
 
-  const widthStyles = scrolled
-    ? 'w-full  px-8'
-    : 'w-[calc(100%-64px)] top-[32px] max-w-[1200px] px-8';
+  // 4) Inline style to match initial SSR/client paint
+  const initialStyles: React.CSSProperties = {
+    width: scrolled ? '100%' : 'calc(100% - 500px)',
+    borderRadius: scrolled ? '0px' : '9999px',
+  };
+
+  // 5) Positioning: centered at top vs. sticky when scrolled
+  const positionClasses = scrolled
+    ? 'sticky top-0 left-0 mx-auto'
+    : 'absolute left-1/2 transform -translate-x-1/2 top-[32px]';
 
   return (
     <nav
-      className={`${positionStyles} ${rounding} ${widthStyles} bg-white py-3 flex justify-between items-center shadow-lg z-50`}
+      ref={navRef}
+      style={initialStyles}
+      className={`
+        ${positionClasses}
+        bg-white
+        py-3 px-8
+        flex justify-between items-center
+        shadow-lg
+        z-50
+      `}
     >
       <Link href='/'>
         <Image src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
@@ -56,8 +95,6 @@ export default function NavBar() {
 
       <ul className='flex items-center space-x-6 relative'>
         {NAV_LINKS.map(({ label, href }) => {
-          const isActive = pathname === href;
-
           // Find a Job dropdown
           if (label === 'Find a Job') {
             return (

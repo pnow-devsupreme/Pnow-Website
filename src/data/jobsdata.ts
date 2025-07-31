@@ -50,15 +50,7 @@ import Healthcare1 from '../../public/jobs/Doctors.png';
 import Accounting6 from '../../public/jobs/Investment.png';
 import Healthcare3 from '../../public/jobs/Laboratory.png';
 import Healthcare2 from '../../public/jobs/Laboratory-r.png';
-import {
-  Construction1,
-  Construction2,
-  Construction3,
-  Construction4,
-  Construction5,
-  Construction6,
-  Construction7,
-} from '~/constructionImages';
+
 import {
   Aviation1,
   Aviation2,
@@ -68,6 +60,15 @@ import {
   Aviation6,
   Aviation7,
 } from '~/aviationImages';
+import {
+  Construction1,
+  Construction2,
+  Construction3,
+  Construction4,
+  Construction5,
+  Construction6,
+  Construction7,
+} from '~/constructionImages';
 import {
   Image1,
   Image2,
