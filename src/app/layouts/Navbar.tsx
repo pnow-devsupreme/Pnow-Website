@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 import { jobs } from '@/data/jobsdata';
+import { employmentData } from '@/app/components/employer/data/employerData';
 
 import Logo from '../../../public/navbar/pnlogonew.jpg';
 
@@ -47,17 +48,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`
-        ${positionStyles}
-        ${rounding}
-        ${widthStyles}
-        bg-white
-        py-3
-       
-        flex justify-between items-center
-        shadow-lg
-        z-50
-      `}
+      className={`${positionStyles} ${rounding} ${widthStyles} bg-white py-3 flex justify-between items-center shadow-lg z-50`}
     >
       <Link href='/'>
         <Image src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
@@ -67,21 +58,14 @@ export default function NavBar() {
         {NAV_LINKS.map(({ label, href }) => {
           const isActive = pathname === href;
 
+          // Find a Job dropdown
           if (label === 'Find a Job') {
             return (
               <li key={href} className='relative group'>
-                {/* Prevent navigation */}
                 <button className='text-brand-purple font-semibold text-base focus:outline-none'>
                   {label}
                 </button>
-
-                {/* Dropdown */}
-                <ul
-                  className='
-              absolute left-0 w-48 bg-white border rounded-lg shadow-lg
-              hidden group-hover:block z-50
-            '
-                >
+                <ul className='absolute left-0 w-48 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
                   {jobs.map((job) => (
                     <li key={job.slug}>
                       <Link
@@ -97,16 +81,36 @@ export default function NavBar() {
             );
           }
 
+          // Employers dropdown
+          if (label === 'Employers') {
+            return (
+              <li key={href} className='relative group'>
+                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
+                  {label}
+                </button>
+                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
+                  {Object.entries(employmentData).map(([slug, data]) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/employers/${slug}`}
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                      >
+                        {data.servicesSection.title}{' '}
+                        {data.servicesSection.subtitle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
+          // Default link
           return (
             <li key={href}>
               <Link
                 href={href}
-                className={`
-            text-brand-purple
-            font-semibold
-            text-base
-            transition
-          `}
+                className='text-brand-purple font-semibold text-base transition'
               >
                 {label}
               </Link>
@@ -116,18 +120,7 @@ export default function NavBar() {
       </ul>
 
       <Link href='/contact'>
-        <button
-          className='
-            bg-brand-purple
-            text-white
-            px-6 py-3
-            rounded-full
-            font-semibold
-            text-base
-            hover:opacity-90
-            transition
-          '
-        >
+        <button className='bg-brand-purple text-white px-6 py-3 rounded-full font-semibold text-base hover:opacity-90 transition'>
           Contact Us
         </button>
       </Link>

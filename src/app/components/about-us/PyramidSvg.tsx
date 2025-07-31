@@ -17,17 +17,17 @@ export default function PyramidSvg() {
 
       {/* Top icon: binoculars */}
       <g transform='translate(138,20)'>
-        <FaBinoculars size={32} className='text-white' />
+        <FaBinoculars size={20} className='text-white' />
       </g>
 
       {/* Middle icon: user‑tie */}
       <g transform='translate(138,95)'>
-        <FaUserTie size={32} className='text-white' />
+        <FaUserTie size={20} className='text-white' />
       </g>
 
       {/* Bottom icon: briefcase */}
       <g transform='translate(138,170)'>
-        <FaBriefcase size={32} className='text-white' />
+        <FaBriefcase size={20} className='text-white' />
       </g>
     </svg>
   );
