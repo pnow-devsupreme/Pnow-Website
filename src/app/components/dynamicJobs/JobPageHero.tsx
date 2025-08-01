@@ -18,7 +18,7 @@ const SectionBlock: React.FC<SectionProps> = ({ section, reverse = false }) => {
     buttonLink,
   } = section;
   return (
-    <section className='py-4 px-4 md:px-8'>
+    <section className='py-4 px-4 md:px-8 mt-16'>
       <div
         className={`max-w-6xl mx-auto flex flex-col items-center md:items-stretch md:flex-row ${
           reverse ? 'md:flex-row-reverse' : ''

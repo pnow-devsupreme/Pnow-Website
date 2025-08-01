@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { JobFeature } from '@/data/jobsdata';
 
 interface FeatureGridProps {
@@ -15,8 +14,14 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({ description, items }) => (
       </p>
       <div className='flex flex-col md:flex-row gap-8 md:gap-12 align-left'>
         {items.map((item) => (
-          <div key={item.title} className='text-start'>
-            <item.icon className='w-12 h-12 text-[#0D004D] mb-4' strokeWidth={1}/>
+          <div
+            key={item.title}
+            className='text-start group transition-transform duration-300'
+          >
+            <item.icon
+              className='w-12 h-12 text-[#0D004D] mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6'
+              strokeWidth={1}
+            />
             <h3 className='text-lg font-extrabold text-[#0D004D]'>
               {item.title}
             </h3>

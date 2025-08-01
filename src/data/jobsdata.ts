@@ -3,6 +3,7 @@ import {
   Coins,
   Construction,
   FlaskConical,
+  Gavel,
   Hammer,
   Hospital,
   Hotel,
@@ -12,6 +13,7 @@ import {
   PersonStanding,
   Pill,
   Plane,
+  Scale,
   Spade,
   UmbrellaOff,
   Users,
@@ -20,7 +22,25 @@ import {
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
-
+import {
+  drugImg,
+  psychologistImg,
+  chemist,
+  pharma,
+  forensic,
+} from '~/healthCare';
+import {
+  legal1,
+  legal2,
+  legal3,
+  legal4,
+  legal5,
+  legal6,
+  legal7,
+  legal8,
+  legal9,
+} from '~/legal';
+import { finance, financeLeader, EWallet } from '~/accounting';
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
 import Accounting3 from '../../public/jobs/Accountant-rafiki.png';
@@ -31,7 +51,6 @@ import Accounting6 from '../../public/jobs/Investment.png';
 import Healthcare3 from '../../public/jobs/Laboratory.png';
 import Healthcare2 from '../../public/jobs/Laboratory-r.png';
 
-import { EWallet, finance, financeLeader } from '~/accounting';
 import {
   Aviation1,
   Aviation2,
@@ -59,13 +78,6 @@ import {
   Image7,
 } from '~/hardwareNetwork';
 import {
-  chemist,
-  drugImg,
-  forensic,
-  pharma,
-  psychologistImg,
-} from '~/healthCare';
-import {
   Hospitality1,
   Hospitality2,
   Hospitality3,
@@ -74,6 +86,30 @@ import {
   Hospitality6,
   Hospitality7,
 } from '~/hospitality';
+import {
+  archImg1,
+  archImg10,
+  archImg2,
+  archImg3,
+  archImg4,
+  archImg5,
+  archImg6,
+  archImg7,
+  archImg8,
+  archImg9,
+} from '~/architecture';
+import {
+  environment1,
+  environment10,
+  environment2,
+  environment3,
+  environment4,
+  environment5,
+  environment6,
+  environment7,
+  environment8,
+  environment9,
+} from '~/environment';
 
 export interface JobSection {
   title: string;
@@ -1210,6 +1246,577 @@ export const jobs: Job[] = [
           ],
           imageSrc: Hospitality5,
           altText: 'Bellhop illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  },
+  {
+    id: 7,
+    title: 'Legal',
+    slug: 'legal',
+    sections: [
+      {
+        title: 'Legal Careers with ProficientNow',
+        description:
+          'Connecting talented professionals with rewarding careers in legal. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
+        imageSrc: legal1,
+        altText: 'Legal careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Legal Industry Overview',
+        description:
+          'The legal industry is a cornerstone of modern society, providing critical support services to individuals, businesses, and governments. It is a complex and ever-evolving field, with lawyers and legal professionals working together to navigate the intricacies of the law and ensure justice is served.',
+        imageSrc: legal2,
+        altText: 'Legal illustration',
+      },
+    ],
+    features: {
+      description:
+        'The legal industry offers a diverse range of opportunities for talented professionals, including:',
+      items: [
+        {
+          title: 'Legal Assistant',
+          description:
+            'Providing support and assistance to attorneys and legal staff',
+          icon: Scale,
+        },
+        {
+          title: 'Legal Clerk',
+          description:
+            'Assisting attorneys and legal staff with administrative tasks',
+          icon: Gavel,
+        },
+        {
+          title: 'Legal Secretary',
+          description:
+            'Providing support and assistance to attorneys and legal staff',
+          icon: PersonStanding,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Top Legal Careers',
+      description:
+        'Explore rewarding careers in law with opportunities to specialize in civil, corporate, labor, and employment law. ProficientNow connects legal professionals with top-tier firms and organizations.',
+      items: [
+        {
+          title: 'Civil Litigation Attorney',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Proven experience in handling non-criminal litigation cases',
+          ],
+          responsibilities: [
+            'Specialize in civil law, handling disputes involving contracts, property, personal injury, and other civil matters',
+            'Represent clients in court, presenting arguments and advocating on their behalf',
+            'Negotiate settlements and alternative dispute resolutions outside of court',
+            'Provide legal advice and counsel to clients regarding their civil litigation cases',
+          ],
+          imageSrc: legal3,
+          altText: 'Civil Litigation Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Personal Injury Lawyer',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Experience in personal injury law, with a focus on negligence, wrongful acts, and compensation claims',
+          ],
+          responsibilities: [
+            'Represent clients injured due to negligence, accidents, medical malpractice, or product liability',
+            'Handle all aspects of personal injury cases, including litigation and seeking compensation for clients',
+            'Argue cases in court and negotiate settlements with opposing parties',
+            'Provide legal counsel and support to clients throughout the litigation process',
+          ],
+          imageSrc: legal4,
+          altText: 'Personal Injury Lawyer illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Employment Lawyer',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Expertise in employment law, including wrongful termination, discrimination, and wage disputes',
+          ],
+          responsibilities: [
+            'Represent employees in legal disputes with employers, focusing on wrongful termination, discrimination, and wage-related issues',
+            'Advise clients on their employment rights and legal options',
+            'Provide guidance to clients throughout the legal process and advocate for fair treatment in the workplace',
+          ],
+          imageSrc: legal5,
+          altText: 'Employment Lawyer illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Labor Law Attorney',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'In-depth knowledge of labor law, workplace rights, union negotiations, and employment laws',
+          ],
+          responsibilities: [
+            'Represent clients in labor law disputes, including workplace rights, union negotiations, and compliance with employment laws',
+            'Advocate on behalf of employees or employers in litigation involving labor disputes',
+            'Prepare and review legal documents such as complaints, motions, and settlement agreements',
+            'Provide legal advice and guidance on labor law compliance and union-related issues',
+          ],
+          imageSrc: legal6,
+          altText: 'Labor Law Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Workers’ Compensation Attorney',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Strong knowledge of workers’ compensation law and insurance defense',
+          ],
+          responsibilities: [
+            'Represent insurance companies or employers in workers’ compensation cases, handling claims, disputes, and litigation related to workplace injuries',
+            'Defend clients against claims for workers’ compensation benefits',
+            'Negotiate settlements and manage disputes involving workers’ compensation claims',
+            'Provide legal advice to employers on risk management and workers’ compensation issues',
+          ],
+          imageSrc: legal7,
+          altText: 'Workers’ Compensation Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Corporate Attorney',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Expertise in corporate law, securities regulations, and compliance',
+          ],
+          responsibilities: [
+            'Advise companies on legal and regulatory aspects of business operations, including mergers, acquisitions, and corporate governance',
+            'Ensure compliance with securities laws and regulations, including SEC filings and reporting requirements',
+            'Provide strategic legal counsel on business transactions, capital markets, and corporate finance',
+            'Represent clients in securities-related disputes and regulatory matters',
+          ],
+          imageSrc: legal8,
+          altText: 'Corporate Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Civil Defense Attorney',
+          qualifications: [
+            'Juris Doctor (JD) degree from an accredited law school',
+            'Experience in complex civil defense litigation with strong analytical and negotiation skills',
+          ],
+          responsibilities: [
+            'Handle complex civil litigation cases involving multiple parties and significant financial stakes',
+            'Specialize in defending clients in intricate legal disputes, focusing on strategic litigation and dispute resolution',
+            'Prepare legal documents such as complaints, motions, and settlement agreements',
+            'Provide legal advice and counsel on risk management, compliance, and defense strategies',
+          ],
+          imageSrc: legal9,
+          altText: 'Civil Defense Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  },
+  {
+    id: 8,
+    title: 'Architecture',
+    slug: 'architecture',
+    sections: [
+      {
+        title: 'Architecture Careers with ProficientNow',
+        description:
+          'Connecting talented professionals with rewarding careers in architecture. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
+        imageSrc: archImg1,
+        altText: 'Architecture careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Architecture Industry Overview',
+        description:
+          'Architecture plays a vital role in shaping our environment and society. Explore various career paths in architecture and discover opportunities to contribute to innovative and sustainable design projects.',
+        imageSrc: archImg2,
+        altText: 'Architecture illustration',
+      },
+    ],
+    features: {
+      description:
+        'Discover opportunities in architecture, from designing commercial buildings to creating sustainable communities. ProficientNow connects talented architects with top-tier firms and organizations.',
+      items: [
+        {
+          title: 'Architecture Clerk',
+          description:
+            'Assisting architects and design staff with administrative tasks',
+          icon: Scale,
+        },
+        {
+          title: 'Architecture Assistant',
+          description:
+            'Providing support and assistance to architects and design staff',
+          icon: Gavel,
+        },
+        {
+          title: 'Architecture Secretary',
+          description:
+            'Providing administrative support to architects and design staff',
+          icon: PersonStanding,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Architecture Careers',
+      description:
+        'Architecture sectors offer diverse, rewarding careers with strong growth potential:',
+      items: [
+        {
+          title: 'Project Architect',
+          qualifications: [
+            'Bachelor’s degree in Architecture or a related field',
+            'Strong coordination, communication, and technical skills',
+          ],
+          responsibilities: [
+            'Oversee and manage interior and architectural projects from concept to completion',
+            'Ensure design intent is maintained throughout the documentation and construction process',
+            'Monitor project schedules, deliverables, and compliance with codes and standards',
+            'Support senior architects and project managers in day-to-day project execution',
+          ],
+          imageSrc: archImg3,
+          altText: 'Project Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Retail Design Lead',
+          qualifications: [
+            'Bachelor’s degree in Architecture or a related field',
+            'Strong leadership and client management skills',
+          ],
+          responsibilities: [
+            'Lead project teams through all phases of retail design and development',
+            'Oversee design development to ensure quality, consistency, and brand alignment',
+            'Manage client communications and maintain strong working relationships',
+            'Ensure project documentation complies with codes, regulations, and company standards',
+          ],
+          imageSrc: archImg4,
+          altText: 'Retail Design Lead illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Interior Design Architect',
+          qualifications: [
+            'Bachelor’s degree in Architecture, Interior Design, or a related field',
+            'Experience in retail space planning and interior design',
+          ],
+          responsibilities: [
+            'Develop innovative retail and interior design concepts',
+            'Create detailed architectural drawings, floor plans, and design documents',
+            'Collaborate with project teams to align designs with client goals and branding',
+          ],
+          imageSrc: archImg5,
+          altText: 'Interior Design Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Corporate Interiors Designer',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture or Interior Design',
+            'Proven experience in corporate interior design',
+          ],
+          responsibilities: [
+            'Design innovative and functional corporate interior spaces',
+            'Develop concept designs, presentations, and detailed construction drawings',
+            'Collaborate with clients, consultants, and internal teams throughout the project lifecycle',
+            'Ensure design compliance with building codes, accessibility standards, and corporate branding',
+          ],
+          imageSrc: archImg6,
+          altText: 'Corporate Interiors Designer illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Educational Facility Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong leadership skills and knowledge of educational planning standards and codes',
+          ],
+          responsibilities: [
+            'Lead the design and development of K-12 educational architecture projects',
+            'Manage project teams and coordinate with consultants and stakeholders',
+            'Oversee project documentation, from concept through construction administration',
+            'Collaborate with school districts and community stakeholders to meet educational goals',
+          ],
+          imageSrc: archImg7,
+          altText: 'Educational Facility Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Licensed Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong understanding of building codes, regulations, and project management',
+          ],
+          responsibilities: [
+            'Lead architectural projects from concept through construction with full legal authority',
+            'Ensure all designs comply with local, state, and federal building regulations',
+            'Coordinate with engineers, consultants, and contractors throughout the project lifecycle',
+            'Review and approve architectural plans, drawings, and specifications',
+          ],
+          imageSrc: archImg8,
+          altText: 'Licensed Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Tenant Improvement Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Licensed architect preferred',
+            'Experience in tenant improvement projects with strong project management and technical skills',
+          ],
+          responsibilities: [
+            'Lead tenant improvement projects from design through construction completion',
+            'Develop interior layouts that align with client needs and building requirements',
+            'Coordinate with contractors, consultants, and building management teams',
+            'Ensure design compliance with codes, accessibility standards, and lease agreements',
+          ],
+          imageSrc: archImg9,
+          altText: 'Tenant Improvement Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Healthcare Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Extensive experience in healthcare design',
+            'Architectural license preferred',
+          ],
+          responsibilities: [
+            'Direct healthcare architecture projects from concept through completion',
+            'Design patient-centered environments that prioritize safety, comfort, and functionality',
+            'Lead interdisciplinary teams and coordinate with healthcare providers and consultants',
+            'Oversee project documentation, design reviews, and construction administration',
+          ],
+          imageSrc: archImg10,
+          altText: 'Healthcare Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Senior Project Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong leadership and strategic planning skills',
+          ],
+          responsibilities: [
+            'Oversee the design and execution of complex building projects from inception to completion',
+            'Manage project budgets, timelines, and resource allocation',
+            'Review and approve architectural designs, specifications, and construction documents',
+            'Serve as the primary liaison between clients, consultants, and contractors',
+          ],
+          imageSrc: archImg4,
+          altText: 'Senior Project Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  },
+  {
+    id: 9,
+    title: 'Environment',
+    slug: 'environment',
+    sections: [
+      {
+        title: 'Environmental Careers with ProficientNow',
+        description:
+          'We connect skilled environmental professionals with impactful careers that contribute to sustainability and global well-being. From conservation to environmental planning, we align talent with purpose.',
+        imageSrc: environment1,
+        altText: 'Environmental careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Environmental Industry Overview',
+        description:
+          'Environmental professionals play a critical role in protecting our natural resources, addressing climate change, and shaping sustainable communities. Discover meaningful career paths in environmental science, policy, and technology.',
+        imageSrc: environment2,
+        altText: 'Environmental industry illustration',
+      },
+    ],
+    features: {
+      description:
+        'Explore impactful roles in the environmental sector, from conservation biology to sustainable urban planning. ProficientNow partners with mission-driven organizations to match professionals with the right opportunities.',
+      items: [
+        {
+          title: 'Environmental Technician',
+          description:
+            'Assist scientists and engineers in collecting and analyzing environmental samples',
+          icon: Scale,
+        },
+        {
+          title: 'Sustainability Assistant',
+          description:
+            'Support sustainability initiatives and track environmental performance data',
+          icon: Gavel,
+        },
+        {
+          title: 'Environmental Data Clerk',
+          description:
+            'Manage and organize data related to environmental assessments and compliance',
+          icon: PersonStanding,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Environmental Careers',
+      description:
+        'Environmental sectors offer meaningful, purpose-driven careers with strong growth in sustainability, conservation, and public service:',
+      items: [
+        {
+          title: 'Park Ranger',
+          qualifications: [
+            'Bachelor’s degree in Parks and Recreation, Environmental Science, Biology, or a related field',
+            'CPR and first aid certification may be required',
+          ],
+          responsibilities: [
+            'Patrol park areas to ensure visitor safety and regulatory compliance',
+            'Provide information, guidance, and assistance to park visitors',
+            'Perform resource management tasks including trail maintenance and habitat restoration',
+            'Monitor wildlife activity and enforce wildlife protection laws',
+          ],
+          imageSrc: environment3,
+          altText: 'Park Ranger illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Natural Resources Technician',
+          qualifications: [
+            'Associate’s or Bachelor’s degree in Natural Resources Management, Environmental Science, Biology, or a related field',
+            'Fieldwork experience and familiarity with environmental data collection techniques',
+          ],
+          responsibilities: [
+            'Conduct field surveys to gather data on wildlife, vegetation, and water quality',
+            'Assist in habitat restoration and invasive species control efforts',
+            'Compile, analyze, and report environmental data for research and compliance',
+            'Support the development and implementation of natural resource management plans',
+          ],
+          imageSrc: environment4,
+          altText: 'Natural Resources Technician illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Marine Biologist',
+          qualifications: [
+            'Bachelor’s degree in Marine Biology, Biology, Ecology, or a related field',
+            'Strong swimming and diving skills may be necessary',
+          ],
+          responsibilities: [
+            'Study marine organisms, ecosystems, and aquatic habitats',
+            'Conduct field research, collect samples, and document findings',
+            'Monitor marine biodiversity and evaluate environmental impacts',
+            'Collaborate with scientists, conservationists, and stakeholders on marine protection initiatives',
+          ],
+          imageSrc: environment5,
+          altText: 'Marine Biologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Environmental Field Technician',
+          qualifications: [
+            'Associate’s or Bachelor’s degree in Environmental Science, Biology, Chemistry, or a related field',
+            'Experience with fieldwork and environmental monitoring techniques',
+          ],
+          responsibilities: [
+            'Conduct environmental sampling and monitoring of air, water, and soil quality',
+            'Perform laboratory analyses on environmental samples',
+            'Assist with environmental impact assessments and regulatory compliance monitoring',
+            'Support environmental remediation and cleanup projects',
+          ],
+          imageSrc: environment6,
+          altText: 'Environmental Field Technician illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Wildlife Biologist',
+          qualifications: [
+            'Bachelor’s degree in Wildlife Biology, Ecology, Environmental Science, or a related field',
+            'Strong knowledge of wildlife ecology and behavior',
+          ],
+          responsibilities: [
+            'Conduct field surveys to monitor wildlife populations and habitats',
+            'Implement wildlife management and conservation strategies',
+            'Provide technical guidance and training to landowners and stakeholders',
+            'Collaborate with agencies and organizations on wildlife-related initiatives',
+          ],
+          imageSrc: environment7,
+          altText: 'Wildlife Biologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Conservation Scientist',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Wildlife Biology, Ecology, Environmental Science, or a related field',
+            'Strong analytical and research skills required',
+          ],
+          responsibilities: [
+            'Study wildlife populations, behaviors, and habitat interactions',
+            'Analyze research findings and prepare technical reports',
+            'Support wildlife management and conservation planning efforts',
+            'Collaborate with scientists, agencies, and stakeholders on conservation initiatives',
+          ],
+          imageSrc: environment8,
+          altText: 'Conservation Scientist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Meteorologist',
+          qualifications: [
+            'Bachelor’s degree in Meteorology, Atmospheric Science, or a related field',
+            'Strong mathematical, analytical, and computer skills',
+            'Experience with forecasting models and data interpretation',
+          ],
+          responsibilities: [
+            'Analyze atmospheric data to understand weather patterns and conditions',
+            'Develop and issue accurate weather forecasts and severe weather warnings',
+            'Monitor short-term and long-term climate trends',
+            'Communicate weather updates and risks to the public, media, and stakeholders',
+          ],
+          imageSrc: environment9,
+          altText: 'Meteorologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'GIS Specialist',
+          qualifications: [
+            'Bachelor’s degree in Geography, Geographic Information Systems (GIS), Environmental Science, or a related field',
+            'Proficiency in GIS software and spatial analysis techniques',
+          ],
+          responsibilities: [
+            'Create and maintain GIS databases, maps, and spatial datasets',
+            'Develop spatial models and conduct advanced spatial analysis',
+            'Support research projects and fieldwork with GIS tools and insights',
+            'Communicate findings through maps, reports, and visual presentations for stakeholders',
+          ],
+          imageSrc: environment10,
+          altText: 'GIS Specialist illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },

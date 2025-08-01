@@ -7,10 +7,10 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { employeesData } from '@/data/employeesData';
 import { jobs } from '@/data/jobsdata';
-
 import { employmentData } from '@/app/components/employer/data/employerData';
 
 import Logo from '../../../public/navbar/pnlogonew.jpg';
+import { Dropdown } from '@/app/layouts/Dropdown';
 
 const NAV_LINKS = [
   { label: 'About Us', href: '/about-us' },
@@ -20,6 +20,15 @@ const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blog' },
 ];
+
+// Helper function to chunk array into columns
+const chunkArray = <T,>(array: T[], chunkSize: number): T[][] => {
+  const chunks: T[][] = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunks.push(array.slice(i, i + chunkSize));
+  }
+  return chunks;
+};
 
 export default function NavBar() {
   const navRef = useRef<HTMLElement>(null);
@@ -75,6 +84,39 @@ export default function NavBar() {
     ? 'sticky top-0 left-0 mx-auto'
     : 'absolute left-1/2 transform -translate-x-1/2 top-[32px]';
 
+  // Transform your data into label + href arrays
+  const jobDropdown = chunkArray(
+    jobs.map((job) => ({
+      label: job.title,
+      href: `/jobs/${job.slug}`,
+    })),
+    5
+  );
+
+  const employerDropdown = chunkArray(
+    Object.entries(employmentData).map(([slug, data]) => ({
+      label: `${data.servicesSection.title} ${data.servicesSection.subtitle}`,
+      href: `/employers/${slug}`,
+    })),
+    5
+  );
+
+  const servicesDropdown = chunkArray(
+    Object.entries(employmentData).map(([slug, data]) => ({
+      label: `${data.servicesSection.title} ${data.servicesSection.subtitle}`,
+      href: `/services/${slug}`,
+    })),
+    5
+  );
+
+  const employeesDropdown = chunkArray(
+    Object.entries(employeesData).map(([slug, data]) => ({
+      label: `${data.servicesSection.title} ${data.servicesSection.subtitle}`,
+      href: `/employees/${slug}`,
+    })),
+    5
+  );
+
   return (
     <nav
       ref={navRef}
@@ -94,100 +136,28 @@ export default function NavBar() {
 
       <ul className='flex items-center space-x-6 relative'>
         {NAV_LINKS.map(({ label, href }) => {
-          // Find a Job dropdown
           if (label === 'Find a Job') {
-            return (
-              <li key={href} className='relative group'>
-                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
-                  {label}
-                </button>
-                <ul className='absolute left-0 w-48 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
-                  {jobs.map((job) => (
-                    <li key={job.slug}>
-                      <Link
-                        href={`/jobs/${job.slug}`}
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                      >
-                        {job.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            );
+            return <Dropdown key={label} label={label} columns={jobDropdown} />;
           }
 
-          // Employers dropdown
           if (label === 'Employers') {
             return (
-              <li key={href} className='relative group'>
-                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
-                  {label}
-                </button>
-                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
-                  {Object.entries(employmentData).map(([slug, data]) => (
-                    <li key={slug}>
-                      <Link
-                        href={`/employers/${slug}`}
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                      >
-                        {data.servicesSection.title}{' '}
-                        {data.servicesSection.subtitle}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <Dropdown key={label} label={label} columns={employerDropdown} />
             );
           }
 
           if (label === 'Services') {
             return (
-              <li key={href} className='relative group'>
-                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
-                  {label}
-                </button>
-                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
-                  {Object.entries(employmentData).map(([slug, data]) => (
-                    <li key={slug}>
-                      <Link
-                        href={`/services/${slug}`}
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                      >
-                        {data.servicesSection.title}{' '}
-                        {data.servicesSection.subtitle}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <Dropdown key={label} label={label} columns={servicesDropdown} />
             );
           }
 
           if (label === 'Employees') {
             return (
-              <li key={href} className='relative group'>
-                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
-                  {label}
-                </button>
-                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
-                  {Object.entries(employeesData).map(([slug, data]) => (
-                    <li key={slug}>
-                      <Link
-                        href={`/employees/${slug}`}
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                      >
-                        {data.servicesSection.title}{' '}
-                        {data.servicesSection.subtitle}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <Dropdown key={label} label={label} columns={employeesDropdown} />
             );
           }
 
-          // Default link
           return (
             <li key={href}>
               <Link
