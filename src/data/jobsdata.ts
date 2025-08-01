@@ -87,7 +87,30 @@ import {
   Hospitality6,
   Hospitality7,
 } from '~/hospitality';
-import { archImg1, archImg10, archImg2, archImg3, archImg4, archImg5, archImg6, archImg7, archImg8, archImg9 } from '~/architecture';
+import {
+  archImg1,
+  archImg10,
+  archImg2,
+  archImg3,
+  archImg4,
+  archImg5,
+  archImg6,
+  archImg7,
+  archImg8,
+  archImg9,
+} from '~/architecture';
+import {
+  environment1,
+  environment10,
+  environment2,
+  environment3,
+  environment4,
+  environment5,
+  environment6,
+  environment7,
+  environment8,
+  environment9,
+} from '~/environment';
 
 export interface JobSection {
   title: string;
@@ -1604,6 +1627,197 @@ export const jobs: Job[] = [
           ],
           imageSrc: archImg4,
           altText: 'Senior Project Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  },
+  {
+    id: 9,
+    title: 'Environment',
+    slug: 'environment',
+    sections: [
+      {
+        title: 'Environmental Careers with ProficientNow',
+        description:
+          'We connect skilled environmental professionals with impactful careers that contribute to sustainability and global well-being. From conservation to environmental planning, we align talent with purpose.',
+        imageSrc: environment1,
+        altText: 'Environmental careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Environmental Industry Overview',
+        description:
+          'Environmental professionals play a critical role in protecting our natural resources, addressing climate change, and shaping sustainable communities. Discover meaningful career paths in environmental science, policy, and technology.',
+        imageSrc: environment2,
+        altText: 'Environmental industry illustration',
+      },
+    ],
+    features: {
+      description:
+        'Explore impactful roles in the environmental sector, from conservation biology to sustainable urban planning. ProficientNow partners with mission-driven organizations to match professionals with the right opportunities.',
+      items: [
+        {
+          title: 'Environmental Technician',
+          description:
+            'Assist scientists and engineers in collecting and analyzing environmental samples',
+          icon: Scale,
+        },
+        {
+          title: 'Sustainability Assistant',
+          description:
+            'Support sustainability initiatives and track environmental performance data',
+          icon: Gavel,
+        },
+        {
+          title: 'Environmental Data Clerk',
+          description:
+            'Manage and organize data related to environmental assessments and compliance',
+          icon: PersonStanding,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Environmental Careers',
+      description:
+        'Environmental sectors offer meaningful, purpose-driven careers with strong growth in sustainability, conservation, and public service:',
+      items: [
+        {
+          title: 'Park Ranger',
+          qualifications: [
+            'Bachelor’s degree in Parks and Recreation, Environmental Science, Biology, or a related field',
+            'CPR and first aid certification may be required',
+          ],
+          responsibilities: [
+            'Patrol park areas to ensure visitor safety and regulatory compliance',
+            'Provide information, guidance, and assistance to park visitors',
+            'Perform resource management tasks including trail maintenance and habitat restoration',
+            'Monitor wildlife activity and enforce wildlife protection laws',
+          ],
+          imageSrc: environment3,
+          altText: 'Park Ranger illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Natural Resources Technician',
+          qualifications: [
+            'Associate’s or Bachelor’s degree in Natural Resources Management, Environmental Science, Biology, or a related field',
+            'Fieldwork experience and familiarity with environmental data collection techniques',
+          ],
+          responsibilities: [
+            'Conduct field surveys to gather data on wildlife, vegetation, and water quality',
+            'Assist in habitat restoration and invasive species control efforts',
+            'Compile, analyze, and report environmental data for research and compliance',
+            'Support the development and implementation of natural resource management plans',
+          ],
+          imageSrc: environment4,
+          altText: 'Natural Resources Technician illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Marine Biologist',
+          qualifications: [
+            'Bachelor’s degree in Marine Biology, Biology, Ecology, or a related field',
+            'Strong swimming and diving skills may be necessary',
+          ],
+          responsibilities: [
+            'Study marine organisms, ecosystems, and aquatic habitats',
+            'Conduct field research, collect samples, and document findings',
+            'Monitor marine biodiversity and evaluate environmental impacts',
+            'Collaborate with scientists, conservationists, and stakeholders on marine protection initiatives',
+          ],
+          imageSrc: environment5,
+          altText: 'Marine Biologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Environmental Field Technician',
+          qualifications: [
+            'Associate’s or Bachelor’s degree in Environmental Science, Biology, Chemistry, or a related field',
+            'Experience with fieldwork and environmental monitoring techniques',
+          ],
+          responsibilities: [
+            'Conduct environmental sampling and monitoring of air, water, and soil quality',
+            'Perform laboratory analyses on environmental samples',
+            'Assist with environmental impact assessments and regulatory compliance monitoring',
+            'Support environmental remediation and cleanup projects',
+          ],
+          imageSrc: environment6,
+          altText: 'Environmental Field Technician illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Wildlife Biologist',
+          qualifications: [
+            'Bachelor’s degree in Wildlife Biology, Ecology, Environmental Science, or a related field',
+            'Strong knowledge of wildlife ecology and behavior',
+          ],
+          responsibilities: [
+            'Conduct field surveys to monitor wildlife populations and habitats',
+            'Implement wildlife management and conservation strategies',
+            'Provide technical guidance and training to landowners and stakeholders',
+            'Collaborate with agencies and organizations on wildlife-related initiatives',
+          ],
+          imageSrc: environment7,
+          altText: 'Wildlife Biologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Conservation Scientist',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Wildlife Biology, Ecology, Environmental Science, or a related field',
+            'Strong analytical and research skills required',
+          ],
+          responsibilities: [
+            'Study wildlife populations, behaviors, and habitat interactions',
+            'Analyze research findings and prepare technical reports',
+            'Support wildlife management and conservation planning efforts',
+            'Collaborate with scientists, agencies, and stakeholders on conservation initiatives',
+          ],
+          imageSrc: environment8,
+          altText: 'Conservation Scientist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Meteorologist',
+          qualifications: [
+            'Bachelor’s degree in Meteorology, Atmospheric Science, or a related field',
+            'Strong mathematical, analytical, and computer skills',
+            'Experience with forecasting models and data interpretation',
+          ],
+          responsibilities: [
+            'Analyze atmospheric data to understand weather patterns and conditions',
+            'Develop and issue accurate weather forecasts and severe weather warnings',
+            'Monitor short-term and long-term climate trends',
+            'Communicate weather updates and risks to the public, media, and stakeholders',
+          ],
+          imageSrc: environment9,
+          altText: 'Meteorologist illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'GIS Specialist',
+          qualifications: [
+            'Bachelor’s degree in Geography, Geographic Information Systems (GIS), Environmental Science, or a related field',
+            'Proficiency in GIS software and spatial analysis techniques',
+          ],
+          responsibilities: [
+            'Create and maintain GIS databases, maps, and spatial datasets',
+            'Develop spatial models and conduct advanced spatial analysis',
+            'Support research projects and fieldwork with GIS tools and insights',
+            'Communicate findings through maps, reports, and visual presentations for stakeholders',
+          ],
+          imageSrc: environment10,
+          altText: 'GIS Specialist illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
