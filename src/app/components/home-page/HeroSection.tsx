@@ -1,9 +1,6 @@
-'use client';
-
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
 import SplitTextComp from '@/app/components/bits/SplitText';
@@ -13,7 +10,7 @@ import ConstructionTechnicians from '../../../../public/images/heroImage2.jpg';
 import PipelineEngineer from '../../../../public/images/heroImage3.jpg';
 import SeniorAttorney from '../../../../public/images/heroImage4.jpg';
 
-export default function HeroSection() {
+const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -22,7 +19,7 @@ export default function HeroSection() {
     gsap.registerPlugin(SplitText);
 
     const ctx = gsap.context(() => {
-      // Split‑text animations
+      // ─── Split‑text animations ───────────────────────────────────────────
       const splitTitle = new SplitText(titleRef.current, {
         type: 'chars, words',
       });
@@ -35,16 +32,17 @@ export default function HeroSection() {
         stagger: 0.04,
         ease: 'power2.out',
       });
+
       gsap.from(splitDesc.words, {
-        duration: 0.6,
+        duration: 0.2,
         opacity: 0,
         y: 20,
-        stagger: 0.05,
+        stagger: 0.01,
         ease: 'power2.out',
-        delay: 0.01,
+        delay: 0.1,
       });
 
-      // Floating icons animations
+      // ─── Navbar items & button ──────────────────────────────────────────
       const q = gsap.utils.selector(heroRef);
       gsap.from(q('.nav-item'), {
         duration: 0.4,
@@ -52,26 +50,28 @@ export default function HeroSection() {
         opacity: 0,
         stagger: 0.12,
         ease: 'power2.out',
-        delay: 0.01,
+        delay: 0.4,
       });
+
       gsap.from(q('.contact-btn'), {
         duration: 0.6,
         scale: 0.8,
         opacity: 0,
         ease: 'back.out(1.7)',
-        delay: 0.01,
+        delay: 0.8,
       });
 
-      // Floating icons animations
-      q('.floating-icon').forEach((el, i) => {
+      // ─── Floating icons (each animates independently) ──────────────────
+      const icons = q('.floating-icon');
+      icons.forEach((el, i) => {
         gsap.to(el, {
-          scale: 0.9,
+          y: -15,
           duration: 2,
-          ease: 'sine.inOut',
+          ease: 'ease-linear',
           repeat: -1,
           yoyo: true,
-          delay: i * 0.3,
-          force3D: true,
+          delay: i * 0.3, // stagger start only
+          force3D: true, // ensure GPU acceleration
         });
       });
     }, heroRef);
@@ -88,26 +88,32 @@ export default function HeroSection() {
       }}
     >
       <div className='relative mx-auto h-[750px] max-w-[1440px]'>
-        {/* HERO CONTENT */}
+        {/* ─── HERO CONTENT ───────────────────────────────────── */}
         <div
           className='
-            absolute top-1/2 left-1/2 transform
-            -translate-x-1/2 -translate-y-1/2
-            text-center px-4 w-full max-w-[800px]
-            flex flex-col gap-5 mt-10
+            absolute top-1/2 left-1/2
+            transform -translate-x-1/2 -translate-y-1/2
+            text-center
+            px-4
+            w-full max-w-[800px]
+            flex flex-col gap-5
+            mt-10
           '
         >
           <h1
             ref={titleRef}
-            className='text-[60px] font-bold text-white leading-tight'
+            className='text-[30px] lg:text-[60px] font-bold text-white leading-tight'
           >
             Transform Your <span className='text-brand-red'>Path</span> to
             <br />
-            <span className='text-brand-red'>Success</span>
+            <span className='text-brand-red'> Success</span>
           </h1>
 
           <SplitTextComp
-            text='Welcome to our comprehensive solution, optimizing hiring for employers and efficiently connecting top talent. For employees, we offer career opportunities aligning with aspirations. Elevate your success journey with us, unlocking your full potential together.'
+            text='Welcome to our comprehensive solution, optimizing hiring for
+              employers and efficiently connecting top talent. For employees, we
+              offer career opportunities aligning with aspirations. Elevate your
+              success journey with us, unlocking your full potential together.'
             className='mt-4 text-[18px] leading-relaxed text-white/90'
             delay={100}
             duration={0.5}
@@ -121,27 +127,20 @@ export default function HeroSection() {
           />
 
           <div className='mt-8 flex justify-center space-x-4'>
-            <Link
-              href='/find-a-job'
-              className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 transition'
-            >
+            <button className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
               Find Works
-            </Link>
-            <Link
-              href='/employers'
-              className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 transition'
-            >
+            </button>
+
+            <button className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
               Hire Talents Now
-            </Link>
+            </button>
           </div>
         </div>
 
-        {/* FOUR FLOATING ICONS */}
+        {/* ─── FOUR CIRCULAR ICONS ────────────────────────────── */}
+        {/* Top‑left */}
         <div
-          className='
-            floating-icon absolute top-[260px] left-[80px]
-            flex flex-col items-center
-          '
+          className='floating-icon absolute top-[260px] left-[80px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -154,11 +153,9 @@ export default function HeroSection() {
           </span>
         </div>
 
+        {/* Bottom‑left */}
         <div
-          className='
-            floating-icon absolute bottom-[120px] left-[160px]
-            flex flex-col items-center
-          '
+          className='floating-icon absolute bottom-[120px] left-[160px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -171,11 +168,9 @@ export default function HeroSection() {
           </span>
         </div>
 
+        {/* Top‑right */}
         <div
-          className='
-            floating-icon absolute top-[260px] right-[80px]
-            flex flex-col items-center
-          '
+          className='floating-icon absolute top-[260px] right-[80px] hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -188,11 +183,9 @@ export default function HeroSection() {
           </span>
         </div>
 
+        {/* Bottom‑right */}
         <div
-          className='
-            floating-icon absolute bottom-[120px] right-[160px]
-            flex flex-col items-center
-          '
+          className='floating-icon absolute bottom-[120px] right-[160px]  hidden lg:flex flex-col items-center'
           style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
         >
           <Image
@@ -207,4 +200,6 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
