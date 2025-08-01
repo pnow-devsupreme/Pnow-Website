@@ -26,8 +26,8 @@ const logos = [
 ];
 const TrustedBy: React.FC = () => {
   return (
-    <section id='trusted-by' className='w-full py-12'>
-      <div className='bg-white rounded-3xl shadow-lg py-8 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-12'>
+    <section id='trusted-by' className='w-full absolute  py-12'>
+      <div className='bg-white rounded-3xl shadow-lg py-8 px-8 max-w-7xl mx-auto h-[250px] flex items-center -mt-[100px] '>
         <div className='w-full'>
           <Marquee
             gradient={false}
