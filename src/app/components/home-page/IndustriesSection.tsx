@@ -12,7 +12,7 @@ import {
   User,
   Users,
 } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +21,7 @@ const industries = [
   { label: 'Hospitality', count: 2256, Icon: LifeBuoy },
   { label: 'Kitchen', count: 1408, Icon: Factory },
   { label: 'Retail', count: 1740, Icon: Hop },
-  { label: 'Special Events', count: 3948, Icon: Calendar, highlight: true },
+  { label: 'Special Events', count: 3948, Icon: Calendar },
   { label: 'General Labor', count: 2984, Icon: User },
   { label: 'Driving', count: 4509, Icon: Truck },
   { label: 'Senior Living', count: 1039, Icon: Users },
@@ -30,6 +30,9 @@ const industries = [
 const IndustriesSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement[]>([]);
+  const fillRef = useRef<HTMLDivElement[]>([]);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const animationRefs = useRef<(gsap.core.Tween | null)[]>([]);
 
   useEffect(() => {
     if (itemsRef.current.length) {
@@ -52,8 +55,55 @@ const IndustriesSection: React.FC = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
+      // Kill any ongoing animations
+      animationRefs.current.forEach(anim => {
+        if (anim) anim.kill();
+      });
     };
   }, []);
+
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index);
+
+    // Kill any existing animation on this element
+    if (animationRefs.current[index]) {
+      animationRefs.current[index]!.kill();
+      animationRefs.current[index] = null;
+    }
+
+    // Animate the fill effect from top to bottom
+    if (fillRef.current[index]) {
+      animationRefs.current[index] = gsap.fromTo(
+        fillRef.current[index],
+        { height: 0, top: 0, bottom: 'auto' },
+        {
+          height: '100%',
+          duration: 0.4,
+          ease: 'power2.out'
+        }
+      );
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Kill any existing animations before resetting
+    animationRefs.current.forEach((anim, idx) => {
+      if (anim) {
+        anim.kill();
+        animationRefs.current[idx] = null;
+      }
+    });
+
+    setHoveredIndex(null);
+
+    // Reset all fill effects
+    fillRef.current.forEach((el) => {
+      if (el) {
+        // Reset immediately without animation
+        gsap.set(el, { height: 0, top: 0, bottom: 'auto' });
+      }
+    });
+  };
 
   return (
     <section className='py-16 bg-white'>
@@ -75,28 +125,47 @@ const IndustriesSection: React.FC = () => {
         >
           {/* divide-x & divide-y draws single 1px lines between cells */}
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-x divide-y divide-gray-200'>
-            {industries.map(({ label, count, Icon, highlight }, idx) => (
-              <div
-                key={label}
-                ref={(el) => {
-                  if (el) itemsRef.current[idx] = el;
-                }}
-                className={`flex flex-col items-center justify-center px-6 py-10 ${
-                  highlight ? 'bg-[#0D004D] text-white' : 'bg-white'
-                }`}
-              >
-                <Icon size={32} strokeWidth={1.5} />
-                <h3 className='mt-6 text-xl font-semibold'>{label}</h3>
-                <p
-                  className={
-                    'mt-2 text-sm ' +
-                    (highlight ? 'text-indigo-200' : 'text-gray-500')
-                  }
+            {industries.map(({ label, count, Icon }, idx) => {
+              const isHighlighted = hoveredIndex === idx;
+              return (
+                <div
+                  key={label}
+                  ref={(el) => {
+                    if (el) itemsRef.current[idx] = el;
+                  }}
+                  onMouseEnter={() => handleMouseEnter(idx)}
+                  onMouseLeave={handleMouseLeave}
+                  className='flex flex-col items-center justify-center px-6 py-10 bg-white relative overflow-hidden'
                 >
-                  {count} Staffs
-                </p>
-              </div>
-            ))}
+                  {/* Fill effect overlay - positioned from top */}
+                  <div
+                    ref={(el) => {
+                      if (el) fillRef.current[idx] = el;
+                    }}
+                    className='absolute top-0 left-0 right-0 bg-[#0D004D] z-0'
+                    style={{ height: 0 }}
+                  />
+
+                  {/* Content */}
+                  <div className='relative z-10 flex flex-col items-center'>
+                    <Icon
+                      size={32}
+                      strokeWidth={1.5}
+                      className={`transition-all duration-300 ${isHighlighted ? 'text-white scale-125' : 'text-current'
+                        }`}
+                    />
+                    <h3 className={`mt-6 text-xl font-semibold transition-colors duration-300 ${isHighlighted ? 'text-white' : 'text-gray-900'
+                      }`}>
+                      {label}
+                    </h3>
+                    <p className={`mt-2 text-sm transition-colors duration-300 ${isHighlighted ? 'text-indigo-200' : 'text-gray-500'
+                      }`}>
+                      {count} Staffs
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

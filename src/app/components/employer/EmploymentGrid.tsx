@@ -1,4 +1,3 @@
-// components/EmploymentGrid.tsx
 'use client';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
@@ -34,7 +33,7 @@ const EmploymentGrid: React.FC<EmploymentGridProps> = ({
       {/* Header */}
       <div className='max-w-7xl mx-auto mb-8'>
         <div className='text-center mb-2'>
-          <span className='inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium'>
+          <span className='inline-block bg-blue-100 text-brand-purple px-4 py-2 rounded-full text-sm font-medium'>
             {headerText}
           </span>
         </div>
@@ -74,8 +73,7 @@ const EmploymentGrid: React.FC<EmploymentGridProps> = ({
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50'>
           <div
             className={`bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh]
-              overflow-hidden transform transition-all duration-300 ${
-                isModalOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+              overflow-hidden transform transition-all duration-300 ${isModalOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
               }`}
           >
             {/* Header */}
@@ -104,7 +102,7 @@ const EmploymentGrid: React.FC<EmploymentGridProps> = ({
 
                   {/* Text */}
                   <div className='lg:w-2/3'>
-                    <h3 className='text-2xl font-bold text-blue-900 mb-2'>
+                    <h3 className='text-2xl font-bold text-brand-purple mb-2'>
                       {selectedCategory.jobTitle}
                     </h3>
                     <p className='text-lg text-gray-600 mb-4'>
@@ -127,7 +125,7 @@ const EmploymentGrid: React.FC<EmploymentGridProps> = ({
                         <ul className='space-y-2'>
                           {selectedCategory.responsibilities.map((resp) => (
                             <li key={resp.id} className='flex items-start'>
-                              <span className='w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0' />
+                              <span className='w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0' />
                               <span className='text-gray-700'>{resp.text}</span>
                             </li>
                           ))}
@@ -139,19 +137,19 @@ const EmploymentGrid: React.FC<EmploymentGridProps> = ({
 
                 {/* Actions */}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-8'>
-                  <div className='bg-indigo-900 rounded-xl p-6 text-white text-center'>
+                  <div className='bg-brand-purple rounded-xl p-6 text-white text-center'>
                     <h4 className='text-xl font-bold mb-4'>
                       ARE YOU RECRUITING?
                     </h4>
-                    <button className='bg-white text-indigo-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200'>
+                    <button className='bg-white text-brand-purple px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200'>
                       Contact Us
                     </button>
                   </div>
-                  <div className='bg-indigo-900 rounded-xl p-6 text-white text-center'>
+                  <div className='bg-brand-purple rounded-xl p-6 text-white text-center'>
                     <h4 className='text-xl font-bold mb-4'>
                       LOOKING FOR YOUR NEXT ROLE?
                     </h4>
-                    <button className='bg-white text-indigo-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200'>
+                    <button className='bg-white text-brand-purple px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200'>
                       Submit Resume
                     </button>
                   </div>

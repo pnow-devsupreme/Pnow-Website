@@ -20,14 +20,7 @@ import {
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
-import {
-  drugImg,
-  psychologistImg,
-  chemist,
-  pharma,
-  forensic,
-} from '~/healthCare';
-import { finance, financeLeader, EWallet } from '~/accounting';
+
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
 import Accounting3 from '../../public/jobs/Accountant-rafiki.png';
@@ -38,11 +31,11 @@ import Accounting6 from '../../public/jobs/Investment.png';
 import Healthcare3 from '../../public/jobs/Laboratory.png';
 import Healthcare2 from '../../public/jobs/Laboratory-r.png';
 
+import { EWallet, finance, financeLeader } from '~/accounting';
 import {
   Aviation1,
   Aviation2,
   Aviation3,
-  Aviation4,
   Aviation5,
   Aviation6,
   Aviation7,
@@ -65,6 +58,13 @@ import {
   Image6,
   Image7,
 } from '~/hardwareNetwork';
+import {
+  chemist,
+  drugImg,
+  forensic,
+  pharma,
+  psychologistImg,
+} from '~/healthCare';
 import {
   Hospitality1,
   Hospitality2,

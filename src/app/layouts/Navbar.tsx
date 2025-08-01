@@ -3,9 +3,9 @@
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
+import { employeesData } from '@/data/employeesData';
 import { jobs } from '@/data/jobsdata';
 
 import { employmentData } from '@/app/components/employer/data/employerData';
@@ -22,7 +22,6 @@ const NAV_LINKS = [
 ];
 
 export default function NavBar() {
-  const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const tweenRef = useRef<gsap.core.Tween>();
   const [scrolled, setScrolled] = useState(false);
@@ -130,6 +129,52 @@ export default function NavBar() {
                     <li key={slug}>
                       <Link
                         href={`/employers/${slug}`}
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                      >
+                        {data.servicesSection.title}{' '}
+                        {data.servicesSection.subtitle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
+          if (label === 'Services') {
+            return (
+              <li key={href} className='relative group'>
+                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
+                  {label}
+                </button>
+                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
+                  {Object.entries(employmentData).map(([slug, data]) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/services/${slug}`}
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
+                      >
+                        {data.servicesSection.title}{' '}
+                        {data.servicesSection.subtitle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
+          if (label === 'Employees') {
+            return (
+              <li key={href} className='relative group'>
+                <button className='text-brand-purple font-semibold text-base focus:outline-none'>
+                  {label}
+                </button>
+                <ul className='absolute left-0 w-56 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50'>
+                  {Object.entries(employeesData).map(([slug, data]) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/employees/${slug}`}
                         className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                       >
                         {data.servicesSection.title}{' '}
