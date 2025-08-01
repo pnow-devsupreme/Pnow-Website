@@ -54,7 +54,7 @@ export default function LoadingScreen({
       {
         scale: 1,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.5, // Reduced from 0.8
         ease: 'back.out(1.7)',
       },
       '-=0.3'
@@ -72,40 +72,40 @@ export default function LoadingScreen({
       '-=0.5'
     );
 
-    // Show outline text (no rotation, stays in place)
+    // Show outline text (faster stagger)
     tl.to(
       outlineLetters,
       {
         opacity: 1,
         y: 0,
-        duration: 0.3,
-        stagger: 0.05,
+        duration: 0.2, // Reduced from 0.3
+        stagger: 0.03, // Reduced from 0.05
         ease: 'power2.out',
       },
       '-=1.5'
     );
 
-    // Then rotate in solid letters one by one at the same position
+    // Then rotate in solid letters (faster)
     tl.to(
       solidLetters,
       {
         opacity: 1,
         rotation: 0,
         scale: 1,
-        duration: 0.4,
-        stagger: 0.15,
+        duration: 0.3, // Reduced from 0.4
+        stagger: 0.1, // Reduced from 0.15
         ease: 'back.out(1.7)',
       },
-      '+=0.9'
+      '+=0.3' // Reduced from 0.9
     );
 
-    // Wait a moment, then start curtain animation
-    tl.to({}, { duration: 1 }); // Pause for 1 second
+    // Shorter pause
+    tl.to({}, { duration: 0.3 }); // Reduced from 1 second
 
-    // Curtain pull-up animation
+    // Faster curtain pull-up animation
     tl.to(curtain, {
       y: '-100%',
-      duration: 1,
+      duration: 0.6, // Reduced from 1 second
       ease: 'power2.inOut',
       onComplete: () => {
         setIsComplete(true);

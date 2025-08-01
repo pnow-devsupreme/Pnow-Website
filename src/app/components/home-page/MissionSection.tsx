@@ -10,7 +10,7 @@ const MissionSection: React.FC = () => {
   const center = 100;
   const outerR = 90;
   const innerR = 50;
-  const gapAngle = 15; 
+  const gapAngle = 15;
   const sectionRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -38,18 +38,18 @@ const MissionSection: React.FC = () => {
     ].join(' ');
   }
 
-  const segmentAngle = (360 - 3 * gapAngle) / 3; 
+  const segmentAngle = (360 - 3 * gapAngle) / 3;
 
   const segments = [
-    { start: -90, end: -90 + segmentAngle }, 
+    { start: -90, end: -90 + segmentAngle },
     {
       start: -90 + segmentAngle + gapAngle,
       end: -90 + 2 * segmentAngle + gapAngle,
-    }, 
+    },
     {
       start: -90 + 2 * segmentAngle + 2 * gapAngle,
       end: -90 + 3 * segmentAngle + 2 * gapAngle,
-    }, 
+    },
   ];
 
   const arcs = segments.map((seg) => describeArc(seg.start, seg.end));
@@ -75,10 +75,10 @@ const MissionSection: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 80%', 
+        start: 'top 80%',
         end: 'top 50%',
-        once: true, 
-        markers: false, 
+        once: true,
+        markers: false,
       },
     });
 
@@ -126,7 +126,7 @@ const MissionSection: React.FC = () => {
           </p>
         </div>
 
-          <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
+        <div className='relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] order-1 lg:order-2'>
           <svg
             ref={svgRef}
             viewBox='0 0 200 200'
@@ -136,8 +136,8 @@ const MissionSection: React.FC = () => {
               <path
                 key={i}
                 d={d}
-                fill='#1A0C6D'
-                stroke='#1A0C6D'
+                fill='#0D004D'
+                stroke='#0D004D'
                 strokeWidth='8'
                 strokeLinecap='round'
                 strokeLinejoin='round'

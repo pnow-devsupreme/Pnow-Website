@@ -83,9 +83,9 @@ const TransformSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className='bg-white py-16'>
+    <section ref={sectionRef} className='bg-white  mt-[300px] mb-[100px]'>
       <div className='container max-w-8xl mx-auto px-6 lg:px-8'>
-        <div className='flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12'>
+        <div className='flex flex-col-reverse lg:flex-row items-center lg:items-center gap-12'>
           <div className='gsap-intro w-full lg:w-1/2 flex justify-center'>
             <Image
               src={teamImage}
