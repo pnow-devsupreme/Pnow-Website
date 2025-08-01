@@ -87,6 +87,7 @@ import {
   Hospitality6,
   Hospitality7,
 } from '~/hospitality';
+import { archImg1, archImg10, archImg2, archImg3, archImg4, archImg5, archImg6, archImg7, archImg8, archImg9 } from '~/architecture';
 
 export interface JobSection {
   title: string;
@@ -1395,6 +1396,214 @@ export const jobs: Job[] = [
           ],
           imageSrc: legal9,
           altText: 'Civil Defense Attorney illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+      ],
+    },
+  },
+  {
+    id: 8,
+    title: 'Architecture',
+    slug: 'architecture',
+    sections: [
+      {
+        title: 'Architecture Careers with ProficientNow',
+        description:
+          'Connecting talented professionals with rewarding careers in architecture. We bridge the gap between industry needs and qualified candidates through innovative recruitment solutions.',
+        imageSrc: archImg1,
+        altText: 'Architecture careers illustration',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+      },
+      {
+        title: 'Architecture Industry Overview',
+        description:
+          'Architecture plays a vital role in shaping our environment and society. Explore various career paths in architecture and discover opportunities to contribute to innovative and sustainable design projects.',
+        imageSrc: archImg2,
+        altText: 'Architecture illustration',
+      },
+    ],
+    features: {
+      description:
+        'Discover opportunities in architecture, from designing commercial buildings to creating sustainable communities. ProficientNow connects talented architects with top-tier firms and organizations.',
+      items: [
+        {
+          title: 'Architecture Clerk',
+          description:
+            'Assisting architects and design staff with administrative tasks',
+          icon: Scale,
+        },
+        {
+          title: 'Architecture Assistant',
+          description:
+            'Providing support and assistance to architects and design staff',
+          icon: Gavel,
+        },
+        {
+          title: 'Architecture Secretary',
+          description:
+            'Providing administrative support to architects and design staff',
+          icon: PersonStanding,
+        },
+      ],
+    },
+    careersSection: {
+      title: 'Architecture Careers',
+      description:
+        'Architecture sectors offer diverse, rewarding careers with strong growth potential:',
+      items: [
+        {
+          title: 'Project Architect',
+          qualifications: [
+            'Bachelor’s degree in Architecture or a related field',
+            'Strong coordination, communication, and technical skills',
+          ],
+          responsibilities: [
+            'Oversee and manage interior and architectural projects from concept to completion',
+            'Ensure design intent is maintained throughout the documentation and construction process',
+            'Monitor project schedules, deliverables, and compliance with codes and standards',
+            'Support senior architects and project managers in day-to-day project execution',
+          ],
+          imageSrc: archImg3,
+          altText: 'Project Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Retail Design Lead',
+          qualifications: [
+            'Bachelor’s degree in Architecture or a related field',
+            'Strong leadership and client management skills',
+          ],
+          responsibilities: [
+            'Lead project teams through all phases of retail design and development',
+            'Oversee design development to ensure quality, consistency, and brand alignment',
+            'Manage client communications and maintain strong working relationships',
+            'Ensure project documentation complies with codes, regulations, and company standards',
+          ],
+          imageSrc: archImg4,
+          altText: 'Retail Design Lead illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Interior Design Architect',
+          qualifications: [
+            'Bachelor’s degree in Architecture, Interior Design, or a related field',
+            'Experience in retail space planning and interior design',
+          ],
+          responsibilities: [
+            'Develop innovative retail and interior design concepts',
+            'Create detailed architectural drawings, floor plans, and design documents',
+            'Collaborate with project teams to align designs with client goals and branding',
+          ],
+          imageSrc: archImg5,
+          altText: 'Interior Design Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Corporate Interiors Designer',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture or Interior Design',
+            'Proven experience in corporate interior design',
+          ],
+          responsibilities: [
+            'Design innovative and functional corporate interior spaces',
+            'Develop concept designs, presentations, and detailed construction drawings',
+            'Collaborate with clients, consultants, and internal teams throughout the project lifecycle',
+            'Ensure design compliance with building codes, accessibility standards, and corporate branding',
+          ],
+          imageSrc: archImg6,
+          altText: 'Corporate Interiors Designer illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Educational Facility Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong leadership skills and knowledge of educational planning standards and codes',
+          ],
+          responsibilities: [
+            'Lead the design and development of K-12 educational architecture projects',
+            'Manage project teams and coordinate with consultants and stakeholders',
+            'Oversee project documentation, from concept through construction administration',
+            'Collaborate with school districts and community stakeholders to meet educational goals',
+          ],
+          imageSrc: archImg7,
+          altText: 'Educational Facility Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Licensed Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong understanding of building codes, regulations, and project management',
+          ],
+          responsibilities: [
+            'Lead architectural projects from concept through construction with full legal authority',
+            'Ensure all designs comply with local, state, and federal building regulations',
+            'Coordinate with engineers, consultants, and contractors throughout the project lifecycle',
+            'Review and approve architectural plans, drawings, and specifications',
+          ],
+          imageSrc: archImg8,
+          altText: 'Licensed Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Tenant Improvement Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Licensed architect preferred',
+            'Experience in tenant improvement projects with strong project management and technical skills',
+          ],
+          responsibilities: [
+            'Lead tenant improvement projects from design through construction completion',
+            'Develop interior layouts that align with client needs and building requirements',
+            'Coordinate with contractors, consultants, and building management teams',
+            'Ensure design compliance with codes, accessibility standards, and lease agreements',
+          ],
+          imageSrc: archImg9,
+          altText: 'Tenant Improvement Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Healthcare Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Extensive experience in healthcare design',
+            'Architectural license preferred',
+          ],
+          responsibilities: [
+            'Direct healthcare architecture projects from concept through completion',
+            'Design patient-centered environments that prioritize safety, comfort, and functionality',
+            'Lead interdisciplinary teams and coordinate with healthcare providers and consultants',
+            'Oversee project documentation, design reviews, and construction administration',
+          ],
+          imageSrc: archImg10,
+          altText: 'Healthcare Architect illustration',
+          buttonText: 'Explore Role',
+          buttonLink: '/careers',
+        },
+        {
+          title: 'Senior Project Architect',
+          qualifications: [
+            'Bachelor’s or Master’s degree in Architecture',
+            'Strong leadership and strategic planning skills',
+          ],
+          responsibilities: [
+            'Oversee the design and execution of complex building projects from inception to completion',
+            'Manage project budgets, timelines, and resource allocation',
+            'Review and approve architectural designs, specifications, and construction documents',
+            'Serve as the primary liaison between clients, consultants, and contractors',
+          ],
+          imageSrc: archImg4,
+          altText: 'Senior Project Architect illustration',
           buttonText: 'Explore Role',
           buttonLink: '/careers',
         },
