@@ -72,7 +72,7 @@ const ResearchSection: React.FC = () => {
     <section className='relative'>
       <div className='bg-[#0D004D] h-[500px]'>
         <div className='container mx-auto px-6 lg:px-8 py-16 text-center text-white'>
-          <span className='inline-block bg-white text-indigo-900 rounded-full px-4 py-1 text-xs uppercase font-medium'>
+          <span className='inline-block bg-white text-brand-purple rounded-full px-4 py-1 text-xs uppercase font-medium'>
             Category
           </span>
           <h2 className='mt-4 text-4xl lg:text-5xl font-extrabold max-w-2xl mx-auto'>
@@ -97,7 +97,7 @@ const ResearchSection: React.FC = () => {
             <h3 className='text-xl font-bold'>{c.title}</h3>
             <p className='mt-3 text-gray-600'>{c.description}</p>
             <Link href={c.href}>
-              <button className='mt-6 inline-block bg-indigo-900 text-white rounded-full px-6 py-2 text-sm font-medium hover:bg-indigo-800 transition'>
+              <button className='mt-6 inline-block bg-brand-purples text-white rounded-full px-6 py-2 text-sm font-medium hover:bg-indigo-800 transition'>
                 {c.buttonText}
               </button>
             </Link>

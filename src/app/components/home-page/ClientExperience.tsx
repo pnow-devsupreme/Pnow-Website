@@ -79,13 +79,13 @@ const ClientExperience: React.FC = () => {
         {/* Arrows */}
         <button
           onClick={prev}
-          className='absolute left-0 top-1/2 -translate-y-1/2 bg-white text-indigo-900 rounded-full p-2 shadow hover:bg-gray-100'
+          className='absolute left-0 top-1/2 -translate-y-1/2 bg-white text-brand-purple rounded-full p-2 shadow hover:bg-gray-100'
         >
           <ArrowLeft className='w-5 h-5' />
         </button>
         <button
           onClick={next}
-          className='absolute right-0 top-1/2 -translate-y-1/2 bg-blue-500 text-white rounded-full p-2 shadow hover:bg-blue-600'
+          className='absolute right-0 top-1/2 -translate-y-1/2 bg-brand-purple text-white rounded-full p-2 shadow hover:bg-blue-600'
         >
           <ArrowRight className='w-5 h-5' />
         </button>

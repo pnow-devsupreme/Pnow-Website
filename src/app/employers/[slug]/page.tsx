@@ -1,4 +1,3 @@
-// src/app/employer/[slug]/page.tsx
 import React from 'react';
 
 import {
