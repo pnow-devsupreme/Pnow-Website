@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
 import teamImage from '../../../../public/images/teamImage.png';
@@ -96,13 +97,13 @@ const TransformSection: React.FC = () => {
             />
           </div>
           <div className='gsap-intro w-full lg:w-1/2 max-w-md flex flex-col gap-4'>
-            <span className='inline-block text-[#0D004D] border border-[#0D004D] rounded-full px-3 py-1 text-xs uppercase font-medium w-fit'>
+            <span className='inline-block text-brand-purple border border-brand-purple rounded-full px-3 py-1 text-xs uppercase font-medium w-fit'>
               About us
             </span>
             <div className='flex flex-col gap-4'>
               <h2 className=' text-3xl lg:text-4xl font-bold leading-tight'>
                 Transform Your Path to{' '}
-                <span className='text-[#0D004D]'>Success</span>
+                <span className='text-brand-purple'>Success</span>
               </h2>
               <p className=' text-gray-600 text-[min(1.125rem, 18px)]'>
                 Welcome to our comprehensive solution, optimizing hiring for
@@ -111,12 +112,11 @@ const TransformSection: React.FC = () => {
                 your success journey with us, unlocking your full potential
                 together.
               </p>
-              <button
-                type='button'
-                className='gsap-intro w-fit mt-3  inline-block border border-[#0D004D] text-[#0D004D] rounded-full px-6 py-2 text-sm font-medium hover:bg-purple-50 transition'
-              >
-                Let’s go!
-              </button>
+              <Link href='/contact' passHref legacyBehavior>
+                <button className=' w-fit mt-3 bg-brand-purple text-white  inline-block border border-[#0D004D]  rounded-full px-6 py-2 text-sm font-medium '>
+                  Let’s go!
+                </button>
+              </Link>
             </div>
           </div>
         </div>

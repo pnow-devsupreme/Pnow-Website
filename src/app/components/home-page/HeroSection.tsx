@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
 import SplitTextComp from '@/app/components/bits/SplitText';
@@ -127,13 +128,17 @@ const Hero: React.FC = () => {
           />
 
           <div className='mt-8 flex justify-center space-x-4'>
-            <button className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
-              Find Works
-            </button>
+            <Link href='/contact' passHref legacyBehavior>
+              <a className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center'>
+                Find Works
+              </a>
+            </Link>
 
-            <button className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90'>
-              Hire Talents Now
-            </button>
+            <Link href='/contact' passHref legacyBehavior>
+              <a className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center'>
+                Hire Talents Now
+              </a>
+            </Link>
           </div>
         </div>
 
