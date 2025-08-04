@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { JobFeature } from '@/data/jobsdata';
 
 interface FeatureGridProps {
