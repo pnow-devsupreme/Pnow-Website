@@ -39,7 +39,7 @@ export default function JobPage({ params }: { params: Params }) {
 
   return (
     <>
-      <main className='max-w-6xl mt-[150px] mx-auto px-6 py-12'>
+      <main className='max-w-6xl  lg:mt-[150px] mx-auto px-6 lg:py-12'>
         {job.sections.map((section, idx) => (
           <SectionBlock key={idx} section={section} reverse={idx % 2 === 0} />
         ))}

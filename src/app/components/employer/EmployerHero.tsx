@@ -14,7 +14,7 @@ const EmployerHero: React.FC<EmployerHeroProps> = ({
   additionalInfo = 'Additionally, ProficientNow provides workforce management services through recruitment process outsourcing (RPO) methods, ensuring seamless talent onboarding with minimal operational interference.',
 }) => {
   return (
-    <section className='relative overflow-hidden bg-brand-purple m-0 pt-32'>
+    <section className='relative overflow-hidden bg-brand-purple m-0 lg:pt-32'>
       {/* Content */}
       <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 mb-20 md:py-24 text-center text-gray-200'>
         <h1 className='text-[min(2vw, 25px)] font-bold text-white mb-2'>

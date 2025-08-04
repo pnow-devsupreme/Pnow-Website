@@ -110,7 +110,7 @@ const Locations = () => {
         </div>
 
         {/* Location Cards */}
-        <div className='flex base:flex-col lg:flex-row gap-5 lg:col-span-3'>
+        <div className='flex flex-col lg:flex-row gap-5 lg:col-span-3'>
           {AllLocations.map((item, index) => (
             <div
               key={index}
@@ -153,8 +153,8 @@ const Locations = () => {
 
 const Websleak = () => {
   return (
-    <div className='flex base:flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
-      <div className='flex base:flex-col md:flex-row gap-4'>
+    <div className='flex flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
+      <div className='flex flex-col md:flex-row gap-4'>
         <div className='flex base:flex-wrap md:flex-row gap-5'>
           <p>© ProficientNow 2023</p>
           <p>All Rights Reserved.</p>
