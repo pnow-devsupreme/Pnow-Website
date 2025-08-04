@@ -119,13 +119,13 @@ export default function NavBar() {
 
   const initialStyles: React.CSSProperties = isDesktop
     ? {
-        width: scrolled ? '100%' : 'calc(100% - 500px)',
-        borderRadius: scrolled ? '0px' : '9999px',
-      }
+      width: scrolled ? '100%' : 'calc(100% - 500px)',
+      borderRadius: scrolled ? '0px' : '9999px',
+    }
     : {
-        width: '100%',
-        borderRadius: '0px',
-      };
+      width: '100%',
+      borderRadius: '0px',
+    };
 
   const positionClasses = isDesktop
     ? scrolled

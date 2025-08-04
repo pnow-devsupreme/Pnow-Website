@@ -96,7 +96,7 @@ const TransformSection: React.FC = () => {
               className='max-w-full h-auto'
             />
           </div>
-          <div className='gsap-intro w-full lg:w-1/2 max-w-md flex flex-col gap-4'>
+          <div className='gsap-intro w-full lg:w-1/2 max-w-md flex flex-col  gap-4'>
             <span className='inline-block text-brand-purple border border-brand-purple rounded-full px-3 py-1 text-xs uppercase font-medium w-fit'>
               About us
             </span>
@@ -125,8 +125,14 @@ const TransformSection: React.FC = () => {
 
         <div
           ref={statsRef}
-          className='mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-6xl mx-auto gap-4'
-        >
+          className='mt-12 
+          grid 
+
+         grid-cols-1 sm:grid-cols-2 md:grid-cols-4  
+         place-items-center sm:place-items-stretch
+          max-w-6xl 
+          mx-auto 
+          gap-4'        >
           {stats.map((s) => (
             <div
               key={s.label}
