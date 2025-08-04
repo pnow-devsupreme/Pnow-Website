@@ -7,10 +7,11 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { employeesData } from '@/data/employeesData';
 import { jobs } from '@/data/jobsdata';
+
 import { employmentData } from '@/app/components/employer/data/employerData';
+import { Dropdown } from '@/app/layouts/Dropdown';
 
 import Logo from '../../../public/navbar/Favicon.jpg';
-import { Dropdown } from '@/app/layouts/Dropdown';
 
 const NAV_LINKS = [
   { label: 'About Us', href: '/about-us' },
