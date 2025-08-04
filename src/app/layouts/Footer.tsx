@@ -1,18 +1,17 @@
 'use client';
-// eslint-disable-next-line simple-import-sort/imports
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaTwitter,
 } from 'react-icons/fa';
 
-import Usa from '../../../public/images/usalogo.jpg';
-import India from '../../../public/images/india.jpg';
 import FooterLogo from '../../../public/images/footerlogo.png';
+import India from '../../../public/images/india.jpg';
+import Usa from '../../../public/images/usalogo.jpg';
 
 const Australia = '/images/auslogo.svg';
 const CountryInd = '/images/charminar.svg';
