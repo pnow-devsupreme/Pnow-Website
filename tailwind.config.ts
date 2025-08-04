@@ -11,7 +11,7 @@ const config: Config = {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'brand-purple': '#150048',
+        'brand-purple': '#0D014D',
         'brand-red': '#C42B60',
         ribbon: '#1F0443',
         primary: {
