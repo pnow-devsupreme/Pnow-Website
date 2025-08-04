@@ -128,14 +128,14 @@ const Hero: React.FC = () => {
           />
 
           <div className='mt-8 flex justify-center space-x-4'>
-            <Link href='/contact' passHref legacyBehavior>
-              <a className='bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center'>
+            <Link href="/contact" passHref legacyBehavior>
+              <a className="bg-white text-brand-purple px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center">
                 Find Works
               </a>
             </Link>
 
-            <Link href='/contact' passHref legacyBehavior>
-              <a className='bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center'>
+            <Link href="/contact" passHref legacyBehavior>
+              <a className="bg-brand-red text-white px-8 py-3 rounded-full font-semibold text-base hover:opacity-90 flex items-center justify-center">
                 Hire Talents Now
               </a>
             </Link>

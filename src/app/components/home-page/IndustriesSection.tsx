@@ -56,7 +56,7 @@ const IndustriesSection: React.FC = () => {
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
       // Kill any ongoing animations
-      animationRefs.current.forEach(anim => {
+      animationRefs.current.forEach((anim) => {
         if (anim) anim.kill();
       });
     };
@@ -79,7 +79,7 @@ const IndustriesSection: React.FC = () => {
         {
           height: '100%',
           duration: 0.4,
-          ease: 'power2.out'
+          ease: 'power2.out',
         }
       );
     }
@@ -154,12 +154,16 @@ const IndustriesSection: React.FC = () => {
                       className={`transition-all duration-300 ${isHighlighted ? 'text-white scale-125' : 'text-current'
                         }`}
                     />
-                    <h3 className={`mt-6 text-xl font-semibold transition-colors duration-300 ${isHighlighted ? 'text-white' : 'text-gray-900'
-                      }`}>
+                    <h3
+                      className={`mt-6 text-xl font-semibold transition-colors duration-300 ${isHighlighted ? 'text-white' : 'text-gray-900'
+                        }`}
+                    >
                       {label}
                     </h3>
-                    <p className={`mt-2 text-sm transition-colors duration-300 ${isHighlighted ? 'text-indigo-200' : 'text-gray-500'
-                      }`}>
+                    <p
+                      className={`mt-2 text-sm transition-colors duration-300 ${isHighlighted ? 'text-indigo-200' : 'text-gray-500'
+                        }`}
+                    >
                       {count} Staffs
                     </p>
                   </div>

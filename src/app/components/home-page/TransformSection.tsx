@@ -113,7 +113,9 @@ const TransformSection: React.FC = () => {
                 together.
               </p>
               <Link href='/contact' passHref legacyBehavior>
-                <button className=' w-fit mt-3 bg-brand-purple text-white  inline-block border border-[#0D004D]  rounded-full px-6 py-2 text-sm font-medium '>
+                <button
+                  className=' w-fit mt-3 bg-brand-purple text-white  inline-block border border-[#0D004D]  rounded-full px-6 py-2 text-sm font-medium '
+                >
                   Let’s go!
                 </button>
               </Link>

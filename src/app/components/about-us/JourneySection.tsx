@@ -62,7 +62,7 @@ const JourneySection: React.FC = () => {
                 <p className='text-gray-600 text-base leading-relaxed mb-6'>
                   {description}
                 </p>
-                <Link href='/contact' passHref legacyBehavior>
+                <Link href="/contact" passHref legacyBehavior>
                   <a className='bg-brand-purple text-white text-lg px-6 py-2 rounded-full hover:bg-[#2b0a86] transition'>
                     {buttonText}
                   </a>

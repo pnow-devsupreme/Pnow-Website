@@ -22,12 +22,12 @@ const FEATURES = [
 
 export default function MissionSection() {
   return (
-    <div className='flex flex-col items-center justify-center '>
-      <section className='bg-white py-16 px-4 md:px-20 lg:max-w-[65%]'>
+    <div className='  w-full mx-auto max-w-[60%] items-center  justify-center '>
+      <section className='bg-white py-16 '>
         {/* — Title */}
         <h2 className='text-4xl font-bold text-[#0F0F55] mb-12'>Mission</h2>
 
-        <div className='flex flex-col md:flex-row items-start gap-12'>
+        <div className='flex flex-col md:flex-row items-center gap-12'>
           {/* — Left column: features + paragraph */}
           <div className='flex-1 flex flex-col gap-8'>
             {FEATURES.map(({ title, description, icon }, idx) => (
@@ -69,7 +69,7 @@ export default function MissionSection() {
           {/* — Right column: illustration */}
           <div className='flex-shrink-0 w-full md:w-1/2'>
             <Image
-              src='/svg/mission.svg'
+              src='/images/mission.png'
               alt='Mission illustration'
               width={600}
               height={400}
