@@ -1,18 +1,17 @@
 'use client';
-// eslint-disable-next-line simple-import-sort/imports
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaTwitter,
 } from 'react-icons/fa';
 
-import Usa from '../../../public/images/usalogo.jpg';
-import India from '../../../public/images/india.jpg';
 import FooterLogo from '../../../public/images/footerlogo.png';
+import India from '../../../public/images/india.jpg';
+import Usa from '../../../public/images/usalogo.jpg';
 
 const Australia = '/images/auslogo.svg';
 const CountryInd = '/images/charminar.svg';
@@ -130,15 +129,21 @@ const Locations = () => {
 
                 <div className='text-sm flex flex-col gap-3 justify-center items-center  text-center'>
                   <div>
-                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>ADDRESS</p>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      ADDRESS
+                    </p>
                     <p className='text-white leading-relaxed'>{item.main}</p>
                   </div>
                   <div>
-                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>EMAIL</p>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      EMAIL
+                    </p>
                     <p className='text-white'>{item.email}</p>
                   </div>
                   <div>
-                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>CONTACT</p>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      CONTACT
+                    </p>
                     <p className='text-white'>{item.contact}</p>
                   </div>
                 </div>
@@ -172,7 +177,8 @@ const Locations = () => {
           </div>
         </div>
 
-        <div className='flex base:flex-col lg:flex-row gap-5 lg:col-span-3'>
+        {/* Location Cards */}
+        <div className='flex flex-col lg:flex-row gap-5 lg:col-span-3'>
           {AllLocations.map((item, index) => (
             <div
               key={index}
@@ -215,23 +221,8 @@ const Locations = () => {
 
 const Websleak = () => {
   return (
-    <div className='flex base:flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
-      <div className='sm:hidden flex flex-col gap-4 text-center'>
-        <div className='flex flex-col gap-2'>
-          <p className='text-sm'>© ProficientNow 2023</p>
-          <p className='text-sm'>All Rights Reserved.</p>
-        </div>
-        <div className='flex flex-col gap-3 text-sm font-normal'>
-          <Link href='/privacypolicy' className='hover:text-white transition-colors'>
-            Privacy Policy
-          </Link>
-          <Link href='/termsandconditions' className='hover:text-white transition-colors'>
-            Terms and Conditions
-          </Link>
-        </div>
-      </div>
-
-      <div className='hidden sm:flex base:flex-col md:flex-row gap-4'>
+    <div className='flex flex-col md:flex-row lg:items-center lg:justify-between base:px-[30px] lg:px-[100px] py-[30px] text-[#ACB1E0] text-[16px] font-semibold'>
+      <div className='flex flex-col md:flex-row gap-4'>
         <div className='flex base:flex-wrap md:flex-row gap-5'>
           <p>© ProficientNow 2023</p>
           <p>All Rights Reserved.</p>
