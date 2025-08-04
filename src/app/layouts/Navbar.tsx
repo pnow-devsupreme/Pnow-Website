@@ -9,7 +9,7 @@ import { employeesData } from '@/data/employeesData';
 import { jobs } from '@/data/jobsdata';
 import { employmentData } from '@/app/components/employer/data/employerData';
 
-import Logo from '../../../public/navbar/pnlogonew.jpg';
+import Logo from '../../../public/navbar/Favicon.jpg';
 import { Dropdown } from '@/app/layouts/Dropdown';
 
 const NAV_LINKS = [
@@ -131,7 +131,17 @@ export default function NavBar() {
       `}
     >
       <Link href='/'>
-        <Image src={Logo} alt='ProficientNow' className='h-10 flex-shrink-0' />
+        <div className='flex items-center gap-2'>
+          <Image
+            src={Logo}
+            alt='ProficientNow'
+            className='h-8 flex-shrink-0 object-contain'
+          />
+          <p className='font-small text-xl'>
+            Proficient
+            <span className='text-brand-purple font-semibold'>Now</span>
+          </p>
+        </div>
       </Link>
 
       <ul className='flex items-center space-x-6 relative'>
