@@ -60,22 +60,22 @@ const Locations = () => {
   // social icons array
   const socialLinks = [
     {
-      href: 'https://facebook.com/proficientnow',
+      href: 'https://www.facebook.com/share/15gyhoAZxY/?mibextid=wwXIfr',
       icon: FaFacebookF,
       label: 'Facebook',
     },
     {
-      href: 'https://twitter.com/proficientnow',
+      href: 'https://x.com/ProficientNow',
       icon: FaTwitter,
       label: 'Twitter',
     },
     {
-      href: 'https://instagram.com/proficientnow',
+      href: 'https://www.instagram.com/proficientnow',
       icon: FaInstagram,
       label: 'Instagram',
     },
     {
-      href: 'https://linkedin.com/company/proficientnow',
+      href: 'https://www.linkedin.com/company/proficientnow-inc',
       icon: FaLinkedinIn,
       label: 'LinkedIn',
     },
@@ -83,8 +83,77 @@ const Locations = () => {
 
   return (
     <div className='w-full flex flex-col justify-center items-center bg-[#0f005f]'>
-      <div className='base:flex flex-col gap-8 lg:grid lg:grid-cols-4 w-[90%] gap-x-5 justify-center base:py-[30px] max-w-[1440px] lg:py-[100px]'>
-        {/* Logo + Social Icons */}
+      <div className='sm:hidden w-[90%] max-w-[1440px] py-[30px]'>
+        <div className='flex flex-col items-center mb-8'>
+          <Link href='/'>
+            <Image
+              alt='ProficientNow Logo'
+              src={FooterLogo}
+              className='w-[40px] h-[40px]'
+            />
+          </Link>
+          <div className='mt-6 flex justify-center space-x-6'>
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={label}
+                className='text-white hover:text-gray-300 transition-colors'
+              >
+                <Icon size={20} />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className='flex flex-col justify-center items-center gap-8'>
+          {AllLocations.map((item, index) => (
+            <div
+              key={index}
+              className='flex flex-col  text-white border-b border-[#FFFFFF33] pb-6 last:border-b-0'
+            >
+              <div className='flex flex-col gap-4'>
+                <div className='flex justify-center items-center gap-1'>
+                  <Image
+                    alt={`${item.country} flag`}
+                    src={item.flag}
+                    width={50}
+                    height={30}
+                    className='object-contain w-[50px] h-[30px]'
+                  />
+                  <p className='text-lg font-bold tracking-wide'>
+                    {item.country}
+                  </p>
+                </div>
+
+                <div className='text-sm flex flex-col gap-3 justify-center items-center  text-center'>
+                  <div>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      ADDRESS
+                    </p>
+                    <p className='text-white leading-relaxed'>{item.main}</p>
+                  </div>
+                  <div>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      EMAIL
+                    </p>
+                    <p className='text-white'>{item.email}</p>
+                  </div>
+                  <div>
+                    <p className='text-[#ACB1E0] text-xs font-medium mb-1'>
+                      CONTACT
+                    </p>
+                    <p className='text-white'>{item.contact}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className='hidden sm:flex flex-col gap-8 lg:grid lg:grid-cols-4 w-[90%] gap-x-5 justify-center base:py-[30px] max-w-[1440px] lg:py-[100px]'>
         <div className='flex flex-col items-center lg:items-start'>
           <Link href='/'>
             <Image

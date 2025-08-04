@@ -22,25 +22,7 @@ import {
 } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ComponentType, SVGProps } from 'react';
-import {
-  drugImg,
-  psychologistImg,
-  chemist,
-  pharma,
-  forensic,
-} from '~/healthCare';
-import {
-  legal1,
-  legal2,
-  legal3,
-  legal4,
-  legal5,
-  legal6,
-  legal7,
-  legal8,
-  legal9,
-} from '~/legal';
-import { finance, financeLeader, EWallet } from '~/accounting';
+
 import Accounting1 from '../../public/jobs/Accountant-amico.png';
 import Accounting2 from '../../public/jobs/Accountant-pana.png';
 import Accounting3 from '../../public/jobs/Accountant-rafiki.png';
@@ -51,6 +33,19 @@ import Accounting6 from '../../public/jobs/Investment.png';
 import Healthcare3 from '../../public/jobs/Laboratory.png';
 import Healthcare2 from '../../public/jobs/Laboratory-r.png';
 
+import { EWallet, finance, financeLeader } from '~/accounting';
+import {
+  archImg1,
+  archImg2,
+  archImg3,
+  archImg4,
+  archImg5,
+  archImg6,
+  archImg7,
+  archImg8,
+  archImg9,
+  archImg10,
+} from '~/architecture';
 import {
   Aviation1,
   Aviation2,
@@ -69,6 +64,18 @@ import {
   Construction7,
 } from '~/constructionImages';
 import {
+  environment1,
+  environment2,
+  environment3,
+  environment4,
+  environment5,
+  environment6,
+  environment7,
+  environment8,
+  environment9,
+  environment10,
+} from '~/environment';
+import {
   Image1,
   Image2,
   Image3,
@@ -77,6 +84,13 @@ import {
   Image6,
   Image7,
 } from '~/hardwareNetwork';
+import {
+  chemist,
+  drugImg,
+  forensic,
+  pharma,
+  psychologistImg,
+} from '~/healthCare';
 import {
   Hospitality1,
   Hospitality2,
@@ -87,29 +101,16 @@ import {
   Hospitality7,
 } from '~/hospitality';
 import {
-  archImg1,
-  archImg10,
-  archImg2,
-  archImg3,
-  archImg4,
-  archImg5,
-  archImg6,
-  archImg7,
-  archImg8,
-  archImg9,
-} from '~/architecture';
-import {
-  environment1,
-  environment10,
-  environment2,
-  environment3,
-  environment4,
-  environment5,
-  environment6,
-  environment7,
-  environment8,
-  environment9,
-} from '~/environment';
+  legal1,
+  legal2,
+  legal3,
+  legal4,
+  legal5,
+  legal6,
+  legal7,
+  legal8,
+  legal9,
+} from '~/legal';
 
 export interface JobSection {
   title: string;

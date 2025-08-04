@@ -1,8 +1,9 @@
 'use client';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Lenis from 'lenis';
 import type * as React from 'react';
-import { useState } from 'react'; // Import useState
+import { useEffect, useState } from 'react';
 
 import '@/styles/globals.css';
 import '@/styles/colors.css';
@@ -18,9 +19,38 @@ export default function ClientLayout({
 }) {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
-  const handleLoadingComplete = () => {
-    setIsLoadingComplete(true);
-  };
+  // Initialize Lenis once for the whole app
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2,
+      wheelMultiplier: 1.5,
+      infinite: false,
+      autoResize: true,
+      lerp: 0.2,
+      syncTouch: false,
+    });
+
+    let rafId: number;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
+
+    // Prevent native wheel scrolling so Lenis can take over
+    const preventDefaultScroll = (e: WheelEvent) => e.preventDefault();
+    window.addEventListener('wheel', preventDefaultScroll, { passive: false });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('wheel', preventDefaultScroll);
+      lenis.destroy();
+    };
+  }, []);
+
+  const handleLoadingComplete = () => setIsLoadingComplete(true);
 
   return (
     <html>
